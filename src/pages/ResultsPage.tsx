@@ -7,17 +7,18 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { CandidateProfile } from "./CondidateProfile";
-import { SimplifiedCandidateProfile } from "./SimplifiedCandidateProfile";
+import { CandidateProfile } from "../components/CondidateProfile";
+import { SimplifiedCandidateProfile } from "../components/SimplifiedCandidateProfile";
+import Slider from "../components/Slider";
 
 export function ResultsView() {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
 
   return (
-    <Box p={isSmallScreen ? 3 : 8}>
+    <Box p={isSmallScreen ? 2 : 8}>
       <Grid container>
-        <Grid item xs={12} sm={isSmallScreen ? 12 : 4}>
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 5}>
           <Box textAlign={"left"}>
             <Typography variant={"h4"}>Twoje wyniki</Typography>
             <Typography variant={"h6"}>
@@ -35,6 +36,7 @@ export function ResultsView() {
             <Box padding={"25px 0px 25px 0px"}>
               <Button
                 sx={{
+                  width: isSmallScreen ? "100%" : "250px",
                   backgroundColor: "black",
                   borderRadius: "15px",
                   textTransform: "none",
@@ -48,7 +50,7 @@ export function ResultsView() {
           </Box>
         </Grid>
         <Grid item xs={12} sm={0.5}></Grid>
-        <Grid item xs={12} sm={isSmallScreen ? 12 : 7.5}>
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 6.5}>
           <Box textAlign={"left"}>
             <SimplifiedCandidateProfile />
             <SimplifiedCandidateProfile />
@@ -61,13 +63,21 @@ export function ResultsView() {
           </Box>
         </Grid>
       </Grid>
-      <CandidateProfile></CandidateProfile>
-      <Divider orientation="horizontal" />
-      <CandidateProfile></CandidateProfile>
-      <Divider orientation="horizontal" />
-      <CandidateProfile></CandidateProfile>
-      <Divider orientation="horizontal" />
-      <CandidateProfile></CandidateProfile>
+      {isSmallScreen ? (
+        <Box display="flex" justifyContent="center" alignItems="center">
+          <Slider></Slider>
+        </Box>
+      ) : (
+        <>
+          <CandidateProfile></CandidateProfile>
+          <Divider orientation="horizontal" />
+          <CandidateProfile></CandidateProfile>
+          <Divider orientation="horizontal" />
+          <CandidateProfile></CandidateProfile>
+          <Divider orientation="horizontal" />
+          <CandidateProfile></CandidateProfile>
+        </>
+      )}
     </Box>
   );
 }

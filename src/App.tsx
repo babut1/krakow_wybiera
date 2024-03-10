@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import { Questionaire } from "./components/Questionaire";
+import { Questionaire } from "./pages/Questionaire";
 import { Footer } from "./components/Footer";
 import { TopBar } from "./components/TopBar";
-import { Homepage } from "./components/Homepage";
+import { Homepage } from "./pages/Homepage";
 import { useAppPage } from "./common/state";
-import { MapPage } from "./components/MapPage";
-import { ResultsView } from "./components/ResultsView";
+import { MapPage } from "./pages/MapPage";
+import { ResultsView } from "./pages/ResultsPage";
 import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
 
 function App() {

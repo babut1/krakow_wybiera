@@ -4,7 +4,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
 export function SimplifiedCandidateProfile() {
   return (
     <>
-      <Grid container spacing={0}>
+      <Grid container spacing={0} sx={{ height: "60px" }}>
         <Grid item container xs={1} spacing={2}>
           <Grid item xs={6}>
             <img
@@ -15,13 +15,18 @@ export function SimplifiedCandidateProfile() {
             />
           </Grid>
         </Grid>
-        <Grid item xs={5}>
-          <Box textAlign={"center"}>
-            <Typography variant="h5">Komitet Harolda</Typography>
+        <Grid item xs={5.5}>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            height="100%"
+          >
+            <Typography variant="h6">Komitet Harolda</Typography>
           </Box>
         </Grid>
         <Grid item xs={5.5}>
-          <Box>
+          <Box marginTop={"15px"}>
             <ProgressBar
               completed={75}
               bgColor="black"

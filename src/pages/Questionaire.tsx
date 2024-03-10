@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { setNumberOfQuestions, useSelectedQuestion } from "../common/state";
 import { QuestionInterface } from "../common/types";
-import { Question } from "./Question";
+import { Question } from "../components/Question";
 import { CircularProgress } from "@mui/material";
 
 export function Questionaire() {

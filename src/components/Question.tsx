@@ -27,7 +27,7 @@ export function Question(props: {
 }) {
   const numberOfQuestions = useNumberOfQuestions();
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1000));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(950));
 
   const [buttonStates, setButtonStates] = useState<boolean[]>([
     false,
@@ -95,14 +95,17 @@ export function Question(props: {
           <Typography
             variant="h5"
             gutterBottom
-            textAlign="left"
+            textAlign={isSmallScreen ? "center" : "left"}
             minHeight={"70px"}
+            fontWeight={"bold"}
           >
             {props.question.question}
           </Typography>
           {isSmallScreen && (
-            <Box sx={{ paddingBottom: "20px" }}>
-              <Accordion sx={{ backgroundColor: "lightgrey" }}>
+            <Box>
+              <Accordion
+                sx={{ backgroundColor: "lightgrey", borderRadius: "15px" }}
+              >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1-content"
@@ -117,206 +120,215 @@ export function Question(props: {
               </Accordion>
             </Box>
           )}
-          <Box
-            textAlign={"left"}
+          <Grid
+            container
             sx={{
-              display: "flex",
-              flexDirection: "row",
-              gap: isSmallScreen ? "10px" : "30px",
+              maxWidth: isSmallScreen ? "950px" : "650px",
+              textAlign: "left",
               padding: "0px 0px 30px 0px",
             }}
           >
-            <Button
-              variant="outlined"
-              sx={{
-                borderRadius: "12px",
-                borderColor: "black",
-                padding: "15px",
-                textTransform: "none",
-                textAlign: "center",
-                width: "200px",
-                backgroundColor: buttonStates[0] ? "black" : "white",
-                "&:hover": {
+            <Grid
+              item
+              xs={12}
+              sm={isSmallScreen ? 12 : 4}
+              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
+            >
+              <Button
+                variant="outlined"
+                sx={{
+                  borderRadius: "12px",
+                  borderColor: "black",
+                  padding: "15px",
+                  textTransform: "none",
+                  textAlign: "center",
+                  width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[0] ? "black" : "white",
-                },
-              }}
-              onClick={() => {
-                handleButtonClick(0);
-              }}
-            >
-              <Typography
-                variant="h6"
-                textAlign="left"
-                color={buttonStates[0] ? "white" : "black"}
+                  "&:hover": {
+                    backgroundColor: buttonStates[0] ? "black" : "white",
+                  },
+                }}
+                onClick={() => {
+                  handleButtonClick(0);
+                }}
               >
-                Zgadzam się
-              </Typography>
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                borderRadius: "12px",
-                borderColor: "black",
-                padding: "15px",
-                textTransform: "none",
-                width: "200px",
-                backgroundColor: buttonStates[1] ? "black" : "white",
-                "&:hover": {
+                <Typography
+                  variant="h6"
+                  textAlign="left"
+                  color={buttonStates[0] ? "white" : "black"}
+                >
+                  Zgadzam się
+                </Typography>
+              </Button>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={isSmallScreen ? 12 : 4}
+              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
+            >
+              <Button
+                variant="outlined"
+                sx={{
+                  borderRadius: "12px",
+                  borderColor: "black",
+                  padding: "15px",
+                  textTransform: "none",
+                  width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[1] ? "black" : "white",
-                },
-              }}
-              onClick={() => handleButtonClick(1)}
-            >
-              <Typography
-                variant="h6"
-                textAlign="left"
-                color={buttonStates[1] ? "white" : "black"}
+                  "&:hover": {
+                    backgroundColor: buttonStates[1] ? "black" : "white",
+                  },
+                }}
+                onClick={() => handleButtonClick(1)}
               >
-                Nie zgadzam się
-              </Typography>
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                borderRadius: "12px",
-                borderColor: "black",
-                padding: "15px",
-                textTransform: "none",
-                width: "200px",
-                backgroundColor: buttonStates[2] ? "black" : "white",
-                "&:hover": {
+                <Typography
+                  variant="h6"
+                  textAlign="left"
+                  color={buttonStates[1] ? "white" : "black"}
+                >
+                  Nie zgadzam się
+                </Typography>
+              </Button>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={isSmallScreen ? 12 : 4}
+              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
+            >
+              <Button
+                variant="outlined"
+                sx={{
+                  borderRadius: "12px",
+                  borderColor: "black",
+                  padding: "15px",
+                  textTransform: "none",
+                  width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[2] ? "black" : "white",
-                },
-              }}
-              onClick={() => handleButtonClick(2)}
-            >
-              <Typography
-                variant="h6"
-                textAlign="left"
-                color={buttonStates[2] ? "white" : "black"}
+                  "&:hover": {
+                    backgroundColor: buttonStates[2] ? "black" : "white",
+                  },
+                }}
+                onClick={() => handleButtonClick(2)}
               >
-                Nie mam zdania
-              </Typography>
-            </Button>
-          </Box>
-          <Typography variant="h5" gutterBottom textAlign="left">
+                <Typography
+                  variant="h6"
+                  textAlign="left"
+                  color={buttonStates[2] ? "white" : "black"}
+                >
+                  Nie mam zdania
+                </Typography>
+              </Button>
+            </Grid>
+          </Grid>
+          <Typography
+            variant="h5"
+            gutterBottom
+            textAlign={isSmallScreen ? "center" : "left"}
+          >
             Ten temat jest dla mnie...
           </Typography>
-          <Box
-            textAlign={"left"}
+          <Grid
+            container
             sx={{
-              display: "flex",
-              flexDirection: "row",
-              gap: isSmallScreen ? "10px" : "30px",
-              padding: "30px 00px 30px 0px",
+              maxWidth: isSmallScreen ? "950px" : "650px",
+              textAlign: "left",
+              padding: "0px 0px 30px 0px",
             }}
           >
-            <Button
-              variant="outlined"
-              sx={{
-                borderRadius: "12px",
-                borderColor: "black",
-                padding: "15px",
-                textTransform: "none",
-                textAlign: "center",
-                width: "200px",
-                backgroundColor: buttonStates[3] ? "black" : "white",
-                "&:hover": {
+            <Grid
+              item
+              xs={12}
+              sm={isSmallScreen ? 12 : 4}
+              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
+            >
+              <Button
+                variant="outlined"
+                sx={{
+                  borderRadius: "12px",
+                  borderColor: "black",
+                  padding: "15px",
+                  textTransform: "none",
+                  textAlign: "center",
+                  width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[3] ? "black" : "white",
-                },
-              }}
-              onClick={() => handleButtonClick(3)}
-            >
-              <Typography
-                variant="h6"
-                textAlign="left"
-                color={buttonStates[3] ? "white" : "black"}
+                  "&:hover": {
+                    backgroundColor: buttonStates[3] ? "black" : "white",
+                  },
+                }}
+                onClick={() => handleButtonClick(3)}
               >
-                Bardzo ważny
-              </Typography>
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                borderRadius: "12px",
-                borderColor: "black",
-                padding: "15px",
-                textTransform: "none",
-                width: "200px",
-                backgroundColor: buttonStates[4] ? "black" : "white",
-                "&:hover": {
+                <Typography
+                  variant="h6"
+                  textAlign="left"
+                  color={buttonStates[3] ? "white" : "black"}
+                >
+                  Bardzo ważny
+                </Typography>
+              </Button>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={isSmallScreen ? 12 : 4}
+              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
+            >
+              <Button
+                variant="outlined"
+                sx={{
+                  borderRadius: "12px",
+                  borderColor: "black",
+                  padding: "15px",
+                  textTransform: "none",
+                  width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[4] ? "black" : "white",
-                },
-              }}
-              onClick={() => handleButtonClick(4)}
-            >
-              <Typography
-                variant="h6"
-                textAlign="left"
-                color={buttonStates[4] ? "white" : "black"}
+                  "&:hover": {
+                    backgroundColor: buttonStates[4] ? "black" : "white",
+                  },
+                }}
+                onClick={() => handleButtonClick(4)}
               >
-                Ważny
-              </Typography>
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                borderRadius: "12px",
-                borderColor: "black",
-                padding: "15px",
-                textTransform: "none",
-                width: "200px",
-                backgroundColor: buttonStates[5] ? "black" : "white",
-                "&:hover": {
+                <Typography
+                  variant="h6"
+                  textAlign="left"
+                  color={buttonStates[4] ? "white" : "black"}
+                >
+                  Ważny
+                </Typography>
+              </Button>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={isSmallScreen ? 12 : 4}
+              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
+            >
+              <Button
+                variant="outlined"
+                sx={{
+                  borderRadius: "12px",
+                  borderColor: "black",
+                  padding: "15px",
+                  textTransform: "none",
+                  width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[5] ? "black" : "white",
-                },
-              }}
-              onClick={() => handleButtonClick(5)}
-            >
-              <Typography
-                variant="h6"
-                textAlign="left"
-                color={buttonStates[5] ? "white" : "black"}
+                  "&:hover": {
+                    backgroundColor: buttonStates[5] ? "black" : "white",
+                  },
+                }}
+                onClick={() => handleButtonClick(5)}
               >
-                Nieważny
-              </Typography>
-            </Button>
-          </Box>
-          <Divider orientation="horizontal" />
-          <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
-            <Button
-              variant="outlined"
-              color="primary"
-              onClick={handleGoBack}
-              sx={{
-                margin: "10px",
-                color: "black",
-                borderColor: "black",
-                textTransform: "none",
-                borderRadius: "15px",
-              }}
-            >
-              {props.questionNumber === 0
-                ? "Wybór okręgu"
-                : "Poprzednie pytanie"}
-            </Button>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={handleSubmit}
-              sx={{
-                margin: "10px",
-                backgroundColor: "black",
-                textTransform: "none",
-                borderRadius: "15px",
-              }}
-              disabled={!isProceedButtonEnabled()}
-            >
-              {props.questionNumber === numberOfQuestions - 1
-                ? "Zakończ test"
-                : "Następne pytanie"}
-            </Button>
-          </Box>
+                <Typography
+                  variant="h6"
+                  textAlign="left"
+                  color={buttonStates[5] ? "white" : "black"}
+                >
+                  Nieważny
+                </Typography>
+              </Button>
+            </Grid>
+          </Grid>
         </Grid>
         <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5}></Grid>
         {!isSmallScreen && (
@@ -339,6 +351,50 @@ export function Question(props: {
           </Grid>
         )}
       </Grid>
+      <Divider orientation="horizontal" />
+      <Box
+        sx={{
+          maxWidth: isSmallScreen ? "100%" : "400px",
+          textAlign: isSmallScreen ? "center" : "left",
+          padding: "0px 0px 30px 0px",
+        }}
+      >
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={handleGoBack}
+          sx={{
+            width: isSmallScreen ? "46%" : "160px",
+            color: "black",
+            borderColor: "black",
+            textTransform: "none",
+            borderRadius: "10px",
+            marginTop: "10px",
+            height: "50px",
+            marginRight: "20px",
+          }}
+        >
+          {props.questionNumber === 0 ? "Wybór okręgu" : "Poprzednie pytanie"}
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleSubmit}
+          sx={{
+            width: isSmallScreen ? "46%" : "160px",
+            marginTop: "10px",
+            backgroundColor: "black",
+            textTransform: "none",
+            borderRadius: "10px",
+            height: "50px",
+          }}
+          disabled={!isProceedButtonEnabled()}
+        >
+          {props.questionNumber === numberOfQuestions - 1
+            ? "Zakończ test"
+            : "Następne pytanie"}
+        </Button>
+      </Box>
     </Box>
   );
 }
