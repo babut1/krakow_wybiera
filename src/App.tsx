@@ -8,7 +8,7 @@ import { useAppPage } from "./common/state";
 import { MapPage } from "./pages/MapPage";
 import { ResultsView } from "./pages/ResultsPage";
 import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
-import { Contact } from "./pages/ContactPage";
+import { ContactPage } from "./pages/ContactPage";
 
 function App() {
   const state = useAppPage();
@@ -29,16 +29,15 @@ function App() {
   responsiveTheme = responsiveFontSizes(responsiveTheme);
 
   return (
-    <div className="App">
-      <ThemeProvider theme={responsiveTheme}>
-        <TopBar></TopBar>
-        {state === "homepage" && <Homepage></Homepage>}
-        {state === "map" && <MapPage></MapPage>}
-        {state === "quiz" && <Questionaire></Questionaire>}
-        {state === "results" && <ResultsView></ResultsView>}
-        <Footer></Footer>
-      </ThemeProvider>
-    </div>
+    <ThemeProvider theme={responsiveTheme}>
+      <TopBar></TopBar>
+      {state === "homepage" && <Homepage></Homepage>}
+      {state === "map" && <MapPage></MapPage>}
+      {state === "quiz" && <Questionaire></Questionaire>}
+      {state === "results" && <ResultsView></ResultsView>}
+      {state === "kontakt" && <ContactPage></ContactPage>}
+      <Footer></Footer>
+    </ThemeProvider>
   );
 }
 

@@ -4,11 +4,15 @@ import {
   TextField,
   TextareaAutosize,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-export function Contact() {
+export function ContactPage() {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (
@@ -27,7 +31,7 @@ export function Contact() {
   return (
     <Box
       textAlign={"left"}
-      p={8}
+      p={isSmallScreen ? 2 : 8}
       flexDirection={"column"}
       display={"flex"}
       maxWidth={"700px"}
@@ -36,32 +40,6 @@ export function Contact() {
         <Typography variant="h4" fontWeight={"bold"}>
           Napisz do nas!
         </Typography>
-        {/* <TextField
-          label="Imię i nazwisko"
-          variant="outlined"
-          value={name}
-          onChange={handleNameChange}
-          sx={{ marginTop: "15px" }}
-          name="name"
-          required
-        />
-        <TextField
-          label="E-mail"
-          variant="outlined"
-          value={mail}
-          onChange={handleAMailChange}
-          sx={{ marginTop: "15px" }}
-          name="email_from"
-          required
-        />
-        <TextField
-          label="Temat"
-          variant="outlined"
-          value={topic}
-          onChange={handleTopicChange}
-          sx={{ marginTop: "15px" }}
-          required
-        /> */}
         <TextField
           fullWidth
           type="text"

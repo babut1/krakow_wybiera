@@ -20,6 +20,7 @@ import {
   useNumberOfQuestions,
 } from "../common/state";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { useNavigate } from "react-router-dom";
 
 export function Question(props: {
   question: QuestionInterface;
@@ -27,6 +28,7 @@ export function Question(props: {
 }) {
   const numberOfQuestions = useNumberOfQuestions();
   const theme = useTheme();
+  const navigate = useNavigate();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(950));
 
   const [buttonStates, setButtonStates] = useState<boolean[]>([
@@ -56,17 +58,17 @@ export function Question(props: {
     });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     setButtonStates([false, false, false, false, false, false]);
     if (props.questionNumber + 1 === numberOfQuestions) {
-      await setAppPage("results");
+      navigate("/wyniki");
     }
     changeSelectedQuestion(props.questionNumber + 1);
   };
 
-  const handleGoBack = async () => {
+  const handleGoBack = () => {
     if (props.questionNumber === 0) {
-      await setAppPage("map");
+      navigate("/okrag");
     }
     changeSelectedQuestion(props.questionNumber - 1);
   };

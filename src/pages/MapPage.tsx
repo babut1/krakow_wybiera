@@ -6,18 +6,20 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { setAppPage } from "../common/state";
+import { useNavigate } from "react-router-dom";
+import { changeSelectedQuestion } from "../common/state";
 
 export function MapPage() {
+  const navigate = useNavigate();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleGoBack = async () => {
-    await setAppPage("homepage");
+    navigate("/");
   };
 
   const handleStart = async () => {
-    await setAppPage("quiz");
+    navigate("/test");
   };
 
   return (

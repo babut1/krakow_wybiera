@@ -1,14 +1,31 @@
-import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Button,
+  Tab,
+  Tabs,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import { setAppPage, useAppPage } from "../common/state";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export function TopBar() {
   const state = useAppPage();
-  async function handleStartClick() {
-    if (state === "homepage") {
-      await setAppPage("quiz");
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  function handleStartClick() {
+    if (location.pathname === "/") {
+      navigate("/okrag");
       return;
     }
-    await setAppPage("homepage");
+    navigate("/");
+  }
+
+  function handleContactClick() {
+    navigate("/kontakt");
   }
 
   return (
@@ -34,8 +51,23 @@ export function TopBar() {
                 borderColor: "black",
                 borderRadius: "15px",
                 textTransform: "none",
+                width: "130px",
               }}
-              variant="outlined"
+              variant="text"
+              onClick={handleContactClick}
+            >
+              <Typography variant="h6">Kontakt</Typography>
+            </Button>
+            <Button
+              sx={{
+                marginRight: "10px",
+                color: "black",
+                borderColor: "black",
+                borderRadius: "15px",
+                textTransform: "none",
+                width: "150px",
+              }}
+              variant="text"
             >
               <Typography variant="h6">Wesprzyj nas</Typography>
             </Button>
@@ -44,13 +76,17 @@ export function TopBar() {
                 backgroundColor: "black",
                 borderRadius: "15px",
                 textTransform: "none",
+                width: "170px",
+                height: "50px",
               }}
               color="primary"
               variant="contained"
               onClick={handleStartClick}
             >
               <Typography variant="h6">
-                {state === "homepage" ? "Rozpocznij test" : "Strona główna"}
+                {location.pathname === "/"
+                  ? "Rozpocznij test"
+                  : "Strona główna"}
               </Typography>
             </Button>
           </Box>

@@ -1,9 +1,11 @@
 import { Box, Typography, Button } from "@mui/material";
 import { setAppPage } from "../common/state";
+import { useNavigate } from "react-router-dom";
 
 export function Homepage() {
-  async function handleStartClick() {
-    await setAppPage("map");
+  const navigate = useNavigate();
+  function handleStartClick() {
+    navigate("okrag");
   }
 
   return (

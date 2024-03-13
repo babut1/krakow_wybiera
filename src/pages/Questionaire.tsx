@@ -1,9 +1,13 @@
 // Assuming your Question component is named "Question"
 import React, { useState, useEffect } from "react";
-import { setNumberOfQuestions, useSelectedQuestion } from "../common/state";
+import {
+  changeSelectedQuestion,
+  setNumberOfQuestions,
+  useSelectedQuestion,
+} from "../common/state";
 import { QuestionInterface } from "../common/types";
 import { Question } from "../components/Question";
-import { CircularProgress } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 
 export function Questionaire() {
   const selectedQuestion = useSelectedQuestion();
@@ -11,6 +15,7 @@ export function Questionaire() {
   const [fetchingData, setFetchingData] = useState<boolean>(true);
 
   useEffect(() => {
+    changeSelectedQuestion(0);
     const fetchData = async () => {
       try {
         const response = await fetch("/questions.json");
@@ -28,7 +33,19 @@ export function Questionaire() {
   }, []);
 
   if (fetchingData || !questions.length) {
-    return <CircularProgress />;
+    return (
+      <Box
+        sx={{
+          justifyContent: "center",
+          textAlign: "center",
+          height: "70vh",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgress />;
+      </Box>
+    );
   }
 
   return (

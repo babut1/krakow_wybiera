@@ -10,10 +10,16 @@ import {
 import { CandidateProfile } from "../components/CondidateProfile";
 import { SimplifiedCandidateProfile } from "../components/SimplifiedCandidateProfile";
 import Slider from "../components/Slider";
+import { useNavigate } from "react-router-dom";
 
 export function ResultsView() {
   const theme = useTheme();
+  const navigate = useNavigate();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
+
+  const handleSolveAgain = () => {
+    navigate("/okrag");
+  };
 
   return (
     <Box p={isSmallScreen ? 2 : 8}>
@@ -43,6 +49,7 @@ export function ResultsView() {
                 }}
                 color="primary"
                 variant="contained"
+                onClick={handleSolveAgain}
               >
                 <Typography variant="h6">Rozwiąż jeszcze raz</Typography>
               </Button>
