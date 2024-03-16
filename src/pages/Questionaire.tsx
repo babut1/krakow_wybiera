@@ -43,7 +43,7 @@ export function Questionaire() {
           alignItems: "center",
         }}
       >
-        <CircularProgress />;
+        <CircularProgress />
       </Box>
     );
   }

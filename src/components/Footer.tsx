@@ -18,7 +18,7 @@ export function Footer() {
     >
       <Container maxWidth="lg">
         <Grid container spacing={5}>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={4} sx={{ textAlign: "center" }}>
             <Typography variant="h6" color="text.primary" gutterBottom>
               Tu będzie jakieś logo
             </Typography>
@@ -27,7 +27,7 @@ export function Footer() {
               customers.
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={4} sx={{ textAlign: "center" }}>
             <Typography variant="h6" color="text.primary" gutterBottom>
               Kontakt
             </Typography>
@@ -41,7 +41,7 @@ export function Footer() {
               Phone: +1 234 567 8901
             </Typography>
           </Grid>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={4} sx={{ textAlign: "center" }}>
             <Typography variant="h6" color="text.primary" gutterBottom>
               Sprawdź nasze media
             </Typography>

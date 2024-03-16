@@ -31,7 +31,7 @@ const steps = [
   },
 ];
 
-export default function Slider() {
+export default function CandidateSlider() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = steps.length;
@@ -92,11 +92,13 @@ export default function Slider() {
           style={{ width: "150px", height: "200px", borderRadius: "15px" }}
         />
       </Box>
-      <Typography variant="h5">Kandydat na Prezydenta Miasta</Typography>
-      <Typography variant="h4" fontWeight={"bold"}>
+      <Typography textAlign={"center"} variant="h5">
+        Kandydat na Prezydenta Miasta
+      </Typography>
+      <Typography textAlign={"center"} variant="h4" fontWeight={"bold"}>
         Harold Kowalski
       </Typography>
-      <Typography variant="body1" marginTop={"10px"}>
+      <Typography textAlign={"center"} variant="body1" marginTop={"10px"}>
         Zgodność Twoich opinii z programem
       </Typography>
       <Box padding={"0px 10px 0px 10px"}>

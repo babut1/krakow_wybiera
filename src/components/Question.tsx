@@ -29,7 +29,7 @@ export function Question(props: {
   const numberOfQuestions = useNumberOfQuestions();
   const theme = useTheme();
   const navigate = useNavigate();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(950));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
 
   const [buttonStates, setButtonStates] = useState<boolean[]>([
     false,
@@ -93,7 +93,7 @@ export function Question(props: {
         Stwierdzenie {props.questionNumber + 1} z {numberOfQuestions}
       </Typography>
       <Grid container>
-        <Grid item xs={12} sm={isSmallScreen ? 12 : 8}>
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 7}>
           <Typography
             variant="h5"
             gutterBottom
@@ -125,7 +125,7 @@ export function Question(props: {
           <Grid
             container
             sx={{
-              maxWidth: isSmallScreen ? "950px" : "650px",
+              maxWidth: isSmallScreen ? "100%" : "650px",
               textAlign: "left",
               padding: "0px 0px 30px 0px",
             }}
@@ -234,7 +234,7 @@ export function Question(props: {
           <Grid
             container
             sx={{
-              maxWidth: isSmallScreen ? "950px" : "650px",
+              maxWidth: isSmallScreen ? "100%" : "650px",
               textAlign: "left",
               padding: "0px 0px 30px 0px",
             }}
@@ -334,46 +334,42 @@ export function Question(props: {
         </Grid>
         <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5}></Grid>
         {!isSmallScreen && (
-          <Grid item xs={12} sm={isSmallScreen ? 12 : 3.5}>
-            <Box>
-              <Paper
-                elevation={4}
-                sx={{ backgroundColor: "lightgrey", borderRadius: "15px" }}
-              >
-                <Box p={3} textAlign={"left"}>
-                  <Typography variant="h5" paddingBottom={"15px"}>
-                    Wyjaśnienie
-                  </Typography>
-                  <Typography variant="body1">
-                    {props.question.explanation}
-                  </Typography>
-                </Box>
-              </Paper>
-            </Box>
+          <Grid item xs={12} sm={isSmallScreen ? 12 : 4.5}>
+            <Paper
+              elevation={4}
+              sx={{ backgroundColor: "lightgrey", borderRadius: "15px" }}
+            >
+              <Box p={3} textAlign={"left"}>
+                <Typography variant="h5" paddingBottom={"15px"}>
+                  Wyjaśnienie
+                </Typography>
+                <Typography variant="body1">
+                  {props.question.explanation}
+                </Typography>
+              </Box>
+            </Paper>
           </Grid>
         )}
       </Grid>
       <Divider orientation="horizontal" />
-      <Box
-        sx={{
-          maxWidth: isSmallScreen ? "100%" : "400px",
-          textAlign: isSmallScreen ? "center" : "left",
-          padding: "0px 0px 30px 0px",
-        }}
+      <Grid
+        container
+        alignItems="center"
+        justifyContent={isSmallScreen ? "space-between" : "left"}
       >
         <Button
           variant="outlined"
           color="primary"
           onClick={handleGoBack}
           sx={{
-            width: isSmallScreen ? "46%" : "160px",
+            width: isSmallScreen ? "48%" : "160px",
             color: "black",
             borderColor: "black",
             textTransform: "none",
             borderRadius: "10px",
             marginTop: "10px",
             height: "50px",
-            marginRight: "20px",
+            marginRight: isSmallScreen ? "0px" : "20px",
           }}
         >
           {props.questionNumber === 0 ? "Wybór okręgu" : "Poprzednie pytanie"}
@@ -383,7 +379,7 @@ export function Question(props: {
           color="primary"
           onClick={handleSubmit}
           sx={{
-            width: isSmallScreen ? "46%" : "160px",
+            width: isSmallScreen ? "48%" : "160px",
             marginTop: "10px",
             backgroundColor: "black",
             textTransform: "none",
@@ -396,7 +392,7 @@ export function Question(props: {
             ? "Zakończ test"
             : "Następne pytanie"}
         </Button>
-      </Box>
+      </Grid>
     </Box>
   );
 }

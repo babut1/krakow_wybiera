@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { CandidateProfile } from "../components/CondidateProfile";
 import { SimplifiedCandidateProfile } from "../components/SimplifiedCandidateProfile";
-import Slider from "../components/Slider";
+import CandidateSlider from "../components/CandidateSlider";
 import { useNavigate } from "react-router-dom";
 
 export function ResultsView() {
@@ -72,7 +72,7 @@ export function ResultsView() {
       </Grid>
       {isSmallScreen ? (
         <Box display="flex" justifyContent="center" alignItems="center">
-          <Slider></Slider>
+          <CandidateSlider></CandidateSlider>
         </Box>
       ) : (
         <>
