@@ -8,6 +8,16 @@ export interface QuestionAnswer {
   answer: number;
 }
 
+export interface CommitteeAnswers {
+  [committeeName: string]: CommitteeAnswerInterface[];
+}
+
+export interface CommitteeAnswerInterface {
+  agreement: number;
+  importance: number;
+  explanation: string;
+}
+
 export interface District {
   constituency: number;
   districts: string[];

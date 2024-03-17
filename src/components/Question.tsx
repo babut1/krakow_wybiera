@@ -14,11 +14,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { QuestionInterface } from "../common/types";
-import {
-  changeSelectedQuestion,
-  setAppPage,
-  useNumberOfQuestions,
-} from "../common/state";
+import { changeSelectedQuestion, useNumberOfQuestions } from "../common/state";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useNavigate } from "react-router-dom";
 
@@ -27,8 +23,8 @@ export function Question(props: {
   questionNumber: number;
 }) {
   const numberOfQuestions = useNumberOfQuestions();
-  const theme = useTheme();
   const navigate = useNavigate();
+  const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
 
   const [buttonStates, setButtonStates] = useState<boolean[]>([

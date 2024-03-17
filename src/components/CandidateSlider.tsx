@@ -155,7 +155,7 @@ export default function CandidateSlider() {
               color: "black",
             }}
           >
-            Next
+            Następny
             {theme.direction === "rtl" ? (
               <KeyboardArrowLeft />
             ) : (
@@ -176,7 +176,7 @@ export default function CandidateSlider() {
             ) : (
               <KeyboardArrowLeft />
             )}
-            Back
+            Poprzedni
           </Button>
         }
       />

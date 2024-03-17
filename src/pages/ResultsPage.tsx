@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  CircularProgress,
   Divider,
   Grid,
   Typography,
@@ -11,11 +12,50 @@ import { CandidateProfile } from "../components/CondidateProfile";
 import { SimplifiedCandidateProfile } from "../components/SimplifiedCandidateProfile";
 import CandidateSlider from "../components/CandidateSlider";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { CommitteeAnswers } from "../common/types";
 
 export function ResultsView() {
   const theme = useTheme();
   const navigate = useNavigate();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
+  const [fetchingData, setFetchingData] = useState<boolean>(true);
+  const [committeeAnswers, setCommitteeAnswers] = useState<CommitteeAnswers[]>(
+    []
+  );
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/answers.json");
+        const data = await response.json();
+        setCommitteeAnswers(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Error fetching questions:", error);
+      }
+    };
+
+    fetchData().finally(() => {
+      setFetchingData(false);
+    });
+  }, []);
+
+  if (fetchingData) {
+    return (
+      <Box
+        sx={{
+          justifyContent: "center",
+          textAlign: "center",
+          height: "70vh",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    );
+  }
 
   const handleSolveAgain = () => {
     navigate("/okrag");
@@ -76,13 +116,13 @@ export function ResultsView() {
         </Box>
       ) : (
         <>
-          <CandidateProfile></CandidateProfile>
+          <CandidateProfile showAnswersButton={true}></CandidateProfile>
           <Divider orientation="horizontal" />
-          <CandidateProfile></CandidateProfile>
+          <CandidateProfile showAnswersButton={true}></CandidateProfile>
           <Divider orientation="horizontal" />
-          <CandidateProfile></CandidateProfile>
+          <CandidateProfile showAnswersButton={true}></CandidateProfile>
           <Divider orientation="horizontal" />
-          <CandidateProfile></CandidateProfile>
+          <CandidateProfile showAnswersButton={true}></CandidateProfile>
         </>
       )}
     </Box>

@@ -103,9 +103,11 @@ export function MapPage() {
                     borderColor: "black",
                     borderRadius: "15px",
                     height: "50px",
+                    textTransform: "none",
+                    width: "180px",
                   }}
                 >
-                  Powrót do strony głównej
+                  <Typography variant="h6">Strona główna</Typography>
                 </Button>
                 <Button
                   variant="contained"
@@ -116,9 +118,11 @@ export function MapPage() {
                     backgroundColor: "black",
                     borderRadius: "15px",
                     height: "50px",
+                    textTransform: "none",
+                    width: "180px",
                   }}
                 >
-                  Rozpocznij test
+                  <Typography variant="h6">Rozpocznij test</Typography>
                 </Button>
               </Box>
             </>
@@ -149,7 +153,7 @@ export function MapPage() {
                   height: "50px",
                 }}
               >
-                Powrót do strony głównej
+                <Typography variant="h6">Strona główna</Typography>
               </Button>
               <Button
                 variant="contained"
@@ -165,7 +169,7 @@ export function MapPage() {
                   height: "50px",
                 }}
               >
-                Rozpocznij test
+                <Typography variant="h6">Rozpocznij test</Typography>
               </Button>
             </Grid>
           </>

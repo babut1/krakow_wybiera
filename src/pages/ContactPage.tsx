@@ -30,7 +30,7 @@ export function ContactPage() {
 
   return (
     <Box
-      textAlign={"left"}
+      textAlign={isSmallScreen ? "center" : "left"}
       p={isSmallScreen ? 2 : 8}
       flexDirection={"column"}
       display={"flex"}
@@ -64,19 +64,21 @@ export function ContactPage() {
           multiline
           rows={10}
         />
-        <Button
-          variant="contained"
-          sx={{
-            width: "200px",
-            height: "50px",
-            marginTop: "15px",
-            backgroundColor: "black",
-            borderRadius: "15px",
-          }}
-          type={"submit"}
-        >
-          <Typography>Wyślij wiadomość</Typography>
-        </Button>
+        <Box textAlign={"left"}>
+          <Button
+            variant="contained"
+            sx={{
+              width: "200px",
+              height: "50px",
+              marginTop: "15px",
+              backgroundColor: "black",
+              borderRadius: "15px",
+            }}
+            type={"submit"}
+          >
+            <Typography>Wyślij wiadomość</Typography>
+          </Button>
+        </Box>
       </form>
     </Box>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Typography, Box, Button } from "@mui/material";
 import ProgressBar from "@ramonak/react-progress-bar";
 
-export function CandidateProfile() {
+export function CandidateProfile(props: { showAnswersButton: boolean }) {
   const parentHeight = 180;
   const photoHeight = parentHeight * 0.9;
   const photoWidth = parentHeight * 0.7;
@@ -13,7 +13,6 @@ export function CandidateProfile() {
         <Typography variant="h5">Komitet Harolda</Typography>
       </Box>
       <Grid container spacing={2} style={{ height: `${parentHeight}px` }}>
-        {/* Left side: Two photos */}
         <Grid item container xs={2.5} spacing={2}>
           <Grid item xs={6}>
             <img
@@ -62,22 +61,28 @@ export function CandidateProfile() {
                   borderColor: "black",
                   marginTop: "20px",
                   borderRadius: "15px",
+                  textTransform: "none",
+                  width: "170px",
                 }}
                 variant="outlined"
               >
                 <Typography variant="h6">Listy komitetu</Typography>
               </Button>
-              <Button
-                sx={{
-                  backgroundColor: "black",
-                  marginTop: "20px",
-                  borderRadius: "15px",
-                }}
-                color="primary"
-                variant="contained"
-              >
-                <Typography variant="h6">Odpowiedzi komitetu</Typography>
-              </Button>
+              {props.showAnswersButton && (
+                <Button
+                  sx={{
+                    backgroundColor: "black",
+                    marginTop: "20px",
+                    borderRadius: "15px",
+                    textTransform: "none",
+                    width: "170px",
+                  }}
+                  color="primary"
+                  variant="contained"
+                >
+                  <Typography variant="h6">Odpowiedzi komitetu</Typography>
+                </Button>
+              )}
             </Box>
           </Box>
         </Grid>

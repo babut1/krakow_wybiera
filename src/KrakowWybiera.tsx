@@ -1,15 +1,17 @@
-import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
-import { useAppPage } from "../common/state";
-import { Homepage } from "../pages/Homepage";
-import { TopBar } from "./TopBar";
-import { MapPage } from "../pages/MapPage";
-import { Questionaire } from "../pages/Questionaire";
-import { ResultsView } from "../pages/ResultsPage";
-import { Footer } from "./Footer";
+import {
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import { TopBar } from "./components/TopBar";
+import { Footer } from "./components/Footer";
 import { Outlet } from "react-router-dom";
 
 export function KrakowWybiera() {
-  const state = useAppPage();
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
   let responsiveTheme = createTheme({
     typography: {
       fontFamily: ["Poppins", "Lato"].join(","),
@@ -28,7 +30,9 @@ export function KrakowWybiera() {
   return (
     <ThemeProvider theme={responsiveTheme}>
       <TopBar />
-      <Outlet />
+      <div style={{ marginTop: isSmallScreen ? "80px" : "64px" }}>
+        <Outlet />
+      </div>
       <Footer />
     </ThemeProvider>
   );

@@ -1,10 +1,11 @@
 import { ContactPage } from "../pages/ContactPage";
-import { KrakowWybiera } from "../components/KrakowWybiera";
+import { KrakowWybiera } from "../KrakowWybiera";
 import { Homepage } from "../pages/Homepage";
 import { RouteObject } from "react-router-dom";
 import { ResultsView } from "../pages/ResultsPage";
 import { Questionaire } from "../pages/Questionaire";
 import { MapPage } from "../pages/MapPage";
+import { CommitteeAnswers } from "../pages/CommitteeAnswers";
 
 export const routing: RouteObject[] = [
   {
@@ -30,6 +31,10 @@ export const routing: RouteObject[] = [
       {
         path: "okrag",
         element: <MapPage />,
+      },
+      {
+        path: "a",
+        element: <CommitteeAnswers />,
       },
     ],
   },

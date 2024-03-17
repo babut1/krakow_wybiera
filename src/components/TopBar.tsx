@@ -5,20 +5,16 @@ import {
   IconButton,
   Menu,
   MenuItem,
-  Tab,
-  Tabs,
   Toolbar,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { setAppPage, useAppPage } from "../common/state";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 
 export function TopBar() {
-  const state = useAppPage();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -50,7 +46,15 @@ export function TopBar() {
   }
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        position: "fixed",
+        top: 0,
+        width: "100%",
+        zIndex: 999,
+      }}
+    >
       <AppBar
         sx={{
           backgroundColor: (theme) =>

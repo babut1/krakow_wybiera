@@ -57,12 +57,17 @@ function DistrictSelector(props: {
   onSelect: (districtNumber: number) => void;
 }) {
   return (
-    <Grid container alignItems="center" justifyContent="space-between">
-      <Box style={{ flex: "0 0 70%" }}>
+    <Grid
+      container
+      alignItems="center"
+      justifyContent="space-between"
+      minHeight={"70px"}
+    >
+      <Box style={{ flex: "0 0 73%" }}>
         <Typography variant="h5" fontWeight="bold">
           Okręg {props.district.constituency}
         </Typography>
-        <Typography variant="h6">
+        <Typography variant="body1">
           {props.district.districts.join(", ")}
         </Typography>
       </Box>
