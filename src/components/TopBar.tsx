@@ -80,14 +80,31 @@ export function TopBar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleContactClick}>
-                  <Typography variant="h4">Kontakt</Typography>
+                <MenuItem>
+                  <img
+                    src="https://twojwybor.org/wp-content/uploads/2020/09/IMG_0018-2-2.png"
+                    height={"100px"}
+                  ></img>
+                </MenuItem>
+                <MenuItem
+                  onClick={handleContactClick}
+                  sx={{ padding: "100px" }}
+                >
+                  <Typography variant="h4" fontWeight={"bold"}>
+                    Kontakt
+                  </Typography>
                 </MenuItem>
                 <MenuItem onClick={handleClose}>
-                  <Typography variant="h4">Wesprzyj nas</Typography>
+                  <Typography variant="h4" fontWeight={"bold"}>
+                    Wesprzyj nas
+                  </Typography>
                 </MenuItem>
                 <MenuItem onClick={handleStartClick}>
-                  <Typography variant="h4">Strona główna</Typography>
+                  <Typography variant="h4" fontWeight={"bold"}>
+                    {location.pathname === "/"
+                      ? "Rozpocznij test"
+                      : "Strona główna"}
+                  </Typography>
                 </MenuItem>
               </Menu>
             </Box>

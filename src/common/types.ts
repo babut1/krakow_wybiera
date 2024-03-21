@@ -22,3 +22,8 @@ export interface District {
   constituency: number;
   districts: string[];
 }
+
+export interface UserAnswer {
+  agreement: number;
+  importance: number;
+}

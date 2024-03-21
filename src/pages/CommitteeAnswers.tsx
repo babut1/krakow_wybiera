@@ -1,5 +1,5 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { CandidateProfile } from "../components/CondidateProfile";
+import { CandidateProfile } from "../components/CandidateProfile";
 import { CommitteeAnswer } from "../components/CommitteeAnswer";
 
 export function CommitteeAnswers() {
@@ -11,10 +11,9 @@ export function CommitteeAnswers() {
         Odpowiedzi komitetu
       </Typography>
       <Typography variant="h6" marginBottom={"30px"}>
-        Odpowiedzi komitetu wafuisjejbn ueibs fiusbefishub fuisebfuisbfius
-        bsuiebf ub usebf usebfusbf
+        Odpowiedzi komitetu wafuisjejbn ueibs fiusbefishub fuisebfuisbfius bsuiebf ub usebf usebfusbf
       </Typography>
-      <CandidateProfile showAnswersButton={false}></CandidateProfile>
+      <CandidateProfile showAnswersButton={false} committeeAnswers={null}></CandidateProfile>
       <CommitteeAnswer />
     </Box>
   );

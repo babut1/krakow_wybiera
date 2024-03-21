@@ -13,28 +13,26 @@ import {
   AccordionDetails,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { QuestionInterface } from "../common/types";
-import { changeSelectedQuestion, useNumberOfQuestions } from "../common/state";
+import { QuestionInterface, UserAnswer } from "../common/types";
+import {
+  changeSelectedQuestion,
+  setUserAnswer,
+  setUserAnswers,
+  useNumberOfQuestions,
+  useUserAnswers,
+} from "../common/state";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useNavigate } from "react-router-dom";
 
-export function Question(props: {
-  question: QuestionInterface;
-  questionNumber: number;
-}) {
+export function Question(props: { question: QuestionInterface; questionNumber: number }) {
   const numberOfQuestions = useNumberOfQuestions();
   const navigate = useNavigate();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
 
-  const [buttonStates, setButtonStates] = useState<boolean[]>([
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
+  const [buttonStates, setButtonStates] = useState<boolean[]>([false, false, false, false, false, false]);
+
+  const buttonValues = [1, 0.5, 0, 1.5, 1, 0.5];
 
   const handleButtonClick = (buttonNumber: number) => {
     setButtonStates((prevButtonStates) => {
@@ -55,6 +53,19 @@ export function Question(props: {
   };
 
   const handleSubmit = () => {
+    const currentButtonStates = buttonStates;
+    const trueIndexes: number[] = [];
+    currentButtonStates.forEach((state, index) => {
+      if (state) {
+        trueIndexes.push(index);
+      }
+    });
+    const userAnswer: UserAnswer = {
+      agreement: buttonValues[trueIndexes[0]],
+      importance: buttonValues[trueIndexes[1]],
+    };
+
+    setUserAnswer(userAnswer, props.questionNumber);
     setButtonStates([false, false, false, false, false, false]);
     if (props.questionNumber + 1 === numberOfQuestions) {
       navigate("/wyniki");
@@ -101,19 +112,12 @@ export function Question(props: {
           </Typography>
           {isSmallScreen && (
             <Box>
-              <Accordion
-                sx={{ backgroundColor: "lightgrey", borderRadius: "15px" }}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1-content"
-                >
+              <Accordion sx={{ backgroundColor: "lightgrey", borderRadius: "15px" }}>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1-content">
                   Wyjaśnienie
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography variant="body1">
-                    {props.question.explanation}
-                  </Typography>
+                  <Typography variant="body1">{props.question.explanation}</Typography>
                 </AccordionDetails>
               </Accordion>
             </Box>
@@ -126,12 +130,7 @@ export function Question(props: {
               padding: "0px 0px 30px 0px",
             }}
           >
-            <Grid
-              item
-              xs={12}
-              sm={isSmallScreen ? 12 : 4}
-              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
-            >
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
               <Button
                 variant="outlined"
                 sx={{
@@ -150,21 +149,12 @@ export function Question(props: {
                   handleButtonClick(0);
                 }}
               >
-                <Typography
-                  variant="h6"
-                  textAlign="left"
-                  color={buttonStates[0] ? "white" : "black"}
-                >
+                <Typography variant="h6" textAlign="left" color={buttonStates[0] ? "white" : "black"}>
                   Zgadzam się
                 </Typography>
               </Button>
             </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={isSmallScreen ? 12 : 4}
-              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
-            >
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
               <Button
                 variant="outlined"
                 sx={{
@@ -180,21 +170,12 @@ export function Question(props: {
                 }}
                 onClick={() => handleButtonClick(1)}
               >
-                <Typography
-                  variant="h6"
-                  textAlign="left"
-                  color={buttonStates[1] ? "white" : "black"}
-                >
-                  Nie zgadzam się
+                <Typography variant="h6" textAlign="left" color={buttonStates[1] ? "white" : "black"}>
+                  Nie mam zdania
                 </Typography>
               </Button>
             </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={isSmallScreen ? 12 : 4}
-              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
-            >
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
               <Button
                 variant="outlined"
                 sx={{
@@ -210,21 +191,13 @@ export function Question(props: {
                 }}
                 onClick={() => handleButtonClick(2)}
               >
-                <Typography
-                  variant="h6"
-                  textAlign="left"
-                  color={buttonStates[2] ? "white" : "black"}
-                >
-                  Nie mam zdania
+                <Typography variant="h6" textAlign="left" color={buttonStates[2] ? "white" : "black"}>
+                  Nie zgadzam się
                 </Typography>
               </Button>
             </Grid>
           </Grid>
-          <Typography
-            variant="h5"
-            gutterBottom
-            textAlign={isSmallScreen ? "center" : "left"}
-          >
+          <Typography variant="h5" gutterBottom textAlign={isSmallScreen ? "center" : "left"}>
             Ten temat jest dla mnie...
           </Typography>
           <Grid
@@ -235,12 +208,7 @@ export function Question(props: {
               padding: "0px 0px 30px 0px",
             }}
           >
-            <Grid
-              item
-              xs={12}
-              sm={isSmallScreen ? 12 : 4}
-              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
-            >
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
               <Button
                 variant="outlined"
                 sx={{
@@ -257,21 +225,12 @@ export function Question(props: {
                 }}
                 onClick={() => handleButtonClick(3)}
               >
-                <Typography
-                  variant="h6"
-                  textAlign="left"
-                  color={buttonStates[3] ? "white" : "black"}
-                >
-                  Bardzo ważny
+                <Typography variant="h6" textAlign="left" color={buttonStates[3] ? "white" : "black"}>
+                  Ważny
                 </Typography>
               </Button>
             </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={isSmallScreen ? 12 : 4}
-              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
-            >
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
               <Button
                 variant="outlined"
                 sx={{
@@ -287,21 +246,12 @@ export function Question(props: {
                 }}
                 onClick={() => handleButtonClick(4)}
               >
-                <Typography
-                  variant="h6"
-                  textAlign="left"
-                  color={buttonStates[4] ? "white" : "black"}
-                >
-                  Ważny
+                <Typography variant="h6" textAlign="left" color={buttonStates[4] ? "white" : "black"}>
+                  Średnio ważny
                 </Typography>
               </Button>
             </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={isSmallScreen ? 12 : 4}
-              sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}
-            >
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
               <Button
                 variant="outlined"
                 sx={{
@@ -317,11 +267,7 @@ export function Question(props: {
                 }}
                 onClick={() => handleButtonClick(5)}
               >
-                <Typography
-                  variant="h6"
-                  textAlign="left"
-                  color={buttonStates[5] ? "white" : "black"}
-                >
+                <Typography variant="h6" textAlign="left" color={buttonStates[5] ? "white" : "black"}>
                   Nieważny
                 </Typography>
               </Button>
@@ -331,28 +277,19 @@ export function Question(props: {
         <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5}></Grid>
         {!isSmallScreen && (
           <Grid item xs={12} sm={isSmallScreen ? 12 : 4.5}>
-            <Paper
-              elevation={4}
-              sx={{ backgroundColor: "lightgrey", borderRadius: "15px" }}
-            >
+            <Paper elevation={4} sx={{ backgroundColor: "lightgrey", borderRadius: "15px" }}>
               <Box p={3} textAlign={"left"}>
                 <Typography variant="h5" paddingBottom={"15px"}>
                   Wyjaśnienie
                 </Typography>
-                <Typography variant="body1">
-                  {props.question.explanation}
-                </Typography>
+                <Typography variant="body1">{props.question.explanation}</Typography>
               </Box>
             </Paper>
           </Grid>
         )}
       </Grid>
       <Divider orientation="horizontal" />
-      <Grid
-        container
-        alignItems="center"
-        justifyContent={isSmallScreen ? "space-between" : "left"}
-      >
+      <Grid container alignItems="center" justifyContent={isSmallScreen ? "space-between" : "left"}>
         <Button
           variant="outlined"
           color="primary"
@@ -384,9 +321,7 @@ export function Question(props: {
           }}
           disabled={!isProceedButtonEnabled()}
         >
-          {props.questionNumber === numberOfQuestions - 1
-            ? "Zakończ test"
-            : "Następne pytanie"}
+          {props.questionNumber === numberOfQuestions - 1 ? "Zakończ test" : "Następne pytanie"}
         </Button>
       </Grid>
     </Box>

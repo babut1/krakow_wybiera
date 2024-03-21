@@ -1,8 +1,12 @@
 import React from "react";
 import { Grid, Typography, Box, Button } from "@mui/material";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { CommitteeAnswerInterface } from "../common/types";
 
-export function CandidateProfile(props: { showAnswersButton: boolean }) {
+export function CandidateProfile(props: {
+  showAnswersButton: boolean;
+  committeeAnswers: CommitteeAnswerInterface[] | null;
+}) {
   const parentHeight = 180;
   const photoHeight = parentHeight * 0.9;
   const photoWidth = parentHeight * 0.7;
@@ -75,7 +79,7 @@ export function CandidateProfile(props: { showAnswersButton: boolean }) {
                     marginTop: "20px",
                     borderRadius: "15px",
                     textTransform: "none",
-                    width: "170px",
+                    width: "240px",
                   }}
                   color="primary"
                   variant="contained"

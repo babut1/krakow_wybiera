@@ -1,28 +1,21 @@
-import {
-  Box,
-  Button,
-  CircularProgress,
-  Divider,
-  Grid,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
-import { CandidateProfile } from "../components/CondidateProfile";
+import { Box, Button, CircularProgress, Divider, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { CandidateProfile } from "../components/CandidateProfile";
 import { SimplifiedCandidateProfile } from "../components/SimplifiedCandidateProfile";
 import CandidateSlider from "../components/CandidateSlider";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { CommitteeAnswers } from "../common/types";
+import { useUserAnswers } from "../common/state";
+import { countResultPerCommittee } from "../common/utils";
 
 export function ResultsView() {
   const theme = useTheme();
   const navigate = useNavigate();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
   const [fetchingData, setFetchingData] = useState<boolean>(true);
-  const [committeeAnswers, setCommitteeAnswers] = useState<CommitteeAnswers[]>(
-    []
-  );
+  const [committeeAnswers, setCommitteeAnswers] = useState<CommitteeAnswers>({});
+  const userAnswers = useUserAnswers();
+  console.log(userAnswers);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +23,9 @@ export function ResultsView() {
         const response = await fetch("/answers.json");
         const data = await response.json();
         setCommitteeAnswers(data);
-        console.log(data);
+        if (userAnswers && committeeAnswers) {
+          console.log(countResultPerCommittee(userAnswers, committeeAnswers["miszalski"]));
+        }
       } catch (error) {
         console.error("Error fetching questions:", error);
       }
@@ -68,16 +63,12 @@ export function ResultsView() {
           <Box textAlign={"left"}>
             <Typography variant={"h4"}>Twoje wyniki</Typography>
             <Typography variant={"h6"}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+              of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum.
             </Typography>
             <Box padding={"25px 0px 25px 0px"}>
               <Button
@@ -116,13 +107,25 @@ export function ResultsView() {
         </Box>
       ) : (
         <>
-          <CandidateProfile showAnswersButton={true}></CandidateProfile>
+          <CandidateProfile
+            showAnswersButton={true}
+            committeeAnswers={committeeAnswers["committee1" as keyof CommitteeAnswers]}
+          ></CandidateProfile>
           <Divider orientation="horizontal" />
-          <CandidateProfile showAnswersButton={true}></CandidateProfile>
+          <CandidateProfile
+            showAnswersButton={true}
+            committeeAnswers={committeeAnswers["committee1" as keyof CommitteeAnswers]}
+          ></CandidateProfile>
           <Divider orientation="horizontal" />
-          <CandidateProfile showAnswersButton={true}></CandidateProfile>
+          <CandidateProfile
+            showAnswersButton={true}
+            committeeAnswers={committeeAnswers["committee1" as keyof CommitteeAnswers]}
+          ></CandidateProfile>
           <Divider orientation="horizontal" />
-          <CandidateProfile showAnswersButton={true}></CandidateProfile>
+          <CandidateProfile
+            showAnswersButton={true}
+            committeeAnswers={committeeAnswers["committee1" as keyof CommitteeAnswers]}
+          ></CandidateProfile>
         </>
       )}
     </Box>
