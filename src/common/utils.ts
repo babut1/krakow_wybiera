@@ -38,7 +38,7 @@ export function countResultPerCommittee(userAnswers: UserAnswer[], committeeAnsw
       continue;
     } else {
       maxScore += userAnswers[i].importance;
-      score =
+      score +=
         (baseScore + countAgreementPoints(userAnswers[i].agreement, committeeAnswers[i].agreement)) *
         userAnswers[i].importance;
     }

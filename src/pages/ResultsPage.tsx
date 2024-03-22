@@ -15,7 +15,6 @@ export function ResultsView() {
   const [fetchingData, setFetchingData] = useState<boolean>(true);
   const [committeeAnswers, setCommitteeAnswers] = useState<CommitteeAnswers>({});
   const userAnswers = useUserAnswers();
-  console.log(userAnswers);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,14 +22,11 @@ export function ResultsView() {
         const response = await fetch("/answers.json");
         const data = await response.json();
         setCommitteeAnswers(data);
-        if (userAnswers && committeeAnswers) {
-          console.log(countResultPerCommittee(userAnswers, committeeAnswers["miszalski"]));
-        }
       } catch (error) {
         console.error("Error fetching questions:", error);
       }
     };
-
+    
     fetchData().finally(() => {
       setFetchingData(false);
     });
@@ -90,14 +86,9 @@ export function ResultsView() {
         <Grid item xs={12} sm={0.5}></Grid>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 6.5}>
           <Box textAlign={"left"}>
-            <SimplifiedCandidateProfile />
-            <SimplifiedCandidateProfile />
-            <SimplifiedCandidateProfile />
-            <SimplifiedCandidateProfile />
-            <SimplifiedCandidateProfile />
-            <SimplifiedCandidateProfile />
-            <SimplifiedCandidateProfile />
-            <SimplifiedCandidateProfile />
+            <SimplifiedCandidateProfile committeeName="Muzyk" committeeResult={Math.round(countResultPerCommittee(userAnswers, committeeAnswers["muzyk"]))}/>
+            <SimplifiedCandidateProfile committeeName="Miszalski" committeeResult={Math.round(countResultPerCommittee(userAnswers, committeeAnswers["miszalski"]))}/>
+            <SimplifiedCandidateProfile committeeName="Berkowicz" committeeResult={Math.round(countResultPerCommittee(userAnswers, committeeAnswers["konfa"]))}/>
           </Box>
         </Grid>
       </Grid>
@@ -109,22 +100,22 @@ export function ResultsView() {
         <>
           <CandidateProfile
             showAnswersButton={true}
-            committeeAnswers={committeeAnswers["committee1" as keyof CommitteeAnswers]}
+            committeeAnswers={committeeAnswers["miszalski" as keyof CommitteeAnswers]}
           ></CandidateProfile>
           <Divider orientation="horizontal" />
           <CandidateProfile
             showAnswersButton={true}
-            committeeAnswers={committeeAnswers["committee1" as keyof CommitteeAnswers]}
+            committeeAnswers={committeeAnswers["miszalski" as keyof CommitteeAnswers]}
           ></CandidateProfile>
           <Divider orientation="horizontal" />
           <CandidateProfile
             showAnswersButton={true}
-            committeeAnswers={committeeAnswers["committee1" as keyof CommitteeAnswers]}
+            committeeAnswers={committeeAnswers["miszalski" as keyof CommitteeAnswers]}
           ></CandidateProfile>
           <Divider orientation="horizontal" />
           <CandidateProfile
             showAnswersButton={true}
-            committeeAnswers={committeeAnswers["committee1" as keyof CommitteeAnswers]}
+            committeeAnswers={committeeAnswers["miszalski" as keyof CommitteeAnswers]}
           ></CandidateProfile>
         </>
       )}

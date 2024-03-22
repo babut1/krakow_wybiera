@@ -21,7 +21,7 @@ export function CommitteeAnswer() {
         >
           <Typography variant="h6">Stwierdzenie 1</Typography>
           <Typography variant="h4" fontWeight={"bold"}>
-            Dupa
+            Lorem
           </Typography>
           <Typography variant="h6">Odpowiedź komitetu:</Typography>
           <Typography variant="h5" fontWeight={"bold"}>
@@ -38,7 +38,7 @@ export function CommitteeAnswer() {
               <Typography variant="h5" paddingBottom={"15px"}>
                 Wyjaśnienie
               </Typography>
-              <Typography variant="body1">Dupa</Typography>
+              <Typography variant="body1">Lorem</Typography>
             </Box>
           </Paper>
         </Grid>

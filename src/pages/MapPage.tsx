@@ -76,13 +76,13 @@ export function MapPage() {
                     </Typography>
                     <Box>
                       <Typography variant="h5" fontWeight={"bold"}>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dupa
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem
                       </Typography>
                       <Typography variant="h5" fontWeight={"bold"}>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dupa
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem
                       </Typography>
                       <Typography variant="h5" fontWeight={"bold"}>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dupa
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem
                       </Typography>
                     </Box>
                   </Grid>

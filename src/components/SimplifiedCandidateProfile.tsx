@@ -1,7 +1,7 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import ProgressBar from "@ramonak/react-progress-bar";
 
-export function SimplifiedCandidateProfile() {
+export function SimplifiedCandidateProfile(props: {committeeName: string, committeeResult: number}) {
   return (
     <>
       <Grid container spacing={0} sx={{ height: "60px" }}>
@@ -22,13 +22,13 @@ export function SimplifiedCandidateProfile() {
             justifyContent="center"
             height="100%"
           >
-            <Typography variant="h6">Komitet Harolda</Typography>
+            <Typography variant="h6">{props.committeeName}</Typography>
           </Box>
         </Grid>
         <Grid item xs={5.5}>
           <Box marginTop={"15px"}>
             <ProgressBar
-              completed={75}
+              completed={props.committeeResult}
               bgColor="black"
               borderRadius="10px"
               height="30px"
