@@ -4,7 +4,6 @@ import { Homepage } from "../pages/Homepage";
 import { RouteObject } from "react-router-dom";
 import { ResultsView } from "../pages/ResultsPage";
 import { Questionaire } from "../pages/Questionaire";
-import { MapPage } from "../pages/MapPage";
 import { CommitteeAnswers } from "../pages/CommitteeAnswers";
 import { QuizExplanationPage } from "../pages/QuizExplanationPage";
 import { AlorithmPage } from "../pages/AlgorithmPage";

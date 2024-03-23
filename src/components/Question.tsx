@@ -14,13 +14,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { QuestionInterface, UserAnswer } from "../common/types";
-import {
-  changeSelectedQuestion,
-  setUserAnswer,
-  setUserAnswers,
-  useNumberOfQuestions,
-  useUserAnswers,
-} from "../common/state";
+import { changeSelectedQuestion, setUserAnswer, useNumberOfQuestions } from "../common/state";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useNavigate } from "react-router-dom";
 
@@ -28,11 +22,11 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
   const numberOfQuestions = useNumberOfQuestions();
   const navigate = useNavigate();
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1015));
 
-  const [buttonStates, setButtonStates] = useState<boolean[]>([false, false, false, false, false, false]);
+  const [buttonStates, setButtonStates] = useState<boolean[]>([false, false, false, false, false, false, false, false]);
 
-  const buttonValues = [1, 0.5, 0, 1.5, 1, 0.5];
+  const buttonValues = [1, 0.5, 0, 1, 2, 3, 4, 5];
 
   const handleButtonClick = (buttonNumber: number) => {
     setButtonStates((prevButtonStates) => {
@@ -42,10 +36,12 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
         newButtonStates[1] = false;
         newButtonStates[2] = false;
       }
-      if (buttonNumber > 2 && buttonNumber < 6) {
+      if (buttonNumber > 2 && buttonNumber < 8) {
         newButtonStates[3] = false;
         newButtonStates[4] = false;
         newButtonStates[5] = false;
+        newButtonStates[6] = false;
+        newButtonStates[7] = false;
       }
       newButtonStates[buttonNumber] = true;
       return newButtonStates;
@@ -66,7 +62,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
     };
 
     setUserAnswer(userAnswer, props.questionNumber);
-    setButtonStates([false, false, false, false, false, false]);
+    setButtonStates([false, false, false, false, false, false, false, false]);
     if (props.questionNumber + 1 === numberOfQuestions) {
       navigate("/wyniki");
     }
@@ -87,7 +83,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
   }
 
   return (
-    <Box p={isSmallScreen ? 2 : 8} boxShadow={3} mx="auto">
+    <Box p={isSmallScreen ? 2 : 7} boxShadow={3} mx="auto">
       <ProgressBar
         completed={(props.questionNumber / numberOfQuestions) * 100}
         labelSize="0px"
@@ -100,7 +96,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
         Stwierdzenie {props.questionNumber + 1} z {numberOfQuestions}
       </Typography>
       <Grid container>
-        <Grid item xs={12} sm={isSmallScreen ? 12 : 7}>
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 7.3}>
           <Typography
             variant="h5"
             gutterBottom
@@ -127,7 +123,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
             sx={{
               maxWidth: isSmallScreen ? "100%" : "650px",
               textAlign: "left",
-              padding: "0px 0px 30px 0px",
+              padding: "0px 0px 25px 0px",
             }}
           >
             <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
@@ -140,6 +136,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   textTransform: "none",
                   textAlign: "center",
                   width: isSmallScreen ? "100%" : "180px",
+                  height: isSmallScreen ? "50px" : "auto",
                   backgroundColor: buttonStates[0] ? "black" : "white",
                   "&:hover": {
                     backgroundColor: buttonStates[0] ? "black" : "white",
@@ -154,7 +151,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                 </Typography>
               </Button>
             </Grid>
-            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "7px" : "0px" }}>
               <Button
                 variant="outlined"
                 sx={{
@@ -163,6 +160,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   padding: "15px",
                   textTransform: "none",
                   width: isSmallScreen ? "100%" : "180px",
+                  height: isSmallScreen ? "50px" : "auto",
                   backgroundColor: buttonStates[1] ? "black" : "white",
                   "&:hover": {
                     backgroundColor: buttonStates[1] ? "black" : "white",
@@ -175,7 +173,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                 </Typography>
               </Button>
             </Grid>
-            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "7px" : "0px" }}>
               <Button
                 variant="outlined"
                 sx={{
@@ -184,6 +182,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   padding: "15px",
                   textTransform: "none",
                   width: isSmallScreen ? "100%" : "180px",
+                  height: isSmallScreen ? "50px" : "auto",
                   backgroundColor: buttonStates[2] ? "black" : "white",
                   "&:hover": {
                     backgroundColor: buttonStates[2] ? "black" : "white",
@@ -203,12 +202,12 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
           <Grid
             container
             sx={{
-              maxWidth: isSmallScreen ? "100%" : "650px",
+              maxWidth: "100%",
               textAlign: "left",
               padding: "0px 0px 30px 0px",
             }}
           >
-            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 2.4} sx={{ paddingTop: isSmallScreen ? "7px" : "0px" }}>
               <Button
                 variant="outlined"
                 sx={{
@@ -218,6 +217,8 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   textTransform: "none",
                   textAlign: "center",
                   width: isSmallScreen ? "100%" : "180px",
+                  maxWidth: "100%",
+                  height: isSmallScreen ? "50px" : "96px",
                   backgroundColor: buttonStates[3] ? "black" : "white",
                   "&:hover": {
                     backgroundColor: buttonStates[3] ? "black" : "white",
@@ -225,12 +226,12 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                 }}
                 onClick={() => handleButtonClick(3)}
               >
-                <Typography variant="h6" textAlign="left" color={buttonStates[3] ? "white" : "black"}>
-                  Ważny
+                <Typography variant="h6" textAlign="center" color={buttonStates[3] ? "white" : "black"}>
+                  Bardzo ważny
                 </Typography>
               </Button>
             </Grid>
-            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 2.4} sx={{ paddingTop: isSmallScreen ? "7px" : "0px" }}>
               <Button
                 variant="outlined"
                 sx={{
@@ -239,6 +240,8 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   padding: "15px",
                   textTransform: "none",
                   width: isSmallScreen ? "100%" : "180px",
+                  maxWidth: "100%",
+                  height: isSmallScreen ? "50px" : "96px",
                   backgroundColor: buttonStates[4] ? "black" : "white",
                   "&:hover": {
                     backgroundColor: buttonStates[4] ? "black" : "white",
@@ -246,12 +249,12 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                 }}
                 onClick={() => handleButtonClick(4)}
               >
-                <Typography variant="h6" textAlign="left" color={buttonStates[4] ? "white" : "black"}>
-                  Średnio ważny
+                <Typography variant="h6" textAlign="center" color={buttonStates[4] ? "white" : "black"}>
+                  Ważny
                 </Typography>
               </Button>
             </Grid>
-            <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 2.4} sx={{ paddingTop: isSmallScreen ? "7px" : "0px" }}>
               <Button
                 variant="outlined"
                 sx={{
@@ -260,6 +263,8 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   padding: "15px",
                   textTransform: "none",
                   width: isSmallScreen ? "100%" : "180px",
+                  maxWidth: "100%",
+                  height: isSmallScreen ? "50px" : "96px",
                   backgroundColor: buttonStates[5] ? "black" : "white",
                   "&:hover": {
                     backgroundColor: buttonStates[5] ? "black" : "white",
@@ -267,14 +272,60 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                 }}
                 onClick={() => handleButtonClick(5)}
               >
-                <Typography variant="h6" textAlign="left" color={buttonStates[5] ? "white" : "black"}>
+                <Typography variant="h6" textAlign="center" color={buttonStates[5] ? "white" : "black"}>
+                  Średnio ważny
+                </Typography>
+              </Button>
+            </Grid>
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 2.4} sx={{ paddingTop: isSmallScreen ? "7px" : "0px" }}>
+              <Button
+                variant="outlined"
+                sx={{
+                  borderRadius: "12px",
+                  borderColor: "black",
+                  padding: "15px",
+                  textTransform: "none",
+                  width: isSmallScreen ? "100%" : "180px",
+                  maxWidth: "100%",
+                  height: isSmallScreen ? "50px" : "96px",
+                  backgroundColor: buttonStates[6] ? "black" : "white",
+                  "&:hover": {
+                    backgroundColor: buttonStates[6] ? "black" : "white",
+                  },
+                }}
+                onClick={() => handleButtonClick(6)}
+              >
+                <Typography variant="h6" textAlign="center" color={buttonStates[6] ? "white" : "black"}>
+                  Raczej nieważny
+                </Typography>
+              </Button>
+            </Grid>
+            <Grid item xs={12} sm={isSmallScreen ? 12 : 2.4} sx={{ paddingTop: isSmallScreen ? "7px" : "0px" }}>
+              <Button
+                variant="outlined"
+                sx={{
+                  borderRadius: "12px",
+                  borderColor: "black",
+                  padding: "15px",
+                  textTransform: "none",
+                  width: isSmallScreen ? "100%" : "180px",
+                  maxWidth: "100%",
+                  height: isSmallScreen ? "50px" : "96px",
+                  backgroundColor: buttonStates[7] ? "black" : "white",
+                  "&:hover": {
+                    backgroundColor: buttonStates[7] ? "black" : "white",
+                  },
+                }}
+                onClick={() => handleButtonClick(7)}
+              >
+                <Typography variant="h6" textAlign="center" color={buttonStates[7] ? "white" : "black"}>
                   Nieważny
                 </Typography>
               </Button>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5}></Grid>
+        <Grid item xs={12} sm={isSmallScreen ? 0 : 0.2}></Grid>
         {!isSmallScreen && (
           <Grid item xs={12} sm={isSmallScreen ? 12 : 4.5}>
             <Paper elevation={4} sx={{ backgroundColor: "lightgrey", borderRadius: "15px" }}>
