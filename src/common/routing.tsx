@@ -6,6 +6,8 @@ import { ResultsView } from "../pages/ResultsPage";
 import { Questionaire } from "../pages/Questionaire";
 import { MapPage } from "../pages/MapPage";
 import { CommitteeAnswers } from "../pages/CommitteeAnswers";
+import { QuizExplanationPage } from "../pages/QuizExplanationPage";
+import { AlorithmPage } from "../pages/AlgorithmPage";
 
 export const routing: RouteObject[] = [
   {
@@ -30,7 +32,11 @@ export const routing: RouteObject[] = [
       },
       {
         path: "okrag",
-        element: <MapPage />,
+        element: <QuizExplanationPage />,
+      },
+      {
+        path: "algorytm",
+        element: <AlorithmPage />,
       },
       {
         path: "a",
