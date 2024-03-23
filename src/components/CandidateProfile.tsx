@@ -6,6 +6,8 @@ import { CommitteeAnswerInterface } from "../common/types";
 export function CandidateProfile(props: {
   showAnswersButton: boolean;
   committeeAnswers: CommitteeAnswerInterface[] | null;
+  committeeResult: number;
+  candidateName: string;
 }) {
   const parentHeight = 180;
   const photoHeight = parentHeight * 0.9;
@@ -36,21 +38,21 @@ export function CandidateProfile(props: {
 
         <Grid item xs={4} container direction="column" textAlign={"left"}>
           <Grid item>
-            <Typography variant="h5">Kandydat na Prezydenta Miasta</Typography>
+            <Typography variant="h6">Kandydat na Prezydenta Miasta</Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body1">Harold Kowalski</Typography>
+            <Typography variant="h5" fontWeight={"bold"}>
+              {props.candidateName}
+            </Typography>
           </Grid>
         </Grid>
         <Grid item xs={5.5}>
           <Box>
             <Box textAlign={"left"}>
-              <Typography variant="h6">
-                Zgodność Twoich opinii z programem
-              </Typography>
+              <Typography variant="h6">Zgodność Twoich opinii z programem</Typography>
             </Box>
             <ProgressBar
-              completed={75}
+              completed={props.committeeResult}
               bgColor="grey"
               borderRadius="20px"
               height="55px"

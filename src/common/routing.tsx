@@ -28,6 +28,44 @@ export const routing: RouteObject[] = [
       {
         path: "wyniki",
         element: <ResultsView />,
+        children: [
+          {
+            path: "konfederacjaibezpartyjnisamorzadowcy",
+            element: <CommitteeAnswers />,
+          },
+          {
+            path: "krakowdlamieszkancow",
+            element: <CommitteeAnswers />,
+          },
+          {
+            path: "zjednoczenidlakrakowa",
+            element: <CommitteeAnswers />,
+          },
+          {
+            path: "prawoisprawiedliwosc",
+            element: <CommitteeAnswers />,
+          },
+          {
+            path: "trzeciadroga",
+            element: <CommitteeAnswers />,
+          },
+          {
+            path: "kuprzyslosci",
+            element: <CommitteeAnswers />,
+          },
+          {
+            path: "stanislawmazur",
+            element: <CommitteeAnswers />,
+          },
+          {
+            path: "koalicjaobywatelska",
+            element: <CommitteeAnswers />,
+          },
+          {
+            path: "samorzadnykrakow",
+            element: <CommitteeAnswers />,
+          },
+        ],
       },
       {
         path: "okrag",

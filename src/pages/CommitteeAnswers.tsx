@@ -13,7 +13,12 @@ export function CommitteeAnswers() {
       <Typography variant="h6" marginBottom={"30px"}>
         Odpowiedzi komitetu wafuisjejbn ueibs fiusbefishub fuisebfuisbfius bsuiebf ub usebf usebfusbf
       </Typography>
-      <CandidateProfile showAnswersButton={false} committeeAnswers={null}></CandidateProfile>
+      <CandidateProfile
+        showAnswersButton={false}
+        committeeAnswers={null}
+        committeeResult={66}
+        candidateName=""
+      ></CandidateProfile>
       <CommitteeAnswer />
     </Box>
   );

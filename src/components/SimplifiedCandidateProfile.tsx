@@ -1,7 +1,7 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import ProgressBar from "@ramonak/react-progress-bar";
 
-export function SimplifiedCandidateProfile(props: {committeeName: string, committeeResult: number}) {
+export function SimplifiedCandidateProfile(props: { committeeName: string; committeeResult: number }) {
   return (
     <>
       <Grid container spacing={0} sx={{ height: "60px" }}>
@@ -16,13 +16,10 @@ export function SimplifiedCandidateProfile(props: {committeeName: string, commit
           </Grid>
         </Grid>
         <Grid item xs={5.5}>
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            height="100%"
-          >
-            <Typography variant="h6">{props.committeeName}</Typography>
+          <Box display="flex" alignItems="center" justifyContent="center" height="100%">
+            <Typography variant="h6" textAlign={"center"}>
+              {props.committeeName}
+            </Typography>
           </Box>
         </Grid>
         <Grid item xs={5.5}>

@@ -1,25 +1,25 @@
 import { useNumberOfQuestions } from "./state";
-import { CommitteeAnswerInterface, CommitteeAnswers, UserAnswer } from "./types";
+import { CommitteeAnswerInterface, Committee, UserAnswer } from "./types";
 
 function countAgreementPoints(userAgreement: number, committeeAgreement: number) {
-  if (userAgreement === 0.5) {
-    return Math.min(0.5 - (committeeAgreement - 3) / 10, 0);
+  let newCommitteAgreement = committeeAgreement;
+  if (newCommitteAgreement = 10){
+    newCommitteAgreement = 9
   }
-  if (userAgreement === 1) {
-    return Math.min(0.5 - Math.abs(committeeAgreement - 5.5) / 10, 0);
+  if (newCommitteAgreement = 1){
+    newCommitteAgreement = 2
   }
-  if (userAgreement === 1.5) {
-    return Math.min(0.5 - (8 - committeeAgreement) / 10, 0);
-  }
-  return 0;
+    return Math.max(0.5 - Math.abs(newCommitteAgreement - (2*userAgreement - 1)) / 10,
+      0.5 - Math.abs(newCommitteAgreement - (2*userAgreement)) / 10,
+      0);
 }
 
 export function countResultPerCommittee(userAnswers: UserAnswer[], committeeAnswers: CommitteeAnswerInterface[]) {
   let maxScore = 0;
   let score = 0;
   for (let i = 0; i < 20; i++) {
+    maxScore += userAnswers[i].importance;
     if (Math.abs(userAnswers[i].agreement - committeeAnswers[i].agreement) == 1) {
-      maxScore += userAnswers[i].importance;
       continue;
     }
     let baseScore = 0;
@@ -29,19 +29,19 @@ export function countResultPerCommittee(userAnswers: UserAnswer[], committeeAnsw
       baseScore = 0.25;
     }
     if (
-      (userAnswers[i].importance === 1.5 && committeeAnswers[i].importance > 7) ||
-      (userAnswers[i].importance === 0.5 && committeeAnswers[i].importance < 4) ||
-      (userAnswers[i].importance === 1 && committeeAnswers[i].importance > 3 && committeeAnswers[i].importance < 8)
+      (userAnswers[i].importance === 5 && committeeAnswers[i].importance > 8) ||
+      (userAnswers[i].importance === 4 && committeeAnswers[i].importance > 6 && committeeAnswers[i].importance < 9) ||
+      (userAnswers[i].importance === 3 && committeeAnswers[i].importance > 4 && committeeAnswers[i].importance < 7) ||
+      (userAnswers[i].importance === 2 && committeeAnswers[i].importance > 2 && committeeAnswers[i].importance < 5) ||
+      (userAnswers[i].importance === 1 && committeeAnswers[i].importance < 3)
     ) {
-      maxScore += userAnswers[i].importance;
       score += userAnswers[i].importance;
       continue;
     } else {
-      maxScore += userAnswers[i].importance;
       score +=
         (baseScore + countAgreementPoints(userAnswers[i].agreement, committeeAnswers[i].agreement)) *
         userAnswers[i].importance;
     }
   }
-  return (score * 100) / maxScore;
+  return Math.round((score * 100) / maxScore);
 }

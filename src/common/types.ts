@@ -8,8 +8,17 @@ export interface QuestionAnswer {
   answer: number;
 }
 
-export interface CommitteeAnswers {
-  [committeeName: string]: CommitteeAnswerInterface[];
+export interface Committee {
+  [committeeName: string]: {
+    answers: CommitteeAnswerInterface[];
+    candidateName: string;
+    committeeLogoPath: string;
+    candidatePicturePath: string;
+    committeeComment: string;
+    importantMatters: number[];
+    committeeLists: string;
+    fullCommitteeName: string;
+  };
 }
 
 export interface CommitteeAnswerInterface {

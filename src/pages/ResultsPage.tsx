@@ -4,7 +4,7 @@ import { SimplifiedCandidateProfile } from "../components/SimplifiedCandidatePro
 import CandidateSlider from "../components/CandidateSlider";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { CommitteeAnswers } from "../common/types";
+import { Committee } from "../common/types";
 import { useUserAnswers } from "../common/state";
 import { countResultPerCommittee } from "../common/utils";
 
@@ -13,24 +13,28 @@ export function ResultsView() {
   const navigate = useNavigate();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
   const [fetchingData, setFetchingData] = useState<boolean>(true);
-  const [committeeAnswers, setCommitteeAnswers] = useState<CommitteeAnswers>({});
+  const [committeeAnswers, setCommitteeAnswers] = useState<Committee>({});
   const userAnswers = useUserAnswers();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/answers.json");
+        const response = await fetch("/committees.json");
         const data = await response.json();
         setCommitteeAnswers(data);
       } catch (error) {
         console.error("Error fetching questions:", error);
       }
     };
-    
+
     fetchData().finally(() => {
       setFetchingData(false);
     });
   }, []);
+
+  const handleSolveAgain = () => {
+    navigate("/okrag");
+  };
 
   if (fetchingData) {
     return (
@@ -47,10 +51,6 @@ export function ResultsView() {
       </Box>
     );
   }
-
-  const handleSolveAgain = () => {
-    navigate("/okrag");
-  };
 
   return (
     <Box p={isSmallScreen ? 2 : 8}>
@@ -86,9 +86,19 @@ export function ResultsView() {
         <Grid item xs={12} sm={0.5}></Grid>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 6.5}>
           <Box textAlign={"left"}>
-            <SimplifiedCandidateProfile committeeName="Muzyk" committeeResult={Math.round(countResultPerCommittee(userAnswers, committeeAnswers["muzyk"]))}/>
-            <SimplifiedCandidateProfile committeeName="Miszalski" committeeResult={Math.round(countResultPerCommittee(userAnswers, committeeAnswers["miszalski"]))}/>
-            <SimplifiedCandidateProfile committeeName="Berkowicz" committeeResult={Math.round(countResultPerCommittee(userAnswers, committeeAnswers["konfa"]))}/>
+            {Object.keys(committeeAnswers)
+              .sort((a, b) => {
+                const resultA = countResultPerCommittee(userAnswers, committeeAnswers[a].answers);
+                const resultB = countResultPerCommittee(userAnswers, committeeAnswers[b].answers);
+                return resultB - resultA;
+              })
+              .map((committee: string) => (
+                <SimplifiedCandidateProfile
+                  committeeName={committeeAnswers[committee].candidateName}
+                  committeeResult={countResultPerCommittee(userAnswers, committeeAnswers[committee].answers)}
+                  // todo: logo
+                />
+              ))}
           </Box>
         </Grid>
       </Grid>
@@ -97,27 +107,23 @@ export function ResultsView() {
           <CandidateSlider></CandidateSlider>
         </Box>
       ) : (
-        <>
-          <CandidateProfile
-            showAnswersButton={true}
-            committeeAnswers={committeeAnswers["miszalski" as keyof CommitteeAnswers]}
-          ></CandidateProfile>
-          <Divider orientation="horizontal" />
-          <CandidateProfile
-            showAnswersButton={true}
-            committeeAnswers={committeeAnswers["miszalski" as keyof CommitteeAnswers]}
-          ></CandidateProfile>
-          <Divider orientation="horizontal" />
-          <CandidateProfile
-            showAnswersButton={true}
-            committeeAnswers={committeeAnswers["miszalski" as keyof CommitteeAnswers]}
-          ></CandidateProfile>
-          <Divider orientation="horizontal" />
-          <CandidateProfile
-            showAnswersButton={true}
-            committeeAnswers={committeeAnswers["miszalski" as keyof CommitteeAnswers]}
-          ></CandidateProfile>
-        </>
+        Object.keys(committeeAnswers)
+          .sort((a, b) => {
+            const resultA = countResultPerCommittee(userAnswers, committeeAnswers[a].answers);
+            const resultB = countResultPerCommittee(userAnswers, committeeAnswers[b].answers);
+            return resultB - resultA;
+          })
+          .map((committee: string, index: number) => (
+            <>
+              <CandidateProfile
+                showAnswersButton={true}
+                committeeAnswers={committeeAnswers[committee].answers}
+                committeeResult={countResultPerCommittee(userAnswers, committeeAnswers[committee].answers)}
+                candidateName={committeeAnswers[committee].candidateName}
+              ></CandidateProfile>
+              {index < Object.keys(committeeAnswers).length - 1 && <Divider orientation="horizontal" />}
+            </>
+          ))
       )}
     </Box>
   );
