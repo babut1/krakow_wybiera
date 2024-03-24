@@ -102,13 +102,13 @@ export function ResultsView() {
               })
               .map((committee: string) => (
                 <SimplifiedCandidateProfile
-                  committeeName={committeeAnswers[committee].candidateName}
+                  committeeName={committeeAnswers[committee].fullCommitteeName}
                   committeeResult={countResultPerCommittee(
                     userAnswers,
                     committeeAnswers[committee].answers,
                     committeeAnswers[committee].importantMatters
                   )}
-                  // todo: logo
+                  candidatePicturePath={committeeAnswers[committee].candidatePicturePath}
                 />
               ))}
           </Box>
@@ -116,7 +116,7 @@ export function ResultsView() {
       </Grid>
       {isSmallScreen ? (
         <Box display="flex" justifyContent="center" alignItems="center">
-          <CandidateSlider></CandidateSlider>
+          <CandidateSlider committees={committeeAnswers}></CandidateSlider>
         </Box>
       ) : (
         Object.keys(committeeAnswers)
@@ -146,6 +146,8 @@ export function ResultsView() {
                 candidateName={committeeAnswers[committee].candidateName}
                 committeeLists={committeeAnswers[committee].committeeLists}
                 committeeName={committee}
+                logoPath={committeeAnswers[committee].committeeLogoPath}
+                candidatePath={committeeAnswers[committee].candidatePicturePath}
               ></CandidateProfile>
               {index < Object.keys(committeeAnswers).length - 1 && <Divider orientation="horizontal" />}
             </>

@@ -1,49 +1,39 @@
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  MobileStepper,
-  Paper,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, MobileStepper, Paper, Typography, useTheme } from "@mui/material";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useState } from "react";
+import { Committee } from "../common/types";
+import { useNavigate } from "react-router-dom";
+import { countResultPerCommittee } from "../common/utils";
+import { useUserAnswers } from "../common/state";
 
-const steps = [
-  {
-    label: "Komitet Harolda",
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
-  },
-  {
-    label: "Create an ad group",
-    description:
-      "An ad group contains one or more ads which target a shared set of keywords.",
-  },
-  {
-    label: "Create an ad",
-    description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
-  },
-];
-
-export default function CandidateSlider() {
+export default function CandidateSlider(props: { committees: Committee }) {
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
-  const maxSteps = steps.length;
+  const maxSteps = Object.keys(props.committees).length;
+  const navigate = useNavigate();
+  const userAnswers = useUserAnswers();
+  const sortedCommittees = Object.keys(props.committees).sort((a, b) => {
+    const resultA = countResultPerCommittee(
+      userAnswers,
+      props.committees[a].answers,
+      props.committees[a].importantMatters
+    );
+    const resultB = countResultPerCommittee(
+      userAnswers,
+      props.committees[b].answers,
+      props.committees[b].importantMatters
+    );
+    return resultB - resultA;
+  });
+  const sortedCandidateListValues = sortedCommittees.map((committee) => props.committees[committee]);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => (prevActiveStep + 1) % maxSteps);
   };
 
   const handleBack = () => {
-    setActiveStep(
-      (prevActiveStep) => (prevActiveStep - 1 + maxSteps) % maxSteps
-    );
+    setActiveStep((prevActiveStep) => (prevActiveStep - 1 + maxSteps) % maxSteps);
   };
 
   return (
@@ -64,7 +54,7 @@ export default function CandidateSlider() {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h5">{steps[activeStep].label}</Typography>
+        <Typography variant="h5">{sortedCandidateListValues[activeStep].fullCommitteeName}</Typography>
       </Paper>
       <Box
         sx={{
@@ -77,8 +67,8 @@ export default function CandidateSlider() {
         }}
       >
         <img
-          src="https://m.media-amazon.com/images/I/41J1BcPUDUL._AC_UF894,1000_QL80_.jpg"
-          alt="Photo 1"
+          src={sortedCandidateListValues[activeStep].candidatePicturePath}
+          alt="Zdjęcie kandydata"
           style={{
             width: "150px",
             height: "200px",
@@ -87,8 +77,8 @@ export default function CandidateSlider() {
           }}
         />
         <img
-          src="https://m.media-amazon.com/images/I/41J1BcPUDUL._AC_UF894,1000_QL80_.jpg"
-          alt="Photo 1"
+          src={sortedCandidateListValues[activeStep].committeeLogoPath}
+          alt="Logo komitetu"
           style={{ width: "150px", height: "200px", borderRadius: "15px" }}
         />
       </Box>
@@ -96,14 +86,18 @@ export default function CandidateSlider() {
         Kandydat na Prezydenta Miasta
       </Typography>
       <Typography textAlign={"center"} variant="h4" fontWeight={"bold"}>
-        Harold Kowalski
+        {sortedCandidateListValues[activeStep].candidateName}
       </Typography>
       <Typography textAlign={"center"} variant="body1" marginTop={"10px"}>
         Zgodność Twoich opinii z programem
       </Typography>
       <Box padding={"0px 10px 0px 10px"}>
         <ProgressBar
-          completed={75}
+          completed={countResultPerCommittee(
+            userAnswers,
+            props.committees[sortedCommittees[activeStep]].answers,
+            props.committees[sortedCommittees[activeStep]].importantMatters
+          )}
           bgColor="black"
           borderRadius="20px"
           height="50px"
@@ -123,6 +117,7 @@ export default function CandidateSlider() {
             textTransform: "none",
           }}
           variant="outlined"
+          onClick={() => window.open(sortedCandidateListValues[activeStep].committeeLists, "_blank")}
         >
           <Typography variant="h6">Listy komitetu</Typography>
         </Button>
@@ -138,6 +133,7 @@ export default function CandidateSlider() {
           }}
           color="primary"
           variant="contained"
+          onClick={() => navigate(`/${Object.keys(props.committees)[activeStep]}`)}
         >
           <Typography variant="h6">Odpowiedzi komitetu</Typography>
         </Button>
@@ -156,11 +152,7 @@ export default function CandidateSlider() {
             }}
           >
             Następny
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
+            {theme.direction === "rtl" ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
           </Button>
         }
         backButton={
@@ -171,11 +163,7 @@ export default function CandidateSlider() {
               color: "black",
             }}
           >
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
+            {theme.direction === "rtl" ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
             Poprzedni
           </Button>
         }

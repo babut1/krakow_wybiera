@@ -103,8 +103,8 @@
       }
     ],
     "candidateName": "Aleksander Miszalski",
-    "committeeLogoPath": "",
-    "candidatePicturePath": "",
+    "committeeLogoPath": "miszalski/miszalski_logo.png",
+    "candidatePicturePath": "miszalski/miszalski.png",
     "committeeComment": "",
     "importantMatters": [5, 8, 11, 13, 18],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/wbp/kandydat/3738233",
@@ -195,7 +195,7 @@
       {
         "agreement": 1,
         "importance": 10,
-        "explanation": "Ochrona zabytkowego centrum poprzez walkę z hałasem i zwiększenie bezpieczeństwa, zwiększenie liczby patroli straży miejskiej i policji, zmniejszenie sprzedaży alkoholu; zapewnienie większego komfortu życia mieszkańców Starego Miasta. Systematyczny wzrost liczebności strażników miejskich z obecnych 550 do 1000 pełniących funkcje patrolowe i zabezpieczające porządek szczególnie w miejscach atrakcji turystycznych (Stare Miasto, Kazimierz). Realizacja modernizacji przejść dla pieszych zwiększających poziom bezpieczeństwa pieszych , szczególnie w sąsiedztwie zespołów szkolno – przedszkolnych. Budowa brakującej infrastruktury pieszej w postaci chodników szczególnie na terenie dzielnic wschodnich. Modernizacja i uzupełnienie oświetlenia ulicznego."
+        "explanation": "Ochrona zabytkowego centrum poprzez walkę z hałasem i zwiększenie bezpieczeństwa, zwiększenie liczby patroli straży miejskiej i policji, zmniejszenie sprzedaży alkoholu;, Systematyczny wzrost liczebności strażników miejskich z obecnych 550 do 1000 pełniących funkcje patrolowe i zabezpieczające porządek szczególnie w miejscach atrakcji turystycznych. Modernizacja przejść dla pieszych zwiększających poziom bezpieczeństwa pieszych , szczególnie w sąsiedztwie zespołów szkolno – przedszkolnych. Budowa brakującej infrastruktury pieszej w postaci chodników szczególnie na terenie dzielnic wschodnich. Modernizacja i uzupełnienie oświetlenia ulicznego."
       },
       {
         "agreement": 0,
@@ -215,7 +215,7 @@
     ],
     "candidateName": "Jerzy Muzyk",
     "committeeLogoPath": "",
-    "candidatePicturePath": "",
+    "candidatePicturePath": "muzyk/muzyk.png",
     "committeeComment": "Zwiększenie komfortu i zadowolenia z życia mieszkańców poprzez realizację wizji Krakowa jako miasta bezpiecznego, otwartego na potrzeby wszystkich mieszkańców, miasta z łatwym dostępem do wysokiej jakości usług publicznych i zrównoważonym transportem uwzględniającym preferencje różnych grup mieszkańców, miasta ekologicznego, z bogatą oferta edukacyjną i kulturalną, miasta w którym mali i średni przedsiębiorcy odgrywają należną im rolę w rozwoju gospodarczym. Postulaty te stanowią filary programu wyborczego KWW Samorządny Kraków oraz Jerzego Muzyka. #grajMy dla Krakowa.",
     "importantMatters": [1, 2, 8, 15, 16],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/39397?elections=rada_gminy",
@@ -325,8 +325,8 @@
       }
     ],
     "candidateName": "Konrad Berkowicz",
-    "committeeLogoPath": "",
-    "candidatePicturePath": "",
+    "committeeLogoPath": "berkowicz/berkowicz_logo.jpg",
+    "candidatePicturePath": "berkowicz/berkowicz.png",
     "committeeComment": "Ulice polskich miast nie mają barw partyjnych, nie potrzebują plemiennych wojen. Potrzebują ponadpolitycznego porozumienia i właśnie takie ponadpolityczne porozumienie zawiązaliśmy. Konfederacja i Bezpartyjni Samorządowcy idą do wyborów razem i będą walczyć o dobro naszych małych ojczyzn, chronić je przed szalonymi pomysłami ideologów.",
     "importantMatters": [3, 5, 6, 8, 17],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/37045?elections=rada_gminy",
@@ -436,8 +436,8 @@
       }
     ],
     "candidateName": "Łukasz Gibała",
-    "committeeLogoPath": "",
-    "candidatePicturePath": "",
+    "committeeLogoPath": "gibala/gibala_logo.png",
+    "candidatePicturePath": "gibala/gibala.png",
     "committeeComment": "Nasza wizja jest od dekady taka sama: chcemy zielonego, dobrze skomunikowanego, stawiającego na jakość życia, otwartego i silnego innowacyjną gospodarką Krakowa. Miasta, w którym mieszkanie nie jest luksusem, ale dobrem powszechnym. Rozwiążemy raz na zawsze problem korków i spalin. Będziemy solidnie inwestować w komunikację publiczną. Rozpoczniemy budowę metra. Postawimy na budowę nowych linii tramwajowych: na Kliny, wzdłuż Lema i do Luboczy. Sprawimy, że każdy mieszkaniec Krakowa w odległości 500 m będzie miał dostęp do komunikacji publicznej. Przeznaczymy 5% budżetu inwestycyjnego miasta na wykup terenów zielonych. Stworzymy osiedlowe mini rynki i uzupełnimy infrastrukturę osiedli peryferyjnych. Nasz program to 170 konkretów, dobrze znamy problemy mieszkańców i wiemy, jak je rozwiązać.",
     "importantMatters": [0, 2, 3, 8, 12],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/29853",
@@ -547,8 +547,8 @@
       }
     ],
     "candidateName": "Stanisław Mazur",
-    "committeeLogoPath": "",
-    "candidatePicturePath": "",
+    "committeeLogoPath": "mazur/mazur_logo.png",
+    "candidatePicturePath": "mazur/mazur.png",
     "committeeComment": "Jesteśmy grupą ludzi, która jest i będzie blisko ludzi, otwarta na dialog i gotowa do realizacji ambitnych projektów - od komunikacji miejskiej, przez ekologię, aż po kulturę i innowacje technologiczne. Zaangażowanie naszej listy w kwestie ekologiczne, rozwój przestrzeni miejskiej oraz wsparcie dla inicjatyw społecznych to dowód na to, że chcemy nie tylko mówić o zmianach, ale je wprowadzać. Chcemy, aby Kraków był miastem dla wszystkich - miejscem, gdzie każdy znajdzie przestrzeń dla siebie, niezależnie od wieku czy zainteresowań. Naszym celem jest stworzenie Krakowa, który rozwija się nie tylko przez wielkie projekty infrastrukturalne, ale także poprzez budowanie wspólnoty i wspieranie lokalnych inicjatyw.",
     "importantMatters": [2, 3, 4, 8, 12],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/32621?elections=rada_gminy",
@@ -658,8 +658,8 @@
       }
     ],
     "candidateName": "Andrzej Kulig",
-    "committeeLogoPath": "",
-    "candidatePicturePath": "",
+    "committeeLogoPath": "kulig/kulig_logo.png",
+    "candidatePicturePath": "kulig/kulig.png",
     "committeeComment": "",
     "importantMatters": [1, 3, 4, 8, 16],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/36047",

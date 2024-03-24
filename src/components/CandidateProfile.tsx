@@ -11,6 +11,8 @@ export function CandidateProfile(props: {
   candidateName: string;
   committeeLists: string;
   committeeName: string;
+  logoPath: string;
+  candidatePath: string;
 }) {
   const navigate = useNavigate();
   const parentHeight = 180;
@@ -25,18 +27,10 @@ export function CandidateProfile(props: {
       <Grid container spacing={2} style={{ height: `${parentHeight}px` }}>
         <Grid item container xs={2.5} spacing={2}>
           <Grid item xs={6}>
-            <img
-              src="https://m.media-amazon.com/images/I/41J1BcPUDUL._AC_UF894,1000_QL80_.jpg"
-              alt="Photo 1"
-              style={{ width: photoWidth, height: photoHeight }}
-            />
+            <img src={props.candidatePath} alt="Zdjęcie kandydata" style={{ width: photoWidth, height: photoHeight }} />
           </Grid>
           <Grid item xs={6}>
-            <img
-              src="https://m.media-amazon.com/images/I/41J1BcPUDUL._AC_UF894,1000_QL80_.jpg"
-              alt="Photo 1"
-              style={{ width: photoWidth, height: photoHeight }}
-            />
+            <img src={props.logoPath} alt="Logo komitetu" style={{ width: photoWidth, height: photoHeight }} />
           </Grid>
         </Grid>
 

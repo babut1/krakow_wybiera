@@ -1,18 +1,17 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import ProgressBar from "@ramonak/react-progress-bar";
 
-export function SimplifiedCandidateProfile(props: { committeeName: string; committeeResult: number }) {
+export function SimplifiedCandidateProfile(props: {
+  committeeName: string;
+  committeeResult: number;
+  candidatePicturePath: string;
+}) {
   return (
     <>
       <Grid container spacing={0} sx={{ height: "60px" }}>
         <Grid item container xs={1} spacing={2}>
           <Grid item xs={6}>
-            <img
-              src="https://m.media-amazon.com/images/I/41J1BcPUDUL._AC_UF894,1000_QL80_.jpg"
-              alt="Photo 1"
-              height="50px"
-              width="50px"
-            />
+            <img src={props.candidatePicturePath} alt="Zdjęcie kandydata" height="50px" width="50px" />
           </Grid>
         </Grid>
         <Grid item xs={5.5}>

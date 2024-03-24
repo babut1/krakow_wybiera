@@ -65,6 +65,8 @@ export function CommitteeAnswers(props: { committeeName: string }) {
         candidateName=""
         committeeLists=""
         committeeName=""
+        candidatePath=""
+        logoPath=""
       ></CandidateProfile>
       {committeeAnswers[props.committeeName].answers.map((answer: CommitteeAnswerInterface, index: number) => (
         <CommitteeAnswer
