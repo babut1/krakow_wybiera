@@ -1,5 +1,5 @@
 {
-  "koalicjaObywatelska": {
+  "koalicjaobywatelska": {
     "answers": [
       {
         "agreement": 1,
@@ -110,7 +110,7 @@
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/wbp/kandydat/3738233",
     "fullCommitteeName": "Koalicyjny Komitet Wyborczy Koalicja Obywatelska"
   },
-  "samorzadnyKrakow": {
+  "samorzadnykrakow": {
     "answers": [
       {
         "agreement": 1,
@@ -221,7 +221,7 @@
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/39397?elections=rada_gminy",
     "fullCommitteeName": "Komitet Wyborczy Wyborców Samorządny Kraków"
   },
-  "konfederacjaIBezpartyjniSamorzadnowcy": {
+  "konfederacjaibezpartyjnisamorzadowcy": {
     "answers": [
       {
         "agreement": 0,
@@ -332,7 +332,7 @@
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/37045?elections=rada_gminy",
     "fullCommitteeName": "Komitet Wyborczy Wyborców Konfederacja i Bezpartyjni Samorządowcy"
   },
-  "krakowDlaMieszkancow": {
+  "krakowdlamieszkancow": {
     "answers": [
       {
         "agreement": 1,
@@ -453,7 +453,7 @@
       {
         "agreement": 1,
         "importance": 10,
-        "explanation": "Uważamy, że dalsza walka ze smogiem jest jednym z najważniejszych zadań, jakie magistrat ma do wykonania wobec krakowian. Nie tylko musimy naciskać na wymianę pieców w gminach ościennych, ale także, w sposób mądry powinniśmy wprowadzić Strefę Czystego Transportu. Podstawą komunikacji w Krakowie musi być zintegrowana sieć transportu, oparta na autobusach, tramwajach i kolei aglomeracyjnej, a w przyszłości także metrze. Strefa Czystego Transportu powinna być wprowadzona w takim sposób, by użytkownicy starszych samochodów byli w stanie zaparkować swój pojazd i przesiąść się na komunikację miejską na parkingach P+R. Zadaniem miasta jest także lepsze badanie źródeł smogu, także powstającego w związku z realizacją inwestycji i w budownictwie. Zanieczyszczenie powietrza odpowiada za to, że krakowianie żyją krócej, przy czym smog ma ogromny wpływ szczególnie na zdrowie dzieci i osób starszych."
+        "explanation": "Zanieczyszczenie powietrza skraca życie mieszkańców, szczególnie szkodząc dzieciom i osobom starszym. Walka ze smogiem jest kluczowym zadaniem dla magistratu Krakowa. Musimy nie tylko naciskać na wymianę pieców w gminach ościennych, ale też wprowadzić Strefę Czystego Transportu, bazującą na zintegrowanej sieci transportowej (autobusy, tramwaje, kolej aglomeracyjna, w przyszłości metro). Strefa ta ma umożliwić parkowanie pojazdów na parkingach P+R i przesiadkę na transport publiczny. Ważne jest również badanie źródeł smogu, w tym zanieczyszczeń pochodzących z inwestycji i budownictwa."
       },
       {
         "agreement": 1,
@@ -478,7 +478,7 @@
       {
         "agreement": 0,
         "importance": 5,
-        "explanation": "Kraków jest jednym z najbardziej zakorkowanych miast w Europie i w dużej mierze odpowiada za to ogromna liczba 250 tysięcy samochodów, które każdego dnia wyjeżdżają do miasta, a także wysoki wskaźnik usamochodowienia - na 1000 mieszkańców mamy ponad 700 samochodów. Miasto powinno rozwijać się w kierunku preferowania komunikacji zbiorowej, tworzenia nowych połączeń i rozciągania strefy płatnego parkowania - tak, by grupami chronionymi przed problemem parkingowym byli wyłącznie mieszkańcy danej dzielnicy, którzy powinni mieć priorytet przy znajdowaniu miejsc postojowych. Nie chcemy zmuszać do opuszczania samochodów, ale zachęcać do tego, oferując najlepszą komunikację. "
+        "explanation": "Kraków jest jednym z najbardziej zakorkowanych miast w Europie, za co w dużej mierze odpowiada 250 tysięcy samochodów, które każdego dnia wyjeżdżają do miasta oraz wysoki wskaźnik usamochodowienia - na 1000 mieszkańców mamy ponad 700 samochodów. Miasto powinno rozwijać się w kierunku komunikacji zbiorowej, tworzenia nowych połączeń i rozciągania strefy płatnego parkowania - tak, by grupami chronionymi przed problemem parkingowym byli wyłącznie mieszkańcy danej dzielnicy, którzy powinni mieć priorytet przy znajdowaniu miejsc postojowych. Nie chcemy zmuszać do opuszczania samochodów, ale zachęcać do tego, oferując najlepszą komunikację."
       },
       {
         "agreement": 1,
@@ -493,7 +493,7 @@
       {
         "agreement": 1,
         "importance": 3,
-        "explanation": "Miasto powinno utrzymywać media miejskie w zakresie koniecznym, by skutecznie informować o ważnych wydarzeniach, komunikatach społecznych, miejskich wydarzeniach sportowych i kulturalnych, czy na przykład komunikatach o remontach lub promocji wartości takich jak ochrona środowiska naturalnego oraz lokalny biznes. Uważamy jednak, że ta działalność powinna mieć charakter czysto informacyjny, nie publicystyczny i powinna być wykonywana w sposób transparentny - bez udziału miejskich polityków. Obecna kampania wyborcza jest najlepszym dowodem na to, że powinna zmienić się rola mediów należących do miasta. Jesteśmy pewni, że przy otwartej komunikacji i dialogu z mieszkańcami komunikaty urzędu miasta przebiją się bez problemu do mediów lokalnych."
+        "explanation": "Miasto powinno ograniczyć role mediów miejskich do informowania o ważnych wydarzeniach, komunikatach społecznych, kulturalnych, sportowych, remontach, ochronie środowiska i wsparciu lokalnego biznesu. Ta działalność powinna być neutralna, czysto informacyjna i transparentna, bez udziału polityków. Obecna kampania wyborcza pokazuje, że konieczna jest zmiana roli miejskich mediów. Wierzymy, że otwarta komunikacja i dialog z mieszkańcami pozwolą komunikatom urzędu miasta dotrzeć do mediów lokalnych bez problemu."
       },
       {
         "agreement": 1,
@@ -503,7 +503,7 @@
       {
         "agreement": 1,
         "importance": 5,
-        "explanation": "Uważamy że pieniędzy jest wystarczająco, nie powinny one być jednak wydawane na duże obiekty tylko na wspieranie artystów i adaptację już istniejących przestrzeni. Miasto ma obowiązek zapewnić artystom właściwe wynagrodzenie i finansowanie sztuki. Kluczowe jest wprowadzenie innowacyjnych, pozabudżetowych form wsparcia, umożliwiających dostęp do kultury dla wszystkich mieszkańców. Ważne są również przestrzenie dla spotkań, targów, koncertów i konferencji. Kraków powinien stawiać na międzynarodowe kongresy, wykorzystując swój kulturalny potencjał do rozwoju turystyki, gastronomii i hotelarstwa. Wizja miasta obejmuje przejście od tradycyjnych instytucji kultury do hubów kulturowych, z łatwym dostępem do informacji o wydarzeniach, wspierając tym samym rozwój przez organizacje pozarządowe."
+        "explanation": "Pieniądze na kulturę powinny wspierać artystów i adaptować istniejące przestrzenie, a nie finansować duże obiekty. Miasto ma zapewnić artystom właściwe wynagrodzenie i finansowanie. Wprowadzenie innowacyjnych form wsparcia poza budżetem, zapewniających dostęp do kultury dla wszystkich, jest kluczowe. Kraków powinien promować międzynarodowe kongresy, wykorzystując swój kulturalny potencjał, co przyczyni się do rozwoju turystyki, gastronomii i hotelarstwa. Wizja przyszłości zakłada ewolucję od tradycyjnych instytucji kultury do kulturalnych hubów, z łatwym dostępem do informacji o wydarzeniach, wspierając rozwój przez organizacje pozarządowe."
       },
       {
         "agreement": 1,
@@ -513,22 +513,22 @@
       {
         "agreement": 1,
         "importance": 9,
-        "explanation": "Czas myśleć o przyszłości Krakowa, miasta z rosnącą populacją i zwiększającą się grupą seniorów, przekraczającą dziś 200 tys., co stanowi ponad 25% mieszkańców. Miasto musi zdecydowanie rozwijać politykę senioralną, promując zdrowy tryb życia, aktywizację i dostosowanie infrastruktury do potrzeb starszego pokolenia. Kluczowe jest oparcie polityki senioralnej na solidarności i dialogu międzypokoleniowym, co pozwoli na budowanie społeczności zrozumiałej i otwartej na potrzeby każdego mieszkańca. Zwracamy uwagę na potrzebę wprowadzenia nowych standardów projektowania miejskiej infrastruktury, by była ona dostępna i przyjazna dla osób z różnymi ograniczeniami. W tym kontekście konieczne jest również powołanie Dziennych Ośrodków Pomocy Seniorom, które będą wsparciem dla seniorów i ich rodzin, oferując usługi dopasowane do ich indywidualnych potrzeb. Działania te są kluczowe dla tworzenia miasta przyjaznego dla wszystkich pokoleń."
+        "explanation": "Kraków, z populacją przekraczającą 200 tys. seniorów (ponad 25% mieszkańców), musi rozwijać politykę senioralną, promując zdrowy tryb życia i dostosowując infrastrukturę do potrzeb starszych. Ważna jest solidarność i dialog międzypokoleniowy, co umożliwi budowanie społeczności otwartej na potrzeby wszystkich. Potrzebne są nowe standardy projektowania infrastruktury, dostępnej i przyjaznej dla osób z ograniczeniami, oraz powołanie Dziennych Ośrodków Pomocy Seniorom, wspierających seniorów i ich rodziny z usługami dopasowanymi do ich potrzeb. To klucz do stworzenia miasta przyjaznego dla wszystkich pokoleń."
       },
       {
         "agreement": 1,
         "importance": 7,
-        "explanation": "Wprowadzenie parytetu płciowego w zarządach spółek miejskich oraz ich radach nadzorczych stanowi krok w kierunku sprawiedliwości i równości. Takie działanie nie tylko eliminuje dyskryminację ze względu na płeć, lecz także przyczynia się do różnorodności perspektyw i doświadczeń, co może przynieść korzyści dla firm i ich interesariuszy. Badania wykazują, że zróżnicowane zespoły podejmują lepsze decyzje, są bardziej innowacyjne i osiągają wyższe wyniki finansowe. Ponadto, parytet płciowy stanowi ważny sygnał społeczny, promujący równość szans i inspirujący inne sektory gospodarki do podobnych działań. Dlatego też, wprowadzenie równego reprezentowania płci w zarządach spółek miejskich jest krokiem w stronę bardziej sprawiedliwego i efektywnego społeczeństwa."
+        "explanation": "Wprowadzenie parytetu płciowego w zarządach spółek miejskich i radach nadzorczych to krok ku sprawiedliwości i równości. Eliminuje dyskryminację, przyczyniając się do różnorodności perspektyw, co korzystnie wpływa na firmy. Badania pokazują, że zróżnicowane zespoły podejmują lepsze decyzje, osiągając lepsze wyniki finansowe. Parytet jest sygnałem społecznym, promującym równość szans, inspirującym inne sektory do podobnych działań. Jest to krok w stronę bardziej sprawiedliwego społeczeństwa."
       },
       {
         "agreement": 1,
         "importance": 7,
-        "explanation": "Popierając różnorodne formy edukacji pozaformalnej oraz usługi wspierające młodzież, miasto pokazuje, jak ważne jest kompleksowe podejście do rozwoju młodych ludzi. Wsparcie w zakresie edukacji obywatelskiej, klimatycznej, kulturowej czy seksualnej, poprzez organizację warsztatów, debat i festiwali, przyczynia się do kształtowania świadomych, odpowiedzialnych i aktywnych obywateli. Inicjatywy te ułatwiają młodym ludziom identyfikowanie i rozwijanie ich zainteresowań oraz pasji, co jest kluczowe dla ich osobistego rozwoju i przyszłego sukcesu zawodowego. Miasto, angażując się w aktywizację młodzieży, inwestuje w swoją przyszłość, tworząc przestrzeń dla kreatywności, innowacji i przedsiębiorczości. "
+        "explanation": "Poprzez wsparcie dla edukacji pozaformalnej i inicjatyw młodzieżowych, miasto podkreśla znaczenie kompleksowego rozwoju młodych. Organizacja warsztatów i debat na tematy obywatelskie, klimatyczne, kulturowe i seksualne formuje świadomych i aktywnych obywateli. Takie działania pomagają młodzieży odkrywać i rozwijać zainteresowania oraz pasje, co jest fundamentem dla ich rozwoju osobistego i przyszłego sukcesu zawodowego."
       },
       {
         "agreement": 1,
         "importance": 6,
-        "explanation": "Miasto, podążając za wizją smart city, powinno priorytetyzować bezpieczeństwo mieszkańców. Inwestycje w rozbudowaną straż miejską, nowoczesne oświetlenie uliczne oraz zaawansowany system monitoringu są kluczowe. Takie działania nie tylko poprawią poczucie bezpieczeństwa, ale także przyczynią się do skuteczniejszego reagowania na sytuacje kryzysowe. Ponadto, zwiększenie odporności społeczności lokalnych, poprzez edukację i systemy wczesnego ostrzegania, wzmacnia całe miasto. Integracja tych rozwiązań z technologiami inteligentnego miasta pozwoli na lepszą analizę danych, optymalizację zasobów i szybsze reagowanie na potrzeby mieszkańców, czyniąc miasto bezpieczniejszym i bardziej przyjaznym dla życia."
+        "explanation": "W ramach wizji smart city, miasto powinno skupić się na bezpieczeństwie mieszkańców, inwestując w modernizację technologiczną straży miejskiej, nowoczesne oświetlenie i zaawansowany monitoring. To zwiększy poczucie bezpieczeństwa i pozwoli na efektywniejsze reagowanie w kryzysie. Wzmocnienie odporności poprzez edukację i systemy ostrzegania jest istotne. Integracja tych działań z technologiami smart city umożliwi lepszą analizę danych i szybką reakcję na potrzeby mieszkańców, czyniąc miasto bezpieczniejszym i przyjaznym."
       },
       {
         "agreement": 1,
@@ -554,7 +554,7 @@
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/32621?elections=rada_gminy",
     "fullCommitteeName": "Komitet Wyborczy Wyborców Stanisława Mazura"
   },
-  "kuPrzyszlosci": {
+  "kuprzyszlosci": {
     "answers": [
       {
         "agreement": 1,
@@ -574,7 +574,7 @@
       {
         "agreement": 1,
         "importance": 10,
-        "explanation": "Kraków jest przygotowany do budowy metra. Niebawem będzie decyzja środowiskowa w sprawie kluczowego, całkowicie tunelowego, pierwszego odcinka linii metra od ronda Młyńskiego do ul. Piastowskiej. Będzie drążony metodą górniczą, by nie sparaliżować ruchu w centrum. Jest już zabezpieczone miejsce, gdzie powstanie komora startowa, czyli gdzie specjalna maszyna rozpocznie drążenie tunelu. Zadaniem A. Kuliga, jako prezydenta Krakowa, będzie jak najszybsze doprowadzenie do wyboru firmy, która zaprojektuje pierwszy odcinek metra. Pieniądze na ten cel są zabezpieczone. Równie ważne jest zapewnienie środków zewnętrznych na samą budowę. Rozmowy z ministrem infrastruktury w tej sprawie już trwają."
+        "explanation": "Kraków jest przygotowany do budowy metra. Niebawem będzie decyzja środowiskowa w sprawie pierwszego, tunelowego odcinka linii metra od ronda Młyńskiego do ul. Piastowskiej. Będzie drążony metodą górniczą, by nie sparaliżować ruchu w centrum. Jest już zabezpieczone miejsce, gdzie powstanie komora startowa, czyli gdzie specjalna maszyna rozpocznie drążenie tunelu. Zadaniem A. Kuliga, jako prezydenta Krakowa, będzie jak najszybsze doprowadzenie do wyboru firmy, która zaprojektuje ten odcinek metra. Pieniądze na ten cel są zabezpieczone. Równie ważne jest zapewnienie środków zewnętrznych na samą budowę. Rozmowy z ministrem infrastruktury już trwają."
       },
       {
         "agreement": 1,
@@ -584,32 +584,32 @@
       {
         "agreement": 1,
         "importance": 10,
-        "explanation": "Kraków już współpracuje z 14 gminami okalającymi miasto w ramach Stowarzyszenia Metropolia Krakowska. Tę współpracę niejako wymusiło życie. Chodzi o transport - linie tramwajowe do granic miasta i dalej np. do Wieliczki, bilet aglomeracyjny, budowę P+R przy węzłach komunikacyjnych na granicy miasta, odwodnienie i retencję (podchodzące pod Kraków osiedla, zwłaszcza położone wyżej powodują problemy z zalewaniem niektórych dzielnic spływającą gwałtownie z tych terenów wodą) i pozyskiwanie środków unijnych na wspólne przedsięwzięcia. Bardzo ważnym problemem jest także zanieczyszczenie napływowe z gmin krakowskiego obwarzanka. Tu możliwości finansowego wsparcia innych gmin do tej pory było niemożliwe. Postulaty miasta o przeznaczeniu płaconego przez Kraków Janosikowego pozostały bez odzewu."
+        "explanation": "Kraków już współpracuje z 14 sąsiadującymi gminami w ramach Stowarzyszenia Metropolia Krakowska. Chodzi o transport - linie tramwajowe do granic miasta i dalej (Wieliczka), bilet aglomeracyjny, P+R przy węzłach komunikacyjnych na granicy miasta, odwodnienie i retencję (wody opadowe z nowych osiedli blisko granicy Krakowa, położonych wyżej zalewają niektóre krakowskie osiedla) i pozyskiwanie środków unijnych na wspólne przedsięwzięcia. Bardzo ważnym problemem jest także zanieczyszczenie napływowe z gmin krakowskiego obwarzanka. Postulaty miasta o przeznaczeniu płaconego przez Kraków Janosikowego na ten cel pozostały bez odzewu."
       },
       {
         "agreement": 0,
         "importance": 8,
-        "explanation": "Strefy płatnego parkowania mają na celu zwiększenie rotacji pojazdów parkujących w mieście, a nie ograniczenie ruchu samochodów. Cena za godzinę parkowania również temu służy. Stąd tak częste prośby mieszkańców o wprowadzenie strefy w kolejnych miejscach. Bo nie mają gdzie parkować. Andrzej Kulig, we współpracy ze spółdzielniami chce budować dla mieszkańców ogólnodostępne parkingi na osiedlach.Do Krakowa jednak każdego dnia wjeżdża ponad 250 tysięcy samochodów z zewnątrz. Do tego dodać należy wysokie “usamochodowienie “ mieszkańców miasta (700, a nawet 800 aut na 1000 mieszkańców). Uspokojenie ruchu samochodowego w mieście, zwłaszcza w centrum jest zatem absolutną koniecznością. Stąd w programie Andrzeja Kuliga, metro, nowe linie tramwajowe i autobusowe."
+        "explanation": "Strefy płatnego parkowania mają na celu zwiększenie rotacji pojazdów parkujących w mieście, a nie ograniczenie ruchu. Cena za godzinę parkowania również. O jej wprowadzanie proszą mieszkańcy. Andrzej Kulig, we współpracy ze spółdzielniami chce budować dla mieszkańców parkingi na osiedlach. Do Krakowa każdego dnia wjeżdża ponad 250 tysięcy samochodów z zewnątrz. Do tego dodać należy wysokie “usamochodowienie “ mieszkańców (700, a nawet 800 aut na 1000 mieszkańców). Uspokojenie ruchu samochodowego w mieście, zwłaszcza w centrum jest zatem absolutną koniecznością. Stąd w programie Andrzeja Kuliga, metro, nowe linie tramwajowe i autobusowe."
       },
       {
         "agreement": 1,
         "importance": 8,
-        "explanation": "NIe ma odwrotu od rozwoju komunikacji zbiorowej, integracji sieci transportu zbiorowego i bezpiecznej infrastruktury pieszo-rowerowej. Priorytetem miasta powinien być rozwój transportu publicznego (w szczególności tramwajowego i metra), tak aby był on coraz bardziej dostępny, wygodny i szybszy niż samochód do przemieszczania się po mieście (pierwsza z rekomendacji uczestników ubiegłorocznego panelu transportu publicznego), a także ograniczanie konieczności przemieszczania się po mieście, wspierane przez rozwój infrastruktury oraz podnoszenie jakości usług społecznych w pobliżu miejsca zamieszkania – zgodnie z koncepcją miasta 15-minutowego i oraz rozwój usług publicznych on line."
+        "explanation": "Nie ma odwrotu od rozwoju komunikacji zbiorowej, integracji sieci transportu zbiorowego i bezpiecznej infrastruktury pieszo-rowerowej. Priorytetem miasta musi być rozwój transportu publicznego (głównie tramwaj i metro), by był coraz bardziej dostępny, wygodny i szybszy niż samochód w poruszaniu się po mieście (pierwsza z rekomendacji uczestników panelu transportu publicznego z 2023 r.), a także ograniczanie konieczności przemieszczania się po mieście, wspierane przez rozwój infrastruktury oraz podnoszenie jakości usług społecznych w pobliżu miejsca zamieszkania – zgodnie z koncepcją miasta15-minutowego i oraz rozwój usług publicznych on line."
       },
       {
         "agreement": 1,
         "importance": 10,
-        "explanation": "Szeroko prowadzone konsultacje z mieszkańcami (np. konsultacje w XII dzielnicy po fiasku planu Nowego Miasta), transparentnie podejmowane decyzje w sprawie budowy (np. remont ostatniego odcinka Królowej Jadwigi i możliwość uczestnictwa mieszkańców w radach budowy), warsztaty dotyczące zagospodarowania wspólnej przestrzeni ( np. Zielone Podwórka Nowej Huty), proponowane przez Andrzeja Kuliga kontrakty dla dzielnic (zwiększenie realnego wpływu mieszkańców i radnych dzielnicowych na realizację ważnych dla mieszkańców inwestycji) a także budżet obywatelski oddają ważne decyzje także w ręce krakowian. I tak być powinno. Choć w tym procesie nie może także zabraknąć specjalistów i odpowiedzialnych za pewne obszary w mieście."
+        "explanation": "Szeroko prowadzone konsultacje z mieszkańcami (w XII dzielnicy po fiasku planu Nowego Miasta), transparentne decyzje w sprawie budowy (remont ostatniego odcinka Król. Jadwigi, możliwość uczestnictwa mieszkańców w radach budowy), warsztaty dotyczące zagospodarowania wspólnej przestrzeni (Zielone Podwórka Nowej Huty), proponowane przez prof. Kuliga kontrakty dla dzielnic (zwiększenie realnego wpływu mieszkańców i radnych dzielnicowych na realizację potrzebnych inwestycji) i budżet obywatelski oddają decyzje w ręce krakowian. Tak być powinno. Choć w tym procesie nie może także zabraknąć specjalistów i odpowiedzialnych za pewne obszary w mieście."
       },
       {
         "agreement": 1,
         "importance": 8,
-        "explanation": "Pytanie tak naprawdę brzmi, jak w dzisiejszych czasach miasto ma informować mieszkańców o wielu istotnych dla nich sprawach. Zmienił się rynek medialny i sposoby komunikowania, docierania do odbiorów. Informacja ma być podana szybko, ciekawie i najlepiej w atrakcyjnej, także wizualnie formie, do której odbiorca jest przyzwyczajony. Z drugiej strony wiele informacji istotnych dla mieszkańców - np. działania w domach kultury, zwłaszcza tych mniejszych, nie zawsze, a właściwie rzadko przebijają się do mediów lokalnych. Z różnych przyczyn. Płatne reklamy w mediach nie rozwiążą całego problemu i ich zakup suma sumarum mógłby się okazać dużo droższy od własnych mediów. Ważne, by informacja miejska była informacją, a nie uprawianiem polityki. Czego w ostatnich latach, nie tylko w mediach ogólnopolskich, a także lokalnych nie brakowało."
+        "explanation": "Pytanie tak naprawdę brzmi, jak miasto ma informować mieszkańców o wielu istotnych dla nich sprawach. Zmienił się rynek medialny i sposoby komunikowania, docierania do odbiorów. Informacja ma być szybka, ciekawa, w atrakcyjnej, także wizualnie formie, do której odbiorca jest przyzwyczajony. Z drugiej strony wiele informacji istotnych dla mieszkańców - np. działania w domach kultury, zwłaszcza tych mniejszych rzadko przebijają się do mediów lokalnych. Z różnych przyczyn. Płatne reklamy nie rozwiążą problemu. Ich zakup mógłby się okazać dużo droższy od własnych mediów.Ważne, by informacja miejska była informacją, a nie uprawianiem polityki."
       },
       {
         "agreement": 1,
         "importance": 8,
-        "explanation": "Powinno, ale w większości przypadków nie może. Bo wsparcie dla przedsiębiorców, którzy np. tracą dochody z powodu koniecznych remontów ulic lub z powodu zmiany zachowań klientów (zakupy w internecie) jest uznawane za nieuprawnioną pomoc publiczną. Więc potrzebne są rozwiązania ustawowe, które na takie działania miastu pozwolą. Na razie Andrzej Kulig proponuje wprowadzenie Krakowskiego Kuponu Rzemieślniczego. To projekt, który umożliwi mieszkańcom korzystanie z usług rzemieślników taniej, ponieważ część kosztów usług będzie refinansowana przez miasto. Kupon zachęci krakowian do korzystania z lokalnych rzemieślników i będzie promować ich działalność, a także przyczyni się do promocji postaw zero waste."
+        "explanation": "Powinno, ale w większości przypadków nie może. Wsparcie dla przedsiębiorców, którzy np.tracą dochody z powodu koniecznych remontów ulic lub z powodu zmiany zachowań klientów (zakupy w internecie) jest uznawane za nieuprawnioną pomoc publiczną. Potrzebne są rozwiązania ustawowe, które na takie działania miastu pozwolą. Na razie Andrzej Kulig proponuje wprowadzenie Krakowskiego Kuponu Rzemieślniczego, który umożliwi mieszkańcom korzystanie z usług rzemieślników taniej, część kosztów usług będzie refinansowana przez miasto. Kupon zachęci do korzystania z lokalnych rzemieślników i będzie promować ich działalność. To też promocja postaw zero waste."
       },
       {
         "agreement": 1,

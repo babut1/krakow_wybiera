@@ -3,18 +3,24 @@ import { CommitteeAnswerInterface, Committee, UserAnswer } from "./types";
 
 function countAgreementPoints(userAgreement: number, committeeAgreement: number) {
   let newCommitteAgreement = committeeAgreement;
-  if (newCommitteAgreement = 10){
-    newCommitteAgreement = 9
+  if ((newCommitteAgreement = 10)) {
+    newCommitteAgreement = 9;
   }
-  if (newCommitteAgreement = 1){
-    newCommitteAgreement = 2
+  if ((newCommitteAgreement = 1)) {
+    newCommitteAgreement = 2;
   }
-    return Math.max(0.5 - Math.abs(newCommitteAgreement - (2*userAgreement - 1)) / 10,
-      0.5 - Math.abs(newCommitteAgreement - (2*userAgreement)) / 10,
-      0);
+  return Math.max(
+    0.5 - Math.abs(newCommitteAgreement - (2 * userAgreement - 1)) / 10,
+    0.5 - Math.abs(newCommitteAgreement - 2 * userAgreement) / 10,
+    0
+  );
 }
 
-export function countResultPerCommittee(userAnswers: UserAnswer[], committeeAnswers: CommitteeAnswerInterface[]) {
+export function countResultPerCommittee(
+  userAnswers: UserAnswer[],
+  committeeAnswers: CommitteeAnswerInterface[],
+  importantMatters: number[]
+) {
   let maxScore = 0;
   let score = 0;
   for (let i = 0; i < 20; i++) {

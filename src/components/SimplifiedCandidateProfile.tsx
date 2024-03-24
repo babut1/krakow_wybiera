@@ -26,11 +26,11 @@ export function SimplifiedCandidateProfile(props: { committeeName: string; commi
           <Box marginTop={"15px"}>
             <ProgressBar
               completed={props.committeeResult}
-              bgColor="black"
               borderRadius="10px"
               height="30px"
-              labelColor="white"
               labelAlignment="right"
+              labelColor="white"
+              bgColor="black"
               baseBgColor="darkgrey"
             />
           </Box>

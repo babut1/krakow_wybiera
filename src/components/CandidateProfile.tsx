@@ -2,13 +2,17 @@ import React from "react";
 import { Grid, Typography, Box, Button } from "@mui/material";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { CommitteeAnswerInterface } from "../common/types";
+import { useNavigate } from "react-router-dom";
 
 export function CandidateProfile(props: {
   showAnswersButton: boolean;
   committeeAnswers: CommitteeAnswerInterface[] | null;
   committeeResult: number;
   candidateName: string;
+  committeeLists: string;
+  committeeName: string;
 }) {
+  const navigate = useNavigate();
   const parentHeight = 180;
   const photoHeight = parentHeight * 0.9;
   const photoWidth = parentHeight * 0.7;
@@ -53,11 +57,13 @@ export function CandidateProfile(props: {
             </Box>
             <ProgressBar
               completed={props.committeeResult}
-              bgColor="grey"
+              labelColor="white"
+              bgColor="black"
+              baseBgColor="darkgrey"
               borderRadius="20px"
               height="55px"
-              labelColor="black"
               labelAlignment="right"
+              labelSize="40"
             />
             <Box textAlign={"right"}>
               <Button
@@ -71,6 +77,7 @@ export function CandidateProfile(props: {
                   width: "170px",
                 }}
                 variant="outlined"
+                onClick={() => window.open(props.committeeLists, "_blank")}
               >
                 <Typography variant="h6">Listy komitetu</Typography>
               </Button>
@@ -83,6 +90,7 @@ export function CandidateProfile(props: {
                     textTransform: "none",
                     width: "240px",
                   }}
+                  onClick={() => navigate(`/${props.committeeName}`)}
                   color="primary"
                   variant="contained"
                 >

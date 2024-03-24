@@ -28,44 +28,42 @@ export const routing: RouteObject[] = [
       {
         path: "wyniki",
         element: <ResultsView />,
-        children: [
-          {
-            path: "konfederacjaibezpartyjnisamorzadowcy",
-            element: <CommitteeAnswers />,
-          },
-          {
-            path: "krakowdlamieszkancow",
-            element: <CommitteeAnswers />,
-          },
-          {
-            path: "zjednoczenidlakrakowa",
-            element: <CommitteeAnswers />,
-          },
-          {
-            path: "prawoisprawiedliwosc",
-            element: <CommitteeAnswers />,
-          },
-          {
-            path: "trzeciadroga",
-            element: <CommitteeAnswers />,
-          },
-          {
-            path: "kuprzyslosci",
-            element: <CommitteeAnswers />,
-          },
-          {
-            path: "stanislawmazur",
-            element: <CommitteeAnswers />,
-          },
-          {
-            path: "koalicjaobywatelska",
-            element: <CommitteeAnswers />,
-          },
-          {
-            path: "samorzadnykrakow",
-            element: <CommitteeAnswers />,
-          },
-        ],
+      },
+      {
+        path: "konfederacjaibezpartyjnisamorzadowcy",
+        element: <CommitteeAnswers committeeName="konfederacjaibezpartyjnisamorzadowcy" />,
+      },
+      {
+        path: "krakowdlamieszkancow",
+        element: <CommitteeAnswers committeeName="krakowdlamieszkancow" />,
+      },
+      {
+        path: "zjednoczenidlakrakowa",
+        element: <CommitteeAnswers committeeName="zjednoczenidlakrakowa" />,
+      },
+      {
+        path: "prawoisprawiedliwosc",
+        element: <CommitteeAnswers committeeName="prawoisprawiedliwosc" />,
+      },
+      {
+        path: "trzeciadroga",
+        element: <CommitteeAnswers committeeName="trzeciadroga" />,
+      },
+      {
+        path: "kuprzyszlosci",
+        element: <CommitteeAnswers committeeName="kuprzyszlosci" />,
+      },
+      {
+        path: "stanislawmazur",
+        element: <CommitteeAnswers committeeName="stanislawmazur" />,
+      },
+      {
+        path: "koalicjaobywatelska",
+        element: <CommitteeAnswers committeeName="koalicjaobywatelska" />,
+      },
+      {
+        path: "samorzadnykrakow",
+        element: <CommitteeAnswers committeeName="samorzadnykrakow" />,
       },
       {
         path: "okrag",
@@ -74,10 +72,6 @@ export const routing: RouteObject[] = [
       {
         path: "algorytm",
         element: <AlorithmPage />,
-      },
-      {
-        path: "a",
-        element: <CommitteeAnswers />,
       },
     ],
   },

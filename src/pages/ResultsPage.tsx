@@ -88,14 +88,26 @@ export function ResultsView() {
           <Box textAlign={"left"}>
             {Object.keys(committeeAnswers)
               .sort((a, b) => {
-                const resultA = countResultPerCommittee(userAnswers, committeeAnswers[a].answers);
-                const resultB = countResultPerCommittee(userAnswers, committeeAnswers[b].answers);
+                const resultA = countResultPerCommittee(
+                  userAnswers,
+                  committeeAnswers[a].answers,
+                  committeeAnswers[a].importantMatters
+                );
+                const resultB = countResultPerCommittee(
+                  userAnswers,
+                  committeeAnswers[b].answers,
+                  committeeAnswers[b].importantMatters
+                );
                 return resultB - resultA;
               })
               .map((committee: string) => (
                 <SimplifiedCandidateProfile
                   committeeName={committeeAnswers[committee].candidateName}
-                  committeeResult={countResultPerCommittee(userAnswers, committeeAnswers[committee].answers)}
+                  committeeResult={countResultPerCommittee(
+                    userAnswers,
+                    committeeAnswers[committee].answers,
+                    committeeAnswers[committee].importantMatters
+                  )}
                   // todo: logo
                 />
               ))}
@@ -109,8 +121,16 @@ export function ResultsView() {
       ) : (
         Object.keys(committeeAnswers)
           .sort((a, b) => {
-            const resultA = countResultPerCommittee(userAnswers, committeeAnswers[a].answers);
-            const resultB = countResultPerCommittee(userAnswers, committeeAnswers[b].answers);
+            const resultA = countResultPerCommittee(
+              userAnswers,
+              committeeAnswers[a].answers,
+              committeeAnswers[a].importantMatters
+            );
+            const resultB = countResultPerCommittee(
+              userAnswers,
+              committeeAnswers[b].answers,
+              committeeAnswers[b].importantMatters
+            );
             return resultB - resultA;
           })
           .map((committee: string, index: number) => (
@@ -118,8 +138,14 @@ export function ResultsView() {
               <CandidateProfile
                 showAnswersButton={true}
                 committeeAnswers={committeeAnswers[committee].answers}
-                committeeResult={countResultPerCommittee(userAnswers, committeeAnswers[committee].answers)}
+                committeeResult={countResultPerCommittee(
+                  userAnswers,
+                  committeeAnswers[committee].answers,
+                  committeeAnswers[committee].importantMatters
+                )}
                 candidateName={committeeAnswers[committee].candidateName}
+                committeeLists={committeeAnswers[committee].committeeLists}
+                committeeName={committee}
               ></CandidateProfile>
               {index < Object.keys(committeeAnswers).length - 1 && <Divider orientation="horizontal" />}
             </>
