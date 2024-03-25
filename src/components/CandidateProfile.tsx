@@ -14,6 +14,7 @@ export function CandidateProfile(props: {
   logoPath: string;
   candidatePath: string;
   committeeFullName: string;
+  hasAgreed: boolean;
 }) {
   const navigate = useNavigate();
   const parentHeight = 180;
@@ -23,7 +24,9 @@ export function CandidateProfile(props: {
   return (
     <>
       <Box textAlign={"left"}>
-        <Typography variant="h5">{props.committeeFullName}</Typography>
+        <Typography variant="h5" fontWeight={"bold"}>
+          {props.committeeFullName}
+        </Typography>
       </Box>
       <Grid container spacing={2} style={{ height: `${parentHeight}px` }}>
         <Grid item container xs={2.5} spacing={2}>
@@ -48,7 +51,9 @@ export function CandidateProfile(props: {
         <Grid item xs={5.5}>
           <Box>
             <Box textAlign={"left"}>
-              <Typography variant="h6">Zgodność Twoich opinii z programem</Typography>
+              <Typography variant="h6">
+                {props.hasAgreed ? "Zgodność Twoich opinii z programem" : "Komitet nie wziął udziału w badaniu"}
+              </Typography>
             </Box>
             <ProgressBar
               completed={props.committeeResult}
@@ -88,6 +93,7 @@ export function CandidateProfile(props: {
                   onClick={() => navigate(`/${props.committeeName}`)}
                   color="primary"
                   variant="contained"
+                  disabled={!props.hasAgreed}
                 >
                   <Typography variant="h6">Odpowiedzi komitetu</Typography>
                 </Button>

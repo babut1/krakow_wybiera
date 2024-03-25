@@ -8,7 +8,7 @@ import { countResultPerCommittee } from "../common/utils";
 
 export function CommitteeAnswers(props: { committeeName: string }) {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(800));
   const [fetchingData, setFetchingData] = useState<boolean>(true);
   const [committeeAnswers, setCommitteeAnswers] = useState<Committee>({});
   const [questions, setQuestions] = useState<QuestionInterface[]>([]);
@@ -81,6 +81,7 @@ export function CommitteeAnswers(props: { committeeName: string }) {
         candidatePath={committeeAnswers[props.committeeName].candidatePicturePath}
         logoPath={committeeAnswers[props.committeeName].committeeLogoPath}
         committeeFullName={committeeAnswers[props.committeeName].fullCommitteeName}
+        hasAgreed={committeeAnswers[props.committeeName].hasAgreed}
       ></CandidateProfile>
       {committeeAnswers[props.committeeName].answers.map((answer: CommitteeAnswerInterface, index: number) => (
         <CommitteeAnswer

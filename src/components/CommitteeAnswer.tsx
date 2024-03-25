@@ -10,7 +10,7 @@ export function CommitteeAnswer(props: {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(750));
   return (
-    <Box p={isSmallScreen ? 2 : 8} boxShadow={3} mx="auto">
+    <Box p={isSmallScreen ? 2 : 5} boxShadow={3} mx="auto">
       <Grid container>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 5.5} sx={{ textAlign: isSmallScreen ? "center" : "left" }}>
           <Typography variant="h6" sx={{ backgroundColor: props.comment.length > 650 ? "red" : "white" }}>
@@ -31,7 +31,7 @@ export function CommitteeAnswer(props: {
               <Typography variant="h5" paddingBottom={"15px"}>
                 Wyjaśnienie
               </Typography>
-              <Typography variant="body1">{props.comment}</Typography>
+              <Typography variant="body1">{props.comment ? props.comment : "Brak komentarza"}</Typography>
             </Box>
           </Paper>
         </Grid>

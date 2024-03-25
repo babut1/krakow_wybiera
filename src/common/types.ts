@@ -19,6 +19,7 @@ export interface Committee {
     committeeLists: string;
     fullCommitteeName: string;
     committeeShorterFullName: string;
+    hasAgreed: boolean;
   };
 }
 

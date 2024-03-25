@@ -41,10 +41,10 @@ export const routing: RouteObject[] = [
         path: "zjednoczenidlakrakowa",
         element: <CommitteeAnswers committeeName="zjednoczenidlakrakowa" />,
       },
-      {
-        path: "prawoisprawiedliwosc",
-        element: <CommitteeAnswers committeeName="prawoisprawiedliwosc" />,
-      },
+      // {
+      //   path: "prawoisprawiedliwosc",
+      //   element: <CommitteeAnswers committeeName="prawoisprawiedliwosc" />,
+      // },
       {
         path: "trzeciadroga",
         element: <CommitteeAnswers committeeName="trzeciadroga" />,

@@ -10,8 +10,8 @@ import { countResultPerCommittee } from "../common/utils";
 
 export function ResultsView() {
   const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1120));
   const navigate = useNavigate();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
   const [fetchingData, setFetchingData] = useState<boolean>(true);
   const [committeeAnswers, setCommitteeAnswers] = useState<Committee>({});
   const userAnswers = useUserAnswers();
@@ -84,7 +84,7 @@ export function ResultsView() {
   }
 
   return (
-    <Box p={isSmallScreen ? 2 : 8}>
+    <Box p={isSmallScreen ? 2 : 6}>
       <Grid container>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 4}>
           <Box textAlign={"left"}>
@@ -144,7 +144,7 @@ export function ResultsView() {
           </Box>
         </Grid>
       </Grid>
-      <Divider orientation="horizontal" />
+      <Divider orientation="horizontal" sx={{ marginBottom: "20px" }} />
       {isSmallScreen ? (
         <Box display="flex" justifyContent="center" alignItems="center">
           <CandidateSlider committees={committeeAnswers}></CandidateSlider>
@@ -180,8 +180,11 @@ export function ResultsView() {
                 logoPath={committeeAnswers[committee].committeeLogoPath}
                 candidatePath={committeeAnswers[committee].candidatePicturePath}
                 committeeFullName={committeeAnswers[committee].fullCommitteeName}
+                hasAgreed={committeeAnswers[committee].hasAgreed}
               ></CandidateProfile>
-              {index < Object.keys(committeeAnswers).length - 1 && <Divider orientation="horizontal" />}
+              {index < Object.keys(committeeAnswers).length - 1 && (
+                <Divider orientation="horizontal" sx={{ marginBottom: "15px", marginTop: "15px" }} />
+              )}
             </>
           ))
       )}

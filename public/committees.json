@@ -906,114 +906,114 @@
   "trzeciadroga": {
     "answers": [
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 6,
+        "explanation": "Zależy od konsultacji z mieszkańcami, którzy przedstawią pomysły na teren lub będą za zostawieniem w obecnej formie."
+      },
+      {
+        "agreement": 1,
+        "importance": 10,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 10,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 10,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 8,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 8,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 0.5,
+        "importance": 7,
+        "explanation": "Powinniśmy budować parkingi, ale nie celem stawania się bardziej przyjaznym dla samochodów tylko ułatwienia parkowania dla mieszkańców."
+      },
+      {
+        "agreement": 0.5,
+        "importance": 7,
+        "explanation": "Należy mieszkańcom zapewnić sprawną i konkurencyjną dla samochodu komunikację publiczną i w ten sposób zmniejszyć natężenie ruchu. Ruch pieszy znajduje się na priorytetowym miejscu, następnie ruch rowerowy, komunikacja zbiorowa i samochody."
+      },
+      {
+        "agreement": 1,
+        "importance": 10,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 0,
+        "importance": 6,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 5,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 6,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 5,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 8,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 8,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 8,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 8,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 5,
+        "explanation": "Miejsce takie powinno być wyznaczone w drodze konsultacji. Powinno to dotyczyć tylko alkoholi niskoprocentowych."
+      },
+      {
+        "agreement": 1,
+        "importance": 10,
         "explanation": ""
       },
       {
-        "agreement": -1,
-        "importance": -1,
-        "explanation": ""
-      },
-      {
-        "agreement": -1,
-        "importance": -1,
-        "explanation": ""
-      },
-      {
-        "agreement": -1,
-        "importance": -1,
-        "explanation": ""
-      },
-      {
-        "agreement": -1,
-        "importance": -1,
-        "explanation": ""
-      },
-      {
-        "agreement": -1,
-        "importance": -1,
+        "agreement": 1,
+        "importance": 9,
         "explanation": ""
       }
     ],
     "candidateName": "Rafał Komarewicz",
-    "committeeLogoPath": "graphics/empty_avatar.png",
-    "candidatePicturePath": "graphics/empty_avatar.png",
+    "committeeLogoPath": "komarewicz/komarewicz_logo.png",
+    "candidatePicturePath": "komarewicz/komarewicz.png",
     "committeeComment": "",
-    "importantMatters": [],
+    "importantMatters": [1, 2, 3, 13, 19],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/40297",
     "fullCommitteeName": "Komitet Wyborczy Wyborców Rafała Komarewicza Kraków Trzecia Droga",
     "committeeShorterFullName": "KWW Rafała Komarewicza Kraków Trzecia Droga",
-    "hasAgreed": false
+    "hasAgreed": true
   }
 }

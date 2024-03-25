@@ -50,7 +50,7 @@ export default function CandidateSlider(props: { committees: Committee }) {
           textAlign: "center",
           display: "flex",
           alignItems: "center",
-          height: 50,
+          height: 80,
           justifyContent: "center",
         }}
       >
@@ -76,11 +76,18 @@ export default function CandidateSlider(props: { committees: Committee }) {
             borderRadius: "15px",
           }}
         />
-        <img
-          src={sortedCandidateListValues[activeStep].committeeLogoPath}
-          alt="Logo komitetu"
-          style={{ width: "150px", height: "200px", borderRadius: "15px" }}
-        />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <img
+            src={sortedCandidateListValues[activeStep].committeeLogoPath}
+            alt="Logo komitetu"
+            style={{ width: "150px", height: "100px" }}
+          />
+        </Box>
       </Box>
       <Typography textAlign={"center"} variant="h5">
         Kandydat na Prezydenta Miasta
@@ -89,7 +96,9 @@ export default function CandidateSlider(props: { committees: Committee }) {
         {sortedCandidateListValues[activeStep].candidateName}
       </Typography>
       <Typography textAlign={"center"} variant="body1" marginTop={"10px"}>
-        Zgodność Twoich opinii z programem
+        {sortedCandidateListValues[activeStep].hasAgreed
+          ? "Zgodność Twoich opinii z programem"
+          : "Komitet nie wziął udziału w badaniu"}
       </Typography>
       <Box padding={"0px 10px 0px 10px"}>
         <ProgressBar
@@ -133,7 +142,8 @@ export default function CandidateSlider(props: { committees: Committee }) {
           }}
           color="primary"
           variant="contained"
-          onClick={() => navigate(`/${Object.keys(props.committees)[activeStep]}`)}
+          onClick={() => navigate(`/${sortedCommittees[activeStep]}`)}
+          disabled={!sortedCandidateListValues[activeStep].hasAgreed}
         >
           <Typography variant="h6">Odpowiedzi komitetu</Typography>
         </Button>

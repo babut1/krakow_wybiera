@@ -296,7 +296,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   marginRight: "20px",
                 }}
               >
-                {props.questionNumber === 0 ? "Wybór okręgu" : "Poprzednie pytanie"}
+                {props.questionNumber === 0 ? "Instrukcja" : "Poprzednie pytanie"}
               </Button>
               <Button
                 variant="contained"
@@ -348,7 +348,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
               marginRight: "0px",
             }}
           >
-            {props.questionNumber === 0 ? "Wybór okręgu" : "Poprzednie pytanie"}
+            {props.questionNumber === 0 ? "Instrukcja" : "Poprzednie pytanie"}
           </Button>
           <Button
             variant="contained"
