@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
       {
-        name: '<krakowwybiera>',
+        name: 'krakowwybiera',
         script: 'npm',
         args: 'start',
       },
