@@ -2,7 +2,7 @@ module.exports = {
     apps: [
       {
         name: '<krakowwybiera>',
-        script: 'yarn',
+        script: 'npm',
         args: 'start',
       },
     ],
