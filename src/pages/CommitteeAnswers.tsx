@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 import { Committee, CommitteeAnswerInterface, QuestionInterface } from "../common/types";
 import { useUserAnswers } from "../common/state";
 import { countResultPerCommittee } from "../common/utils";
+import { CandidateProfileMobile } from "../components/CanidateProfileMobile";
 
 export function CommitteeAnswers(props: { committeeName: string }) {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(800));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1000));
   const [fetchingData, setFetchingData] = useState<boolean>(true);
   const [committeeAnswers, setCommitteeAnswers] = useState<Committee>({});
   const [questions, setQuestions] = useState<QuestionInterface[]>([]);
@@ -59,30 +60,52 @@ export function CommitteeAnswers(props: { committeeName: string }) {
         Odpowiedzi komitetu
       </Typography>
       <Typography variant="h6" marginBottom={"30px"} maxWidth={isSmallScreen ? "100%" : "50%"}>
-        Znajdziesz tu szczegółowe odpowiedzi oraz komentarze komitetów/ kandydatów na prezydenta miasta. Odpowiedzi i
+        Znajdziesz tu szczegółowe odpowiedzi oraz komentarze komitetów/kandydatów na prezydenta miasta. Odpowiedzi i
         komentarze są uporządkowane zgodnie z kolejnością stwierdzeń z testu. Na samym końcu znajdziesz też kilka słów
         komitetu skierowanych do wyborców.
       </Typography>
-      <CandidateProfile
-        showAnswersButton={false}
-        committeeAnswers={null}
-        committeeResult={
-          userAnswers.length === 20
-            ? countResultPerCommittee(
-                userAnswers,
-                committeeAnswers[props.committeeName].answers,
-                committeeAnswers[props.committeeName].importantMatters
-              )
-            : 0
-        }
-        candidateName={committeeAnswers[props.committeeName].candidateName}
-        committeeLists={committeeAnswers[props.committeeName].committeeLists}
-        committeeName={committeeAnswers[props.committeeName].fullCommitteeName}
-        candidatePath={committeeAnswers[props.committeeName].candidatePicturePath}
-        logoPath={committeeAnswers[props.committeeName].committeeLogoPath}
-        committeeFullName={committeeAnswers[props.committeeName].fullCommitteeName}
-        hasAgreed={committeeAnswers[props.committeeName].hasAgreed}
-      ></CandidateProfile>
+      {!isSmallScreen ? (
+        <CandidateProfile
+          showAnswersButton={false}
+          committeeAnswers={null}
+          committeeResult={
+            userAnswers.length === 20
+              ? countResultPerCommittee(
+                  userAnswers,
+                  committeeAnswers[props.committeeName].answers,
+                  committeeAnswers[props.committeeName].importantMatters
+                )
+              : 0
+          }
+          candidateName={committeeAnswers[props.committeeName].candidateName}
+          committeeLists={committeeAnswers[props.committeeName].committeeLists}
+          committeeName={committeeAnswers[props.committeeName].fullCommitteeName}
+          candidatePath={committeeAnswers[props.committeeName].candidatePicturePath}
+          logoPath={committeeAnswers[props.committeeName].committeeLogoPath}
+          committeeFullName={committeeAnswers[props.committeeName].fullCommitteeName}
+          hasAgreed={committeeAnswers[props.committeeName].hasAgreed}
+        ></CandidateProfile>
+      ) : (
+        <Box textAlign={"center"} justifyContent={"center"} display={"flex"}>
+          <CandidateProfileMobile
+            fullCommitteeName={committeeAnswers[props.committeeName].fullCommitteeName}
+            candidatePicturePath={committeeAnswers[props.committeeName].candidatePicturePath}
+            committeeLogoPath={committeeAnswers[props.committeeName].committeeLogoPath}
+            candidateName={committeeAnswers[props.committeeName].candidateName}
+            hasAgreed={committeeAnswers[props.committeeName].hasAgreed}
+            candidateResult={
+              userAnswers.length === 20
+                ? countResultPerCommittee(
+                    userAnswers,
+                    committeeAnswers[props.committeeName].answers,
+                    committeeAnswers[props.committeeName].importantMatters
+                  )
+                : 0
+            }
+            committeeLists={committeeAnswers[props.committeeName].committeeLists}
+          ></CandidateProfileMobile>
+        </Box>
+      )}
       {committeeAnswers[props.committeeName].answers.map((answer: CommitteeAnswerInterface, index: number) => (
         <CommitteeAnswer
           question={questions[index]}

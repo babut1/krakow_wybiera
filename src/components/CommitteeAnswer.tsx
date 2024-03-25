@@ -8,7 +8,7 @@ export function CommitteeAnswer(props: {
   questionNumber: number;
 }) {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(750));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(950));
   return (
     <Box p={isSmallScreen ? 2 : 5} boxShadow={3} mx="auto">
       <Grid container>
@@ -26,7 +26,7 @@ export function CommitteeAnswer(props: {
         </Grid>
         <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5}></Grid>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 6}>
-          <Paper elevation={4} sx={{ backgroundColor: "lightgrey", borderRadius: "15px" }}>
+          <Paper elevation={4} sx={{ backgroundColor: "lightgrey", borderRadius: "15px", minHeight: "100%" }}>
             <Box p={3} textAlign={"left"}>
               <Typography variant="h5" paddingBottom={"15px"}>
                 Wyjaśnienie

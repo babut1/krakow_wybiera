@@ -29,7 +29,7 @@ export function CandidateProfile(props: {
         </Typography>
       </Box>
       <Grid container spacing={2} style={{ height: `${parentHeight}px` }}>
-        <Grid item container xs={2.5} spacing={2}>
+        <Grid item container xs={3} spacing={2}>
           <Grid item xs={6}>
             <img src={props.candidatePath} alt="Zdjęcie kandydata" style={{ width: photoWidth, height: photoHeight }} />
           </Grid>
@@ -37,13 +37,12 @@ export function CandidateProfile(props: {
             <img src={props.logoPath} alt="Logo komitetu" style={{ width: photoWidth, height: photoHeight / 2.2 }} />
           </Grid>
         </Grid>
-
-        <Grid item xs={4} container direction="column" textAlign={"left"}>
-          <Grid item>
+        <Grid item xs={3.5} container direction="column" alignContent={"center"} justifyContent={"center"}>
+          <Grid item style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <Typography variant="h6">Kandydat na Prezydenta Miasta</Typography>
           </Grid>
-          <Grid item>
-            <Typography variant="h5" fontWeight={"bold"}>
+          <Grid item style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <Typography variant="h5" fontWeight="bold">
               {props.candidateName}
             </Typography>
           </Grid>

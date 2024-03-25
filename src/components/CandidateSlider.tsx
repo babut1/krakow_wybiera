@@ -54,7 +54,9 @@ export default function CandidateSlider(props: { committees: Committee }) {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h5">{sortedCandidateListValues[activeStep].fullCommitteeName}</Typography>
+        <Typography variant="h5" fontWeight={"bold"}>
+          {sortedCandidateListValues[activeStep].fullCommitteeName}
+        </Typography>
       </Paper>
       <Box
         sx={{
