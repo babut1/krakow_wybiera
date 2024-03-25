@@ -52,6 +52,37 @@ export function ResultsView() {
     );
   }
 
+  if (userAnswers.length !== 20) {
+    return (
+      <Box
+        sx={{
+          justifyContent: "center",
+          textAlign: "center",
+          height: "70vh",
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Typography variant="h3">Przed obejrzeniem wyników należy rozwiązać test</Typography>
+        <Button
+          sx={{
+            backgroundColor: "black",
+            borderRadius: "15px",
+            textTransform: "none",
+            width: "170px",
+            height: "50px",
+          }}
+          color="primary"
+          variant="contained"
+          onClick={() => navigate("/")}
+        >
+          <Typography variant="h6">Strona główna</Typography>
+        </Button>
+      </Box>
+    );
+  }
+
   return (
     <Box p={isSmallScreen ? 2 : 8}>
       <Grid container>

@@ -27,6 +27,7 @@ export function ContactPage() {
         process.env.REACT_APP_PUBLIC_ENV
       );
     }
+    alert("Wiadomość wysłana!");
   };
 
   return (
@@ -68,6 +69,7 @@ export function ContactPage() {
               marginTop: "15px",
               backgroundColor: "black",
               borderRadius: "15px",
+              textTransform: "none",
             }}
             type={"submit"}
           >

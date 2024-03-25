@@ -30,8 +30,8 @@ export function CandidateProfile(props: {
           <Grid item xs={6}>
             <img src={props.candidatePath} alt="Zdjęcie kandydata" style={{ width: photoWidth, height: photoHeight }} />
           </Grid>
-          <Grid item xs={6}>
-            <img src={props.logoPath} alt="Logo komitetu" style={{ width: photoWidth, height: photoHeight }} />
+          <Grid item xs={6} container justifyContent="center" alignItems="center">
+            <img src={props.logoPath} alt="Logo komitetu" style={{ width: photoWidth, height: photoHeight / 2.2 }} />
           </Grid>
         </Grid>
 

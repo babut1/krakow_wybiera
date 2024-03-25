@@ -3,6 +3,8 @@ import { CandidateProfile } from "../components/CandidateProfile";
 import { CommitteeAnswer } from "../components/CommitteeAnswer";
 import { useEffect, useState } from "react";
 import { Committee, CommitteeAnswerInterface, QuestionInterface } from "../common/types";
+import { useUserAnswers } from "../common/state";
+import { countResultPerCommittee } from "../common/utils";
 
 export function CommitteeAnswers(props: { committeeName: string }) {
   const theme = useTheme();
@@ -10,6 +12,7 @@ export function CommitteeAnswers(props: { committeeName: string }) {
   const [fetchingData, setFetchingData] = useState<boolean>(true);
   const [committeeAnswers, setCommitteeAnswers] = useState<Committee>({});
   const [questions, setQuestions] = useState<QuestionInterface[]>([]);
+  const userAnswers = useUserAnswers();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -63,13 +66,21 @@ export function CommitteeAnswers(props: { committeeName: string }) {
       <CandidateProfile
         showAnswersButton={false}
         committeeAnswers={null}
-        committeeResult={66}
-        candidateName=""
-        committeeLists=""
-        committeeName=""
-        candidatePath=""
-        logoPath=""
-        committeeFullName=""
+        committeeResult={
+          userAnswers.length === 20
+            ? countResultPerCommittee(
+                userAnswers,
+                committeeAnswers[props.committeeName].answers,
+                committeeAnswers[props.committeeName].importantMatters
+              )
+            : 0
+        }
+        candidateName={committeeAnswers[props.committeeName].candidateName}
+        committeeLists={committeeAnswers[props.committeeName].committeeLists}
+        committeeName={committeeAnswers[props.committeeName].fullCommitteeName}
+        candidatePath={committeeAnswers[props.committeeName].candidatePicturePath}
+        logoPath={committeeAnswers[props.committeeName].committeeLogoPath}
+        committeeFullName={committeeAnswers[props.committeeName].fullCommitteeName}
       ></CandidateProfile>
       {committeeAnswers[props.committeeName].answers.map((answer: CommitteeAnswerInterface, index: number) => (
         <CommitteeAnswer

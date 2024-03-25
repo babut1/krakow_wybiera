@@ -26,8 +26,15 @@ export function Homepage() {
           naszym pięknym miastem!
         </Typography>
         <Box padding={"20px"}>
-          <Button sx={{ backgroundColor: "black" }} color="primary" variant="contained" onClick={handleStartClick}>
-            <Typography variant="h6">Rozpocznij test</Typography>
+          <Button
+            sx={{ backgroundColor: "black", borderRadius: "15px", width: "200px", height: "70px" }}
+            color="primary"
+            variant="contained"
+            onClick={handleStartClick}
+          >
+            <Typography variant="h5" textTransform={"none"}>
+              Rozpocznij test
+            </Typography>
           </Button>
         </Box>
       </Box>
@@ -111,7 +118,7 @@ export function Homepage() {
             Koordynacja projektu: Franciszek Bednarek
           </Typography>
           <Typography variant="body1" padding={"15px 0px 15px 0px"}>
-            Programowanie strony internetowej: Jakub Kościelniak
+            Strona internetowa: Jakub Kościelniak
           </Typography>
           <Typography variant="body1" padding={"15px 0px 15px 0px"}>
             Grafika, UX/UI design: Olga Kowalska
