@@ -6,7 +6,7 @@ export function Homepage() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   function handleStartClick() {
-    navigate("okrag");
+    navigate("/instrukcja");
   }
 
   return (
@@ -22,7 +22,7 @@ export function Homepage() {
       <Box sx={{ minHeight: "500px" }}>
         <Typography variant="h1">Kraków wybiera</Typography>
         <Typography variant="h5" padding={"20px"}>
-          Uzupełnij nasz test i zobacz, który komitet widzi Kraków tak jak Ty. A później wyjdź na pole i ciesz się
+          Weźże zrób nasz test i zobacz, który komitet widzi Kraków tak jak Ty! A później wyjdź na pole i ciesz się
           naszym pięknym miastem!
         </Typography>
         <Box padding={"20px"}>
@@ -39,18 +39,14 @@ export function Homepage() {
           <Typography variant="body1" padding={"15px 0px 15px 0px"}>
             narzędzie, które pozwala Ci porównać twoje poglądy na to jak powinien wyglądać Kraków z programami
             wyborczymi komitetami, którym udało się zarejestrować kandydatów do Rady Miasta Krakowa i na Prezydenta
-            Miasta. Wystarczy, że uzupełnisz nasz test, a algorytm pokażę, do którego komitetu jest Ci najbliżej. Test
-            składa się z 20 stwierdzeń, które dotyczą kwestii takich jak klimat i środowisko, transport publiczny,
-            planowanie przestrzenne, społeczność lokalna, gospodarka, kultura i edukacja, czy bezpieczeństwo. Kraków
-            Wybiera jest społecznym, oddolnym i niezależnym projektem. Chcemy pomóc Ci w świadomym wyborze!
+            Miasta. Wystarczy, że uzupełnisz nasz test, a algorytm pokażę, do którego komitetu jest Ci najbliżej.
           </Typography>
           <Typography variant="body1" padding={"15px 0px 15px 0px"}>
             Test składa się z 20 stwierdzeń, które dotyczą kwestii takich jak klimat i środowisko, transport publiczny,
-            planowanie przestrzenne, społeczność lokalna, gospodarka, kultura i edukacja, czy bezpieczeństwo. Kraków
-            Wybiera jest społecznym, oddolnym i niezależnym projektem. Chcemy pomóc Ci w świadomym wyborze!
+            planowanie przestrzenne, społeczność lokalna, gospodarka, kultura i edukacja, czy bezpieczeństwo.
           </Typography>
           <Typography variant="body1" padding={"15px 0px 15px 0px"}>
-            Kraków Wybiera jest społecznym, oddolnym i niezależnym projektem. Chcemy pomóc Ci w świadomym wyborze!
+            Kraków Wybiera jest społecznym, oddolnym i niezależnym projektem. Chcemy pomóc Ci w świadomym wyborze!{" "}
           </Typography>
         </Grid>
       </Grid>
@@ -74,7 +70,7 @@ export function Homepage() {
             2
           </Typography>
           <Typography>
-            Przekazaliśmy kwestionariusz komitetom, które zarejestrowały kandydatów do władz samorządowych w Krakowie.
+            Przekazaliśmy komitetom, które zarejestrowały kandydatów do władz samorządowych w Krakowie kwestionariusz.{" "}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={isSmallScreen ? 0 : 1} />
@@ -99,11 +95,11 @@ export function Homepage() {
           </Typography>
           <Typography variant="body1" padding={"15px 0px 15px 0px"}>
             Kraków Wybiera to projekt przygotowany przez Stowarzyszenie Twój Wybór. Stowarzyszenie to działająca od 2018
-            roku krakowska, młodzieżowa organizacja pozarządowa (potencjalnie do wykreślenia: zrzeszająca edukatorów,
+            roku krakowska, młodzieżowa organizacja pozarządowa (potencjalnie do wykreślenia:zrzeszająca edukatorów,
             studentów, uczniów szkół średnich oraz aktywistów, którzy wspólnie działają dla świadomego społeczeństwa
             obywatelskiego). Cele organizacji to budowanie społeczności młodych ludzi zaangażowanych w sprawy publiczne,
             działanie na rzecz świadomości obywatelskiej i demokracji uczestniczącej, a także wspieranie reformy systemu
-            kształcenia obywatelskiego.{" "}
+            kształcenia obywatelskiego.
           </Typography>
           <Typography variant="body1" padding={"15px 0px 15px 0px"}>
             Kraków Wybiera jest społecznym, oddolnym i niezależnym projektem. Chcemy pomóc Ci w świadomym wyborze!
@@ -118,14 +114,14 @@ export function Homepage() {
             Programowanie strony internetowej: Jakub Kościelniak
           </Typography>
           <Typography variant="body1" padding={"15px 0px 15px 0px"}>
-            Grafika: Olga Kowalska
+            Grafika, UX/UI design: Olga Kowalska
           </Typography>
           <Typography variant="body1" padding={"15px 0px 15px 0px"}>
             Współpraca z komitetami: Jan Przewięźlikowski
           </Typography>
           <Typography variant="body1" padding={"15px 0px 15px 0px"}>
-            Opracowanie kwestionariusza: Koło Naukowe Socjologii UJ, Franciszek Bednarek, Mikołaj Sazonov, Jan
-            Przewięźlikowski, Olga Kowalska
+            Opracowanie kwestionariusza: Koło Naukowe Socjologii UJ, Koło Naukowe Publicystyki Politycznej, Franciszek
+            Bednarek, Mikołaj Sazonov, Jan Przewięźlikowski, Olga Kowalska
           </Typography>
           <Typography variant="body1" padding={"15px 0px 15px 0px"}>
             Opracowanie algorytmu: Jakub Kościelniak, Franciszek Bednarek, Koło Naukowe Socjologii UJ

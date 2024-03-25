@@ -13,6 +13,7 @@ export function CandidateProfile(props: {
   committeeName: string;
   logoPath: string;
   candidatePath: string;
+  committeeFullName: string;
 }) {
   const navigate = useNavigate();
   const parentHeight = 180;
@@ -22,7 +23,7 @@ export function CandidateProfile(props: {
   return (
     <>
       <Box textAlign={"left"}>
-        <Typography variant="h5">Komitet Harolda</Typography>
+        <Typography variant="h5">{props.committeeFullName}</Typography>
       </Box>
       <Grid container spacing={2} style={{ height: `${parentHeight}px` }}>
         <Grid item container xs={2.5} spacing={2}>

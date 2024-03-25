@@ -33,7 +33,7 @@ export function ResultsView() {
   }, []);
 
   const handleSolveAgain = () => {
-    navigate("/okrag");
+    navigate("/instrukcja");
   };
 
   if (fetchingData) {
@@ -55,16 +55,15 @@ export function ResultsView() {
   return (
     <Box p={isSmallScreen ? 2 : 8}>
       <Grid container>
-        <Grid item xs={12} sm={isSmallScreen ? 12 : 5}>
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 4}>
           <Box textAlign={"left"}>
             <Typography variant={"h4"}>Twoje wyniki</Typography>
             <Typography variant={"h6"}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-              of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-              like Aldus PageMaker including versions of Lorem Ipsum.
+              Obok znajdziesz swoją procentową zgodność z odpowiedziami komitetu/kandydata na prezydenta przedstawioną
+              za pomocą diagramu słupkowego. Twoją zgodność obliczył algorytm, z którym możesz się zapoznać klikając w
+              przycisk poniżej. Przesuwając w dół znajdziesz szczegółowe odpowiedzi oraz komentarze komitetów/
+              kandydatów na prezydenta. Zapoznaj się z nimi szczególnie, jeżeli Twoje różnice w zgodności nie są
+              znaczne.
             </Typography>
             <Box padding={"25px 0px 25px 0px"}>
               <Button
@@ -83,8 +82,8 @@ export function ResultsView() {
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={0.5}></Grid>
-        <Grid item xs={12} sm={isSmallScreen ? 12 : 6.5}>
+        <Grid item xs={12} sm={0.2}></Grid>
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 7.8}>
           <Box textAlign={"left"}>
             {Object.keys(committeeAnswers)
               .sort((a, b) => {
@@ -102,18 +101,19 @@ export function ResultsView() {
               })
               .map((committee: string) => (
                 <SimplifiedCandidateProfile
-                  committeeName={committeeAnswers[committee].fullCommitteeName}
+                  committeeName={committeeAnswers[committee].committeeShorterFullName}
                   committeeResult={countResultPerCommittee(
                     userAnswers,
                     committeeAnswers[committee].answers,
                     committeeAnswers[committee].importantMatters
                   )}
-                  candidatePicturePath={committeeAnswers[committee].candidatePicturePath}
+                  committeeLogoPath={committeeAnswers[committee].committeeLogoPath}
                 />
               ))}
           </Box>
         </Grid>
       </Grid>
+      <Divider orientation="horizontal" />
       {isSmallScreen ? (
         <Box display="flex" justifyContent="center" alignItems="center">
           <CandidateSlider committees={committeeAnswers}></CandidateSlider>
@@ -148,6 +148,7 @@ export function ResultsView() {
                 committeeName={committee}
                 logoPath={committeeAnswers[committee].committeeLogoPath}
                 candidatePath={committeeAnswers[committee].candidatePicturePath}
+                committeeFullName={committeeAnswers[committee].fullCommitteeName}
               ></CandidateProfile>
               {index < Object.keys(committeeAnswers).length - 1 && <Divider orientation="horizontal" />}
             </>

@@ -18,6 +18,7 @@ export interface Committee {
     importantMatters: number[];
     committeeLists: string;
     fullCommitteeName: string;
+    committeeShorterFullName: string;
   };
 }
 

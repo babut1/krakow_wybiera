@@ -32,7 +32,7 @@ export function TopBar() {
 
   function handleStartClick() {
     if (location.pathname === "/") {
-      navigate("/okrag");
+      navigate("/instrukcja");
       setAnchorEl(null);
       return;
     }
@@ -58,9 +58,7 @@ export function TopBar() {
       <AppBar
         sx={{
           backgroundColor: (theme) =>
-            theme.palette.mode === "light"
-              ? theme.palette.grey[200]
-              : theme.palette.grey[800],
+            theme.palette.mode === "light" ? theme.palette.grey[200] : theme.palette.grey[800],
           p: 1,
           mr: 2,
         }}
@@ -71,25 +69,13 @@ export function TopBar() {
           {isSmallScreen ? (
             <Box>
               <IconButton onClick={handleClick}>
-                <MenuIcon
-                  sx={{ color: "black", fontSize: "50px", padding: "0px" }}
-                ></MenuIcon>
+                <MenuIcon sx={{ color: "black", fontSize: "50px", padding: "0px" }}></MenuIcon>
               </IconButton>
-              <Menu
-                anchorEl={anchorEl}
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
+              <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
                 <MenuItem>
-                  <img
-                    src="https://twojwybor.org/wp-content/uploads/2020/09/IMG_0018-2-2.png"
-                    height={"100px"}
-                  ></img>
+                  <img src="https://twojwybor.org/wp-content/uploads/2020/09/IMG_0018-2-2.png" height={"100px"}></img>
                 </MenuItem>
-                <MenuItem
-                  onClick={handleContactClick}
-                  sx={{ padding: "100px" }}
-                >
+                <MenuItem onClick={handleContactClick} sx={{ padding: "100px" }}>
                   <Typography variant="h4" fontWeight={"bold"}>
                     Kontakt
                   </Typography>
@@ -101,9 +87,7 @@ export function TopBar() {
                 </MenuItem>
                 <MenuItem onClick={handleStartClick}>
                   <Typography variant="h4" fontWeight={"bold"}>
-                    {location.pathname === "/"
-                      ? "Rozpocznij test"
-                      : "Strona główna"}
+                    {location.pathname === "/" ? "Rozpocznij test" : "Strona główna"}
                   </Typography>
                 </MenuItem>
               </Menu>
@@ -149,11 +133,7 @@ export function TopBar() {
                 variant="contained"
                 onClick={handleStartClick}
               >
-                <Typography variant="h6">
-                  {location.pathname === "/"
-                    ? "Rozpocznij test"
-                    : "Strona główna"}
-                </Typography>
+                <Typography variant="h6">{location.pathname === "/" ? "Rozpocznij test" : "Strona główna"}</Typography>
               </Button>
             </Box>
           )}

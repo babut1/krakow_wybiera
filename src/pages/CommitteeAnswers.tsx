@@ -55,8 +55,10 @@ export function CommitteeAnswers(props: { committeeName: string }) {
       <Typography variant="h4" fontWeight={"bold"}>
         Odpowiedzi komitetu
       </Typography>
-      <Typography variant="h6" marginBottom={"30px"}>
-        Odpowiedzi komitetu wafuisjejbn ueibs fiusbefishub fuisebfuisbfius bsuiebf ub usebf usebfusbf
+      <Typography variant="h6" marginBottom={"30px"} maxWidth={isSmallScreen ? "100%" : "50%"}>
+        Znajdziesz tu szczegółowe odpowiedzi oraz komentarze komitetów/ kandydatów na prezydenta miasta. Odpowiedzi i
+        komentarze są uporządkowane zgodnie z kolejnością stwierdzeń z testu. Na samym końcu znajdziesz też kilka słów
+        komitetu skierowanych do wyborców.
       </Typography>
       <CandidateProfile
         showAnswersButton={false}
@@ -67,6 +69,7 @@ export function CommitteeAnswers(props: { committeeName: string }) {
         committeeName=""
         candidatePath=""
         logoPath=""
+        committeeFullName=""
       ></CandidateProfile>
       {committeeAnswers[props.committeeName].answers.map((answer: CommitteeAnswerInterface, index: number) => (
         <CommitteeAnswer

@@ -66,7 +66,7 @@ export const routing: RouteObject[] = [
         element: <CommitteeAnswers committeeName="samorzadnykrakow" />,
       },
       {
-        path: "okrag",
+        path: "instrukcja",
         element: <QuizExplanationPage />,
       },
       {

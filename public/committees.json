@@ -108,7 +108,9 @@
     "committeeComment": "",
     "importantMatters": [5, 8, 11, 13, 18],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/wbp/kandydat/3738233",
-    "fullCommitteeName": "Koalicyjny Komitet Wyborczy Koalicja Obywatelska"
+    "fullCommitteeName": "Koalicyjny Komitet Wyborczy Koalicja Obywatelska",
+    "committeeShorterFullName": "KKW Koalicja Obywatelska",
+    "hasAgreed": true
   },
   "samorzadnykrakow": {
     "answers": [
@@ -214,12 +216,14 @@
       }
     ],
     "candidateName": "Jerzy Muzyk",
-    "committeeLogoPath": "",
+    "committeeLogoPath": "graphics/empty_avatar.png",
     "candidatePicturePath": "muzyk/muzyk.png",
     "committeeComment": "Zwiększenie komfortu i zadowolenia z życia mieszkańców poprzez realizację wizji Krakowa jako miasta bezpiecznego, otwartego na potrzeby wszystkich mieszkańców, miasta z łatwym dostępem do wysokiej jakości usług publicznych i zrównoważonym transportem uwzględniającym preferencje różnych grup mieszkańców, miasta ekologicznego, z bogatą oferta edukacyjną i kulturalną, miasta w którym mali i średni przedsiębiorcy odgrywają należną im rolę w rozwoju gospodarczym. Postulaty te stanowią filary programu wyborczego KWW Samorządny Kraków oraz Jerzego Muzyka. #grajMy dla Krakowa.",
     "importantMatters": [1, 2, 8, 15, 16],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/39397?elections=rada_gminy",
-    "fullCommitteeName": "Komitet Wyborczy Wyborców Samorządny Kraków"
+    "fullCommitteeName": "Komitet Wyborczy Wyborców Samorządny Kraków",
+    "committeeShorterFullName": "KWW Samorządny Kraków",
+    "hasAgreed": true
   },
   "konfederacjaibezpartyjnisamorzadowcy": {
     "answers": [
@@ -325,12 +329,14 @@
       }
     ],
     "candidateName": "Konrad Berkowicz",
-    "committeeLogoPath": "berkowicz/berkowicz_logo.jpg",
+    "committeeLogoPath": "berkowicz/berkowicz_logo.png",
     "candidatePicturePath": "berkowicz/berkowicz.png",
     "committeeComment": "Ulice polskich miast nie mają barw partyjnych, nie potrzebują plemiennych wojen. Potrzebują ponadpolitycznego porozumienia i właśnie takie ponadpolityczne porozumienie zawiązaliśmy. Konfederacja i Bezpartyjni Samorządowcy idą do wyborów razem i będą walczyć o dobro naszych małych ojczyzn, chronić je przed szalonymi pomysłami ideologów.",
     "importantMatters": [3, 5, 6, 8, 17],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/37045?elections=rada_gminy",
-    "fullCommitteeName": "Komitet Wyborczy Wyborców Konfederacja i Bezpartyjni Samorządowcy"
+    "fullCommitteeName": "Komitet Wyborczy Wyborców Konfederacja i Bezpartyjni Samorządowcy",
+    "committeeShorterFullName": "KWW Konfederacja i Bezpartyjni Samorządowcy",
+    "hasAgreed": true
   },
   "krakowdlamieszkancow": {
     "answers": [
@@ -441,7 +447,9 @@
     "committeeComment": "Nasza wizja jest od dekady taka sama: chcemy zielonego, dobrze skomunikowanego, stawiającego na jakość życia, otwartego i silnego innowacyjną gospodarką Krakowa. Miasta, w którym mieszkanie nie jest luksusem, ale dobrem powszechnym. Rozwiążemy raz na zawsze problem korków i spalin. Będziemy solidnie inwestować w komunikację publiczną. Rozpoczniemy budowę metra. Postawimy na budowę nowych linii tramwajowych: na Kliny, wzdłuż Lema i do Luboczy. Sprawimy, że każdy mieszkaniec Krakowa w odległości 500 m będzie miał dostęp do komunikacji publicznej. Przeznaczymy 5% budżetu inwestycyjnego miasta na wykup terenów zielonych. Stworzymy osiedlowe mini rynki i uzupełnimy infrastrukturę osiedli peryferyjnych. Nasz program to 170 konkretów, dobrze znamy problemy mieszkańców i wiemy, jak je rozwiązać.",
     "importantMatters": [0, 2, 3, 8, 12],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/29853",
-    "fullCommitteeName": "Komitet Wyborczy Wyborców Łukasza Gibały - Kraków dla Mieszkańców"
+    "fullCommitteeName": "Komitet Wyborczy Wyborców Łukasza Gibały - Kraków dla Mieszkańców",
+    "committeeShorterFullName": "KWW Łukasza Gibały - Kraków dla Mieszkańców",
+    "hasAgreed": true
   },
   "stanislawmazur": {
     "answers": [
@@ -552,7 +560,9 @@
     "committeeComment": "Jesteśmy grupą ludzi, która jest i będzie blisko ludzi, otwarta na dialog i gotowa do realizacji ambitnych projektów - od komunikacji miejskiej, przez ekologię, aż po kulturę i innowacje technologiczne. Zaangażowanie naszej listy w kwestie ekologiczne, rozwój przestrzeni miejskiej oraz wsparcie dla inicjatyw społecznych to dowód na to, że chcemy nie tylko mówić o zmianach, ale je wprowadzać. Chcemy, aby Kraków był miastem dla wszystkich - miejscem, gdzie każdy znajdzie przestrzeń dla siebie, niezależnie od wieku czy zainteresowań. Naszym celem jest stworzenie Krakowa, który rozwija się nie tylko przez wielkie projekty infrastrukturalne, ale także poprzez budowanie wspólnoty i wspieranie lokalnych inicjatyw.",
     "importantMatters": [2, 3, 4, 8, 12],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/32621?elections=rada_gminy",
-    "fullCommitteeName": "Komitet Wyborczy Wyborców Stanisława Mazura"
+    "fullCommitteeName": "Komitet Wyborczy Wyborców Stanisława Mazura",
+    "committeeShorterFullName": "KWW Stanisława Mazura",
+    "hasAgreed": true
   },
   "kuprzyszlosci": {
     "answers": [
@@ -663,6 +673,347 @@
     "committeeComment": "",
     "importantMatters": [1, 3, 4, 8, 16],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/36047",
-    "fullCommitteeName": "Komitet Wyborczy Wyborców Andrzeja Kuliga 'Ku Przyszłości'"
+    "fullCommitteeName": "Komitet Wyborczy Wyborców Andrzeja Kuliga 'Ku Przyszłości'",
+    "committeeShorterFullName": "KWW Andrzeja Kuliga 'Ku Przyszłości'",
+    "hasAgreed": true
+  },
+  "zjednoczeni dla krakowa": {
+    "answers": [
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      }
+    ],
+    "candidateName": "Adam Hareńczyk",
+    "committeeLogoPath": "graphics/empty_avatar.png",
+    "candidatePicturePath": "graphics/empty_avatar.png",
+    "committeeComment": "",
+    "importantMatters": [],
+    "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/38848",
+    "fullCommitteeName": "Komitet Wyborczy Wyborców Zjednoczeni dla Krakowa",
+    "committeeShorterFullName": "KWW Zjednoczeni dla Krakowa",
+    "hasAgreed": false
+  },
+  "prawoisprawiedliwosc": {
+    "answers": [
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      }
+    ],
+    "candidateName": "Łukasz Kmita",
+    "committeeLogoPath": "graphics/empty_avatar.png",
+    "candidatePicturePath": "graphics/empty_avatar.png",
+    "committeeComment": "",
+    "importantMatters": [],
+    "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/32771?elections=rada_gminy",
+    "fullCommitteeName": "Komitet Wyborczy Prawo i Sprawiedliwość",
+    "committeeShorterFullName": "KW Prawo i Sprawiedliwość",
+    "hasAgreed": false
+  },
+  "trzeciadroga": {
+    "answers": [
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      },
+      {
+        "agreement": -1,
+        "importance": -1,
+        "explanation": ""
+      }
+    ],
+    "candidateName": "Rafał Komarewicz",
+    "committeeLogoPath": "graphics/empty_avatar.png",
+    "candidatePicturePath": "graphics/empty_avatar.png",
+    "committeeComment": "",
+    "importantMatters": [],
+    "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/40297",
+    "fullCommitteeName": "Komitet Wyborczy Wyborców Rafała Komarewicza Kraków Trzecia Droga",
+    "committeeShorterFullName": "KWW Rafała Komarewicza Kraków Trzecia Droga",
+    "hasAgreed": false
   }
 }

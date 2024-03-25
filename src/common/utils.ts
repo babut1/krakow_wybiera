@@ -61,20 +61,20 @@ export function countResultPerCommittee(
   let maxScore = 0;
   let score = 0;
   for (let i = 0; i < 20; i++) {
-    if (Math.abs(userAnswers[i].agreement - committeeAnswers[i].agreement) == 1) {
+    if (Math.abs(userAnswers[i].agreement - committeeAnswers[i].agreement) === 1) {
       maxScore += userAnswers[i].importance;
-      if (importantMatters.includes(i) && userAnswers[i].importance == 3) {
+      if (importantMatters.includes(i) && userAnswers[i].importance === 3) {
         maxScore += maxScoreConstant;
       }
-      if (importantMatters.includes(i) && userAnswers[i].importance == 2) {
+      if (importantMatters.includes(i) && userAnswers[i].importance === 2) {
         maxScore += maxScoreConstant / 2;
       }
       continue;
     }
-    if (Math.abs(userAnswers[i].agreement - committeeAnswers[i].agreement) == 0.5) {
+    if (Math.abs(userAnswers[i].agreement - committeeAnswers[i].agreement) === 0.5) {
       score += userAnswers[i].importance / 2;
       maxScore += userAnswers[i].importance;
-      if (importantMatters.includes(i) && userAnswers[i].importance == 3) {
+      if (importantMatters.includes(i) && userAnswers[i].importance === 3) {
         score += maxScoreConstant / 2;
         maxScore += maxScoreConstant;
         continue;
@@ -87,11 +87,11 @@ export function countResultPerCommittee(
     if (userAnswers[i].agreement === committeeAnswers[i].agreement) {
       score += userAnswers[i].importance;
       maxScore += userAnswers[i].importance;
-      if (userAnswers[i].importance == 3 && importantMatters.includes(i)) {
+      if (userAnswers[i].importance === 3 && importantMatters.includes(i)) {
         maxScore += maxScoreConstant;
         score += maxScoreConstant;
       }
-      if (userAnswers[i].importance == 2 && importantMatters.includes(i)) {
+      if (userAnswers[i].importance === 2 && importantMatters.includes(i)) {
         maxScore += maxScoreConstant;
         score += maxScoreConstant / 2;
       }

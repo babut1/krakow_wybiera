@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  TextField,
-  TextareaAutosize,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, TextField, TextareaAutosize, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -16,16 +8,25 @@ export function ContactPage() {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (
-      process.env.REACT_APP_SERVICE_ID &&
-      process.env.REACT_APP_TEMPLATE_ID &&
-      process.env.REACT_APP_PUBLIC_ENV
-    )
+      process.env.REACT_APP_SERVICE_ID_1 &&
+      process.env.REACT_APP_TEMPLATE_ID_1 &&
+      process.env.REACT_APP_PUBLIC_ENV_1
+    ) {
+      emailjs.sendForm(
+        process.env.REACT_APP_SERVICE_ID_1,
+        process.env.REACT_APP_TEMPLATE_ID_1,
+        e.currentTarget,
+        process.env.REACT_APP_PUBLIC_ENV_1
+      );
+    }
+    if (process.env.REACT_APP_SERVICE_ID && process.env.REACT_APP_TEMPLATE_ID && process.env.REACT_APP_PUBLIC_ENV) {
       emailjs.sendForm(
         process.env.REACT_APP_SERVICE_ID,
         process.env.REACT_APP_TEMPLATE_ID,
         e.currentTarget,
         process.env.REACT_APP_PUBLIC_ENV
       );
+    }
   };
 
   return (
@@ -48,13 +49,7 @@ export function ContactPage() {
           name="user_name"
           sx={{ width: "100%", marginTop: "10px" }}
         />
-        <TextField
-          type="email"
-          label="E-mail"
-          name="user_email"
-          required
-          sx={{ width: "100%", marginTop: "15px" }}
-        />
+        <TextField type="email" label="E-mail" name="user_email" required sx={{ width: "100%", marginTop: "15px" }} />
         <TextField
           label="Twoja wiadomość"
           required

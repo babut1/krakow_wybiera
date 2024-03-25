@@ -75,7 +75,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
 
   const handleGoBack = () => {
     if (props.questionNumber === 0) {
-      navigate("/okrag");
+      navigate("/instrukcja");
     }
     changeSelectedQuestion(props.questionNumber - 1);
   };
@@ -100,12 +100,12 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
         Stwierdzenie {props.questionNumber + 1} z {numberOfQuestions}
       </Typography>
       <Grid container>
-        <Grid item xs={12} sm={isSmallScreen ? 12 : 7}>
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 6.8}>
           <Typography
             variant="h5"
             gutterBottom
             textAlign={isSmallScreen ? "center" : "left"}
-            minHeight={"70px"}
+            minHeight={"96px"}
             fontWeight={"bold"}
           >
             {props.question.question}
@@ -139,6 +139,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   padding: "15px",
                   textTransform: "none",
                   textAlign: "center",
+                  maxWidth: "100%",
                   width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[0] ? "black" : "white",
                   "&:hover": {
@@ -162,6 +163,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   borderColor: "black",
                   padding: "15px",
                   textTransform: "none",
+                  maxWidth: "100%",
                   width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[1] ? "black" : "white",
                   "&:hover": {
@@ -183,6 +185,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   borderColor: "black",
                   padding: "15px",
                   textTransform: "none",
+                  maxWidth: "100%",
                   width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[2] ? "black" : "white",
                   "&:hover": {
@@ -217,6 +220,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   padding: "15px",
                   textTransform: "none",
                   textAlign: "center",
+                  maxWidth: "100%",
                   width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[3] ? "black" : "white",
                   "&:hover": {
@@ -238,6 +242,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   borderColor: "black",
                   padding: "15px",
                   textTransform: "none",
+                  maxWidth: "100%",
                   width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[4] ? "black" : "white",
                   "&:hover": {
@@ -259,6 +264,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   borderColor: "black",
                   padding: "15px",
                   textTransform: "none",
+                  maxWidth: "100%",
                   width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[5] ? "black" : "white",
                   "&:hover": {
@@ -273,11 +279,48 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
               </Button>
             </Grid>
           </Grid>
+          {!isSmallScreen && (
+            <Grid container alignItems="center" justifyContent="left">
+              <Button
+                variant="outlined"
+                color="primary"
+                onClick={handleGoBack}
+                sx={{
+                  width: "160px",
+                  color: "black",
+                  borderColor: "black",
+                  textTransform: "none",
+                  borderRadius: "10px",
+                  marginTop: "10px",
+                  height: "50px",
+                  marginRight: "20px",
+                }}
+              >
+                {props.questionNumber === 0 ? "Wybór okręgu" : "Poprzednie pytanie"}
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSubmit}
+                sx={{
+                  width: "160px",
+                  marginTop: "10px",
+                  backgroundColor: "black",
+                  textTransform: "none",
+                  borderRadius: "10px",
+                  height: "50px",
+                }}
+                disabled={!isProceedButtonEnabled()}
+              >
+                {props.questionNumber === numberOfQuestions - 1 ? "Zakończ test" : "Następne pytanie"}
+              </Button>
+            </Grid>
+          )}
         </Grid>
-        <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5}></Grid>
+        <Grid item xs={12} sm={isSmallScreen ? 0 : 0.2}></Grid>
         {!isSmallScreen && (
-          <Grid item xs={12} sm={isSmallScreen ? 12 : 4.5}>
-            <Paper elevation={4} sx={{ backgroundColor: "lightgrey", borderRadius: "7px" }}>
+          <Grid item xs={12} sm={isSmallScreen ? 12 : 5}>
+            <Paper elevation={4} sx={{ backgroundColor: "lightgrey", borderRadius: "7px", minHeight: "500px" }}>
               <Box p={3} textAlign={"left"}>
                 <Typography variant="h5" paddingBottom={"15px"}>
                   Wyjaśnienie
@@ -288,42 +331,43 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
           </Grid>
         )}
       </Grid>
-      <Divider orientation="horizontal" />
-      <Grid container alignItems="center" justifyContent={isSmallScreen ? "space-between" : "left"}>
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={handleGoBack}
-          sx={{
-            width: isSmallScreen ? "48%" : "160px",
-            color: "black",
-            borderColor: "black",
-            textTransform: "none",
-            borderRadius: "10px",
-            marginTop: "10px",
-            height: "50px",
-            marginRight: isSmallScreen ? "0px" : "20px",
-          }}
-        >
-          {props.questionNumber === 0 ? "Wybór okręgu" : "Poprzednie pytanie"}
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleSubmit}
-          sx={{
-            width: isSmallScreen ? "48%" : "160px",
-            marginTop: "10px",
-            backgroundColor: "black",
-            textTransform: "none",
-            borderRadius: "10px",
-            height: "50px",
-          }}
-          disabled={!isProceedButtonEnabled()}
-        >
-          {props.questionNumber === numberOfQuestions - 1 ? "Zakończ test" : "Następne pytanie"}
-        </Button>
-      </Grid>
+      {isSmallScreen && (
+        <Grid container alignItems="center" justifyContent="space-between">
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={handleGoBack}
+            sx={{
+              width: "48%",
+              color: "black",
+              borderColor: "black",
+              textTransform: "none",
+              borderRadius: "10px",
+              marginTop: "10px",
+              height: "50px",
+              marginRight: "0px",
+            }}
+          >
+            {props.questionNumber === 0 ? "Wybór okręgu" : "Poprzednie pytanie"}
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleSubmit}
+            sx={{
+              width: "48%",
+              marginTop: "10px",
+              backgroundColor: "black",
+              textTransform: "none",
+              borderRadius: "10px",
+              height: "50px",
+            }}
+            disabled={!isProceedButtonEnabled()}
+          >
+            {props.questionNumber === numberOfQuestions - 1 ? "Zakończ test" : "Następne pytanie"}
+          </Button>
+        </Grid>
+      )}
     </Box>
   );
 }
