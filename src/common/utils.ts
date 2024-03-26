@@ -58,17 +58,11 @@ export function countResultPerCommittee(
   importantMatters: number[]
 ) {
   const maxScoreConstant = 8;
-  let maxScore = 0;
+  let maxScore = maxScoreConstant * 5;
   let score = 0;
   for (let i = 0; i < 20; i++) {
     if (Math.abs(userAnswers[i].agreement - committeeAnswers[i].agreement) === 1) {
       maxScore += userAnswers[i].importance;
-      if (importantMatters.includes(i) && userAnswers[i].importance === 3) {
-        maxScore += maxScoreConstant;
-      }
-      if (importantMatters.includes(i) && userAnswers[i].importance === 2) {
-        maxScore += maxScoreConstant / 2;
-      }
       continue;
     }
     if (Math.abs(userAnswers[i].agreement - committeeAnswers[i].agreement) === 0.5) {
@@ -76,11 +70,6 @@ export function countResultPerCommittee(
       maxScore += userAnswers[i].importance;
       if (importantMatters.includes(i) && userAnswers[i].importance === 3) {
         score += maxScoreConstant / 2;
-        maxScore += maxScoreConstant;
-        continue;
-      }
-      if (importantMatters.includes(i)) {
-        maxScore += maxScoreConstant;
       }
       continue;
     }
@@ -88,17 +77,13 @@ export function countResultPerCommittee(
       score += userAnswers[i].importance;
       maxScore += userAnswers[i].importance;
       if (userAnswers[i].importance === 3 && importantMatters.includes(i)) {
-        maxScore += maxScoreConstant;
         score += maxScoreConstant;
+        continue;
       }
       if (userAnswers[i].importance === 2 && importantMatters.includes(i)) {
-        maxScore += maxScoreConstant;
         score += maxScoreConstant / 2;
+        continue;
       }
-      // if (userAnswers[i].importance == 3 && !importantMatters.includes(i)) {
-      //   score -= 1;
-      // }
-      continue;
     }
   }
   if (maxScore === 0) {
