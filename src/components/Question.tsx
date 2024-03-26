@@ -145,6 +145,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   "&:hover": {
                     backgroundColor: buttonStates[0] ? "black" : "white",
                   },
+                  height: isSmallScreen ? "40px" : "auto",
                 }}
                 onClick={() => {
                   handleButtonClick(0);
@@ -166,6 +167,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   maxWidth: "100%",
                   width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[1] ? "black" : "white",
+                  height: isSmallScreen ? "40px" : "auto",
                   "&:hover": {
                     backgroundColor: buttonStates[1] ? "black" : "white",
                   },
@@ -188,6 +190,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   maxWidth: "100%",
                   width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[2] ? "black" : "white",
+                  height: isSmallScreen ? "40px" : "auto",
                   "&:hover": {
                     backgroundColor: buttonStates[2] ? "black" : "white",
                   },
@@ -223,6 +226,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   maxWidth: "100%",
                   width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[3] ? "black" : "white",
+                  height: isSmallScreen ? "40px" : "auto",
                   "&:hover": {
                     backgroundColor: buttonStates[3] ? "black" : "white",
                   },
@@ -244,6 +248,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   textTransform: "none",
                   maxWidth: "100%",
                   width: isSmallScreen ? "100%" : "180px",
+                  height: isSmallScreen ? "40px" : "auto",
                   backgroundColor: buttonStates[4] ? "black" : "white",
                   "&:hover": {
                     backgroundColor: buttonStates[4] ? "black" : "white",
@@ -265,6 +270,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   padding: "15px",
                   textTransform: "none",
                   maxWidth: "100%",
+                  height: isSmallScreen ? "40px" : "auto",
                   width: isSmallScreen ? "100%" : "180px",
                   backgroundColor: buttonStates[5] ? "black" : "white",
                   "&:hover": {

@@ -61,8 +61,9 @@ export function CommitteeAnswers(props: { committeeName: string }) {
       </Typography>
       <Typography variant="h6" marginBottom={"30px"} maxWidth={isSmallScreen ? "100%" : "50%"}>
         Znajdziesz tu szczegółowe odpowiedzi oraz komentarze komitetów/kandydatów na prezydenta miasta. Odpowiedzi i
-        komentarze są uporządkowane zgodnie z kolejnością stwierdzeń z testu. Na samym końcu znajdziesz też kilka słów
-        komitetu skierowanych do wyborców.
+        komentarze są uporządkowane zgodnie z kolejnością stwierdzeń z testu. Kolorowe odpowiedzi oznaczają, że dane
+        zagadanienie jest dla komitetu priorytetem. Na samym końcu znajdziesz też kilka słów komitetu skierowanych do
+        wyborców.
       </Typography>
       {!isSmallScreen ? (
         <CandidateProfile
@@ -112,8 +113,15 @@ export function CommitteeAnswers(props: { committeeName: string }) {
           agreement={answer.agreement}
           comment={answer.explanation}
           questionNumber={index + 1}
+          isImportant={committeeAnswers[props.committeeName].importantMatters.includes(index)}
         ></CommitteeAnswer>
       ))}
+      {committeeAnswers[props.committeeName].committeeComment && (
+        <Box p={isSmallScreen ? 2 : 5} boxShadow={3} mx="auto">
+          <Typography variant="h4">Wolny komentarz komitetu</Typography>
+          <Typography variant="h6">{committeeAnswers[props.committeeName].committeeComment}</Typography>
+        </Box>
+      )}
     </Box>
   );
 }

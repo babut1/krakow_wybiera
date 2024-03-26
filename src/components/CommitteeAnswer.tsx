@@ -6,11 +6,17 @@ export function CommitteeAnswer(props: {
   comment: string;
   question: QuestionInterface;
   questionNumber: number;
+  isImportant: boolean;
 }) {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(950));
   return (
-    <Box p={isSmallScreen ? 2 : 5} boxShadow={3} mx="auto">
+    <Box
+      p={isSmallScreen ? 2 : 5}
+      boxShadow={3}
+      mx="auto"
+      sx={{ backgroundColor: props.isImportant ? "pink" : "white", borderRadius: "30px", marginTop: "15px" }}
+    >
       <Grid container>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 5.5} sx={{ textAlign: isSmallScreen ? "center" : "left" }}>
           <Typography variant="h6" sx={{ backgroundColor: props.comment.length > 650 ? "red" : "white" }}>
@@ -19,8 +25,10 @@ export function CommitteeAnswer(props: {
           <Typography variant="h5" fontWeight={"bold"}>
             {props.question.question}
           </Typography>
-          <Typography variant="h6">Odpowiedź komitetu:</Typography>
-          <Typography variant="h5" fontWeight={"bold"}>
+          <Typography variant="h6" marginTop={"20px"}>
+            Odpowiedź komitetu:
+          </Typography>
+          <Typography variant="h4" fontWeight={"bold"}>
             Zgadzam się
           </Typography>
         </Grid>

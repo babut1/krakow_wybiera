@@ -75,17 +75,17 @@ export function TopBar() {
                 <MenuItem>
                   <img src="https://twojwybor.org/wp-content/uploads/2020/09/IMG_0018-2-2.png" height={"100px"}></img>
                 </MenuItem>
-                <MenuItem onClick={handleContactClick} sx={{ padding: "100px" }}>
+                <MenuItem onClick={handleContactClick} sx={{ padding: "15px 20px 15px 20px" }}>
                   <Typography variant="h4" fontWeight={"bold"}>
                     Kontakt
                   </Typography>
                 </MenuItem>
-                <MenuItem onClick={handleClose}>
+                <MenuItem onClick={handleClose} sx={{ padding: "15px 20px 15px 20px" }}>
                   <Typography variant="h4" fontWeight={"bold"}>
                     Wesprzyj nas
                   </Typography>
                 </MenuItem>
-                <MenuItem onClick={handleStartClick}>
+                <MenuItem onClick={handleStartClick} sx={{ padding: "15px 20px 15px 20px" }}>
                   <Typography variant="h4" fontWeight={"bold"}>
                     {location.pathname === "/" ? "Rozpocznij test" : "Strona główna"}
                   </Typography>
