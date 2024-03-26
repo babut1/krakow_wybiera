@@ -127,7 +127,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
             sx={{
               maxWidth: isSmallScreen ? "100%" : "650px",
               textAlign: "left",
-              padding: "0px 0px 20px 0px",
+              padding: isSmallScreen ? "10px 0px 20px 0px" : "0px 0px 30px 0px",
             }}
           >
             <Grid item xs={12} sm={isSmallScreen ? 12 : 4} sx={{ paddingTop: isSmallScreen ? "15px" : "0px" }}>
@@ -203,7 +203,12 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
               </Button>
             </Grid>
           </Grid>
-          <Typography variant="h5" gutterBottom textAlign={isSmallScreen ? "center" : "left"}>
+          <Typography
+            variant="h5"
+            gutterBottom
+            textAlign={isSmallScreen ? "center" : "left"}
+            paddingBottom={isSmallScreen ? "0px" : "20px"}
+          >
             Ten temat jest dla mnie...
           </Typography>
           <Grid
@@ -286,41 +291,44 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
             </Grid>
           </Grid>
           {!isSmallScreen && (
-            <Grid container alignItems="center" justifyContent="left">
-              <Button
-                variant="outlined"
-                color="primary"
-                onClick={handleGoBack}
-                sx={{
-                  width: "160px",
-                  color: "black",
-                  borderColor: "black",
-                  textTransform: "none",
-                  borderRadius: "10px",
-                  marginTop: "10px",
-                  height: "50px",
-                  marginRight: "20px",
-                }}
-              >
-                {props.questionNumber === 0 ? "Instrukcja" : "Poprzednie pytanie"}
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleSubmit}
-                sx={{
-                  width: "160px",
-                  marginTop: "10px",
-                  backgroundColor: "black",
-                  textTransform: "none",
-                  borderRadius: "10px",
-                  height: "50px",
-                }}
-                disabled={!isProceedButtonEnabled()}
-              >
-                {props.questionNumber === numberOfQuestions - 1 ? "Zakończ test" : "Następne pytanie"}
-              </Button>
-            </Grid>
+            <>
+              <Divider orientation="horizontal" sx={{ paddingBottom: "15px" }}></Divider>
+              <Grid container alignItems="center" justifyContent="left">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  onClick={handleGoBack}
+                  sx={{
+                    width: "160px",
+                    color: "black",
+                    borderColor: "black",
+                    textTransform: "none",
+                    borderRadius: "10px",
+                    marginTop: "10px",
+                    height: "50px",
+                    marginRight: "20px",
+                  }}
+                >
+                  {props.questionNumber === 0 ? "Instrukcja" : "Poprzednie pytanie"}
+                </Button>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleSubmit}
+                  sx={{
+                    width: "160px",
+                    marginTop: "10px",
+                    backgroundColor: "black",
+                    textTransform: "none",
+                    borderRadius: "10px",
+                    height: "50px",
+                  }}
+                  disabled={!isProceedButtonEnabled()}
+                >
+                  {props.questionNumber === numberOfQuestions - 1 ? "Zakończ test" : "Następne pytanie"}
+                </Button>
+              </Grid>
+            </>
           )}
         </Grid>
         <Grid item xs={12} sm={isSmallScreen ? 0 : 0.2}></Grid>

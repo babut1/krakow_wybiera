@@ -6,6 +6,7 @@ import { Committee, CommitteeAnswerInterface, QuestionInterface } from "../commo
 import { useUserAnswers } from "../common/state";
 import { countResultPerCommittee } from "../common/utils";
 import { CandidateProfileMobile } from "../components/CanidateProfileMobile";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export function CommitteeAnswers(props: { committeeName: string }) {
   const theme = useTheme();
@@ -56,15 +57,21 @@ export function CommitteeAnswers(props: { committeeName: string }) {
 
   return (
     <Box p={isSmallScreen ? 2 : 8}>
-      <Typography variant="h4" fontWeight={"bold"}>
-        Odpowiedzi komitetu
-      </Typography>
-      <Typography variant="h6" marginBottom={"30px"} maxWidth={isSmallScreen ? "100%" : "50%"}>
-        Znajdziesz tu szczegółowe odpowiedzi oraz komentarze komitetów/kandydatów na prezydenta miasta. Odpowiedzi i
-        komentarze są uporządkowane zgodnie z kolejnością stwierdzeń z testu. Kolorowe odpowiedzi oznaczają, że dane
-        zagadanienie jest dla komitetu priorytetem. Na samym końcu znajdziesz też kilka słów komitetu skierowanych do
-        wyborców.
-      </Typography>
+      <Box textAlign={isSmallScreen ? "center" : "left"}>
+        <Typography variant="h3" fontWeight={"bold"} marginBottom={"25px"}>
+          Odpowiedzi komitetu
+        </Typography>
+        <Typography
+          variant="h6"
+          marginBottom={isSmallScreen ? "40px" : "50px"}
+          maxWidth={isSmallScreen ? "100%" : "65%"}
+        >
+          Znajdziesz tu szczegółowe odpowiedzi oraz komentarze komitetów/kandydatów na prezydenta miasta. Odpowiedzi i
+          komentarze są uporządkowane zgodnie z kolejnością stwierdzeń z testu. Kolorowe odpowiedzi oznaczają, że dane
+          zagadanienie jest dla komitetu priorytetem. Na samym końcu znajdziesz też kilka słów komitetu skierowanych do
+          wyborców.
+        </Typography>
+      </Box>
       {!isSmallScreen ? (
         <CandidateProfile
           showAnswersButton={false}
@@ -117,8 +124,10 @@ export function CommitteeAnswers(props: { committeeName: string }) {
         ></CommitteeAnswer>
       ))}
       {committeeAnswers[props.committeeName].committeeComment && (
-        <Box p={isSmallScreen ? 2 : 5} boxShadow={3} mx="auto">
-          <Typography variant="h4">Wolny komentarz komitetu</Typography>
+        <Box p={isSmallScreen ? 2 : 5} boxShadow={3} mx="auto" marginTop={"20px"} borderRadius={"30px"}>
+          <Typography variant="h4" marginBottom={"30px"}>
+            Wolny komentarz komitetu
+          </Typography>
           <Typography variant="h6">{committeeAnswers[props.committeeName].committeeComment}</Typography>
         </Box>
       )}

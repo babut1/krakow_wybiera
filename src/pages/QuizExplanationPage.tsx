@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export function QuizExplanationPage() {
   const navigate = useNavigate();
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(700));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1000));
 
   const handleGoBack = async () => {
     navigate("/");
@@ -18,7 +18,9 @@ export function QuizExplanationPage() {
     <Box p={isSmallScreen ? 2 : 8}>
       <Grid container>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 7.7}>
-          <Typography variant={"h3"}>Instrukcja uzupełnienia testu</Typography>
+          <Typography variant={"h4"} fontWeight={"bold"} marginBottom={isSmallScreen ? "20px" : "30px"}>
+            Instrukcja uzupełnienia testu
+          </Typography>
           <Typography variant={"h6"}>
             1. Kwestionariusz składa się z 20 stwierdzeń dot. różnych kwestii funkcjonowania, zarządzania i rozwoju
             Krakowa.
@@ -56,7 +58,7 @@ export function QuizExplanationPage() {
         <Grid item sm={isSmallScreen ? 12 : 4}>
           <Paper elevation={4} sx={{ backgroundColor: "lightgrey", borderRadius: "15px", width: "100" }}>
             <Box p={3} textAlign={"left"}>
-              <Typography variant="h4" paddingBottom={"15px"}>
+              <Typography variant="h4" paddingBottom={"20px"}>
                 Pamiętaj!
               </Typography>
               <Typography variant="h6">

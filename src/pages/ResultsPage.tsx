@@ -87,8 +87,10 @@ export function ResultsView() {
     <Box p={isSmallScreen ? 2 : 6}>
       <Grid container>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 4}>
-          <Box textAlign={"left"}>
-            <Typography variant={"h4"}>Twoje wyniki</Typography>
+          <Box textAlign={isSmallScreen ? "center" : "left"} marginTop={isSmallScreen ? "20px" : "0px"}>
+            <Typography variant={"h3"} fontWeight={"bold"} marginBottom={isSmallScreen ? "20px" : "30px"}>
+              Twoje wyniki
+            </Typography>
             <Typography variant={"h6"}>
               Obok znajdziesz swoją procentową zgodność z odpowiedziami komitetu/kandydata na prezydenta przedstawioną
               za pomocą diagramu słupkowego. Twoją zgodność obliczył algorytm, z którym możesz się zapoznać klikając w
