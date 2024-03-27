@@ -1,4 +1,4 @@
-import { Box, CircularProgress, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Button, CircularProgress, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { CandidateProfile } from "../components/CandidateProfile";
 import { CommitteeAnswer } from "../components/CommitteeAnswer";
 import { useEffect, useState } from "react";
@@ -6,6 +6,7 @@ import { Committee, CommitteeAnswerInterface, QuestionInterface } from "../commo
 import { useUserAnswers } from "../common/state";
 import { countResultPerCommittee } from "../common/utils";
 import { CandidateProfileMobile } from "../components/CanidateProfileMobile";
+import { useNavigate } from "react-router-dom";
 
 export function CommitteeAnswers(props: { committeeName: string }) {
   const theme = useTheme();
@@ -14,6 +15,7 @@ export function CommitteeAnswers(props: { committeeName: string }) {
   const [committeeAnswers, setCommitteeAnswers] = useState<Committee>({});
   const [questions, setQuestions] = useState<QuestionInterface[]>([]);
   const userAnswers = useUserAnswers();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,6 +33,7 @@ export function CommitteeAnswers(props: { committeeName: string }) {
       } catch (error) {
         console.error("Error fetching questions:", error);
       }
+      window.scrollTo(0, 0);
     };
 
     fetchData().finally(() => {
@@ -62,14 +65,28 @@ export function CommitteeAnswers(props: { committeeName: string }) {
         </Typography>
         <Typography
           variant="h6"
-          marginBottom={isSmallScreen ? "40px" : "50px"}
+          marginBottom={isSmallScreen ? "20px" : "30px"}
           maxWidth={isSmallScreen ? "100%" : "65%"}
         >
           Znajdziesz tu szczegółowe odpowiedzi oraz komentarze komitetów/kandydatów na prezydenta miasta. Odpowiedzi i
-          komentarze są uporządkowane zgodnie z kolejnością stwierdzeń z testu. Kolorowe odpowiedzi oznaczają, że dane
+          komentarze są uporządkowane zgodnie z kolejnością stwierdzeń z testu. Odpowiedzi w ramkach oznaczają, że dane
           zagadanienie jest dla komitetu priorytetem. Na samym końcu znajdziesz też kilka słów komitetu skierowanych do
           wyborców.
         </Typography>
+        <Button
+          sx={{
+            width: isSmallScreen ? "100%" : "210px",
+            backgroundColor: "black",
+            borderRadius: "15px",
+            textTransform: "none",
+            marginBottom: "40px",
+          }}
+          color="primary"
+          variant="contained"
+          onClick={() => navigate("/wyniki")}
+        >
+          <Typography variant="h6">Wróć do wyników</Typography>
+        </Button>
       </Box>
       {!isSmallScreen ? (
         <CandidateProfile
@@ -117,6 +134,7 @@ export function CommitteeAnswers(props: { committeeName: string }) {
         <CommitteeAnswer
           question={questions[index]}
           agreement={answer.agreement}
+          userAgreement={userAnswers[index]}
           comment={answer.explanation}
           questionNumber={index + 1}
           isImportant={committeeAnswers[props.committeeName].importantMatters.includes(index)}
@@ -124,8 +142,8 @@ export function CommitteeAnswers(props: { committeeName: string }) {
       ))}
       {committeeAnswers[props.committeeName].committeeComment && (
         <Box p={isSmallScreen ? 2 : 5} boxShadow={3} mx="auto" marginTop={"20px"} borderRadius={"30px"}>
-          <Typography variant="h4" marginBottom={"30px"}>
-            Wolny komentarz komitetu
+          <Typography variant="h4" marginBottom={"30px"} textAlign={isSmallScreen ? "center" : "left"}>
+            Swobodny komentarz komitetu
           </Typography>
           <Typography variant="h6">{committeeAnswers[props.committeeName].committeeComment}</Typography>
         </Box>

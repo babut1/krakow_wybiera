@@ -31,7 +31,7 @@ export function CandidateProfileMobile(props: {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h5" fontWeight={"bold"}>
+        <Typography variant="h4" fontWeight={"bold"} marginBottom={"30px"}>
           {props.fullCommitteeName}
         </Typography>
       </Paper>
@@ -64,16 +64,16 @@ export function CandidateProfileMobile(props: {
           <img src={props.committeeLogoPath} alt="Logo komitetu" style={{ width: "150px", height: "100px" }} />
         </Box>
       </Box>
-      <Typography textAlign={"center"} variant="h5">
+      <Typography textAlign={"center"} variant="h5" marginTop={"15px"}>
         Kandydat na Prezydenta Miasta
       </Typography>
       <Typography textAlign={"center"} variant="h4" fontWeight={"bold"}>
         {props.candidateName}
       </Typography>
-      <Typography textAlign={"center"} variant="body1" marginTop={"10px"}>
+      <Typography textAlign={"center"} variant="h6" marginTop={"10px"}>
         {props.hasAgreed ? "Zgodność Twoich opinii z programem" : "Komitet nie wziął udziału w badaniu"}
       </Typography>
-      <Box padding={"0px 10px 0px 10px"}>
+      <Box padding={"10px 10px 0px 10px"}>
         <ProgressBar
           completed={props.candidateResult}
           bgColor="black"

@@ -19,37 +19,24 @@ export function Footer() {
       <Container maxWidth="lg">
         <Grid container spacing={5}>
           <Grid item xs={12} sm={4} sx={{ textAlign: "center" }}>
-            <Typography variant="h6" color="text.primary" gutterBottom>
-              Tu będzie jakieś logo
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              We are XYZ company, dedicated to providing the best service to our
-              customers.
-            </Typography>
+            <img src="graphics/STW_logo.png" height={"120px"}></img>
           </Grid>
           <Grid item xs={12} sm={4} sx={{ textAlign: "center" }}>
             <Typography variant="h6" color="text.primary" gutterBottom>
               Kontakt
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              123 Main Street, Anytown, USA
+              Email: jan.przewiezlikowski@twojwybor.org
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Email: info@example.com
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Phone: 533 323 352
+              Telefon: +48 786 262 565
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4} sx={{ textAlign: "center" }}>
             <Typography variant="h6" color="text.primary" gutterBottom>
               Sprawdź nasze media
             </Typography>
-            <Link
-              href="https://www.facebook.com/stow.twojwybor"
-              color="inherit"
-              target="_blank"
-            >
+            <Link href="https://www.facebook.com/stow.twojwybor" color="inherit" target="_blank">
               <Facebook />
             </Link>
             <Link

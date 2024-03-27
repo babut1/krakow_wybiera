@@ -19,7 +19,7 @@ export function TopBar() {
   const location = useLocation();
 
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(700));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(770));
   const [anchorEl, setAnchorEl] = useState<null | HTMLButtonElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -45,6 +45,11 @@ export function TopBar() {
     setAnchorEl(null);
   }
 
+  function handleSupportClick() {
+    window.open("https://twojwybor.org/wspieraj", "_blank");
+    setAnchorEl(null);
+  }
+
   return (
     <Box
       sx={{
@@ -65,7 +70,17 @@ export function TopBar() {
         position="static"
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <img src="/path/to/your/logo.png" alt="Logo" width="40" height="40" />
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <img
+              src="graphics/STW_logo.png"
+              alt="Logo"
+              width="100"
+              height="70"
+              style={{ marginRight: "20px", cursor: "pointer" }}
+              onClick={() => navigate("/")}
+            />
+            <img src="graphics/krakow_wybiera.png" alt="Kraków wybiera" width="70" height="40" />
+          </Box>
           {isSmallScreen ? (
             <Box>
               <IconButton onClick={handleClick}>
@@ -80,7 +95,7 @@ export function TopBar() {
                     Kontakt
                   </Typography>
                 </MenuItem>
-                <MenuItem onClick={handleClose} sx={{ padding: "15px 20px 15px 20px" }}>
+                <MenuItem onClick={handleSupportClick} sx={{ padding: "15px 20px 15px 20px" }}>
                   <Typography variant="h4" fontWeight={"bold"}>
                     Wesprzyj nas
                   </Typography>
@@ -118,6 +133,7 @@ export function TopBar() {
                   width: "150px",
                 }}
                 variant="text"
+                onClick={handleSupportClick}
               >
                 <Typography variant="h6">Wesprzyj nas</Typography>
               </Button>
