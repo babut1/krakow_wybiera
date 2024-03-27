@@ -28,7 +28,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
   const numberOfQuestions = useNumberOfQuestions();
   const navigate = useNavigate();
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1050));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(1185));
 
   const [buttonStates, setButtonStates] = useState<boolean[]>([false, false, false, false, false, false]);
 
@@ -70,12 +70,18 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
     if (props.questionNumber + 1 === numberOfQuestions) {
       navigate("/wyniki");
     }
+    if (isSmallScreen) {
+      window.scrollTo(0, 0);
+    }
     changeSelectedQuestion(props.questionNumber + 1);
   };
 
   const handleGoBack = () => {
     if (props.questionNumber === 0) {
       navigate("/instrukcja");
+    }
+    if (isSmallScreen) {
+      window.scrollTo(0, 0);
     }
     changeSelectedQuestion(props.questionNumber - 1);
   };
@@ -96,22 +102,27 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
         height="13px"
         baseBgColor="darkgrey"
       />
-      <Typography variant="h6" gutterBottom textAlign="left">
-        Stwierdzenie {props.questionNumber + 1} z {numberOfQuestions}
-      </Typography>
       <Grid container>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 6.8}>
+          <Typography
+            variant="h6"
+            gutterBottom
+            textAlign={isSmallScreen ? "center" : "left"}
+            marginTop={isSmallScreen ? "15px" : "25px"}
+          >
+            Stwierdzenie {props.questionNumber + 1} z {numberOfQuestions}
+          </Typography>
           <Typography
             variant="h5"
             gutterBottom
             textAlign={isSmallScreen ? "center" : "left"}
-            minHeight={"96px"}
+            minHeight={isSmallScreen ? "0px" : "96px"}
             fontWeight={"bold"}
           >
             {props.question.question}
           </Typography>
           {isSmallScreen && (
-            <Box>
+            <Box sx={{ marginTop: "15px" }}>
               <Accordion sx={{ backgroundColor: "lightgrey", borderRadius: "15px" }}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1-content">
                   Wyjaśnienie
@@ -140,7 +151,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   textTransform: "none",
                   textAlign: "center",
                   maxWidth: "100%",
-                  width: isSmallScreen ? "100%" : "180px",
+                  width: isSmallScreen ? "100%" : "200px",
                   backgroundColor: buttonStates[0] ? "black" : "white",
                   "&:hover": {
                     backgroundColor: buttonStates[0] ? "black" : "white",
@@ -165,7 +176,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   padding: "15px",
                   textTransform: "none",
                   maxWidth: "100%",
-                  width: isSmallScreen ? "100%" : "180px",
+                  width: isSmallScreen ? "100%" : "200px",
                   backgroundColor: buttonStates[1] ? "black" : "white",
                   height: isSmallScreen ? "40px" : "auto",
                   "&:hover": {
@@ -188,7 +199,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   padding: "15px",
                   textTransform: "none",
                   maxWidth: "100%",
-                  width: isSmallScreen ? "100%" : "180px",
+                  width: isSmallScreen ? "100%" : "200px",
                   backgroundColor: buttonStates[2] ? "black" : "white",
                   height: isSmallScreen ? "40px" : "auto",
                   "&:hover": {
@@ -204,6 +215,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
             </Grid>
           </Grid>
           <Typography
+            fontWeight={"bold"}
             variant="h5"
             gutterBottom
             textAlign={isSmallScreen ? "center" : "left"}
@@ -229,7 +241,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   textTransform: "none",
                   textAlign: "center",
                   maxWidth: "100%",
-                  width: isSmallScreen ? "100%" : "180px",
+                  width: isSmallScreen ? "100%" : "200px",
                   backgroundColor: buttonStates[3] ? "black" : "white",
                   height: isSmallScreen ? "40px" : "auto",
                   "&:hover": {
@@ -239,7 +251,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                 onClick={() => handleButtonClick(3)}
               >
                 <Typography variant="h6" textAlign="left" color={buttonStates[3] ? "white" : "black"}>
-                  Ważny
+                  Bardzo ważny
                 </Typography>
               </Button>
             </Grid>
@@ -252,7 +264,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   padding: "15px",
                   textTransform: "none",
                   maxWidth: "100%",
-                  width: isSmallScreen ? "100%" : "180px",
+                  width: isSmallScreen ? "100%" : "200px",
                   height: isSmallScreen ? "40px" : "auto",
                   backgroundColor: buttonStates[4] ? "black" : "white",
                   "&:hover": {
@@ -276,7 +288,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                   textTransform: "none",
                   maxWidth: "100%",
                   height: isSmallScreen ? "40px" : "auto",
-                  width: isSmallScreen ? "100%" : "180px",
+                  width: isSmallScreen ? "100%" : "200px",
                   backgroundColor: buttonStates[5] ? "black" : "white",
                   "&:hover": {
                     backgroundColor: buttonStates[5] ? "black" : "white",
@@ -285,15 +297,15 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
                 onClick={() => handleButtonClick(5)}
               >
                 <Typography variant="h6" textAlign="left" color={buttonStates[5] ? "white" : "black"}>
-                  Nieważny
+                  Mało ważny
                 </Typography>
               </Button>
             </Grid>
           </Grid>
           {!isSmallScreen && (
             <>
-              <Divider orientation="horizontal" sx={{ paddingBottom: "15px" }}></Divider>
-              <Grid container alignItems="center" justifyContent="left">
+              <Divider orientation="horizontal" sx={{ paddingBottom: "10px" }}></Divider>
+              <Grid container alignItems="center" justifyContent="left" marginTop={"15px"}>
                 <Button
                   variant="outlined"
                   color="primary"
@@ -334,12 +346,17 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
         <Grid item xs={12} sm={isSmallScreen ? 0 : 0.2}></Grid>
         {!isSmallScreen && (
           <Grid item xs={12} sm={isSmallScreen ? 12 : 5}>
-            <Paper elevation={4} sx={{ backgroundColor: "lightgrey", borderRadius: "7px", minHeight: "500px" }}>
+            <Paper
+              elevation={4}
+              sx={{ backgroundColor: "lightgrey", borderRadius: "7px", minHeight: "500px", marginTop: "35px" }}
+            >
               <Box p={3} textAlign={"left"}>
-                <Typography variant="h5" paddingBottom={"15px"}>
+                <Typography variant="h5" paddingBottom={"20px"} fontWeight={"bold"}>
                   Wyjaśnienie
                 </Typography>
-                <Typography variant="body1">{props.question.explanation}</Typography>
+                <Typography variant="body1" fontSize={"17px"}>
+                  {props.question.explanation}
+                </Typography>
               </Box>
             </Paper>
           </Grid>

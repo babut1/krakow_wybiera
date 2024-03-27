@@ -17,48 +17,53 @@ export function QuizExplanationPage() {
   return (
     <Box p={isSmallScreen ? 2 : 8}>
       <Grid container>
-        <Grid item xs={12} sm={isSmallScreen ? 12 : 7.7}>
-          <Typography variant={"h4"} fontWeight={"bold"} marginBottom={isSmallScreen ? "20px" : "30px"}>
-            Instrukcja uzupełnienia testu
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 7.3} textAlign={isSmallScreen ? "center" : "left"}>
+          <Typography
+            variant={"h3"}
+            fontWeight={"900"}
+            marginBottom={isSmallScreen ? "20px" : "30px"}
+            textAlign={isSmallScreen ? "center" : "left"}
+          >
+            Jak wypełnić test?
           </Typography>
-          <Typography variant={"h6"}>
-            1. Kwestionariusz składa się z 20 stwierdzeń dot. różnych kwestii funkcjonowania, zarządzania i rozwoju
-            Krakowa.
+          <Typography variant={"h6"}>1. Kwestionariusz składa się z 20 stwierdzeń.</Typography>
+          <Typography variant={"h6"} marginTop={"10px"}>
+            2. Po przeczytaniu każdego stwierdzenia oraz jego wyjaśnienia odpowiedz, czy się z nim zgadzasz. Odpowiadaj
+            zgodnie ze swoimi przekonaniami.
           </Typography>
-          <Typography variant={"h6"}>
-            2. Po przeczytaniu każdego stwierdzenia oraz jego wyjaśnienia odpowiedz czy zgadzasz się, nie zgadzasz się z
-            danym stwierdzeniem lub czy nie masz zdania na jego temat. Następnie określ czy zagadnienie, które jest
-            poruszane w stwierdzeniu jest dla Ciebie nieważne, średnio ważne lub ważne.
-          </Typography>
-          <Typography variant={"h6"}>
+          <Typography variant={"h6"} marginTop={"10px"}>
             3. Przy określaniu ważności poruszanych tematów kieruj się poniższymi wskazówkami:
           </Typography>
-          <Typography variant={"h6"} fontWeight={"bold"} marginLeft={"25px"}>
-            „nieważne”- w mojej ocenie miasto może, ale nie musi podjąć działania w danym obszarze i dany temat nie jest
-            dla mnie istotny
+          <Typography variant={"h6"} marginLeft={isSmallScreen ? "0px" : "25px"}>
+            <strong>„mało ważne”</strong> - w mojej ocenie miasto może, ale nie musi podjąć działania w danym obszarze i
+            dany temat jest dla mnie mało istotny
           </Typography>
-          <Typography variant={"h6"} fontWeight={"bold"} marginLeft={"25px"}>
-            „średnio ważne”- w mojej ocenie miasto powinno podjąć działania w danym obszarze i dany temat jest dla mnie
-            częściowo istotny
+          <Typography variant={"h6"} marginLeft={isSmallScreen ? "0px" : "25px"}>
+            <strong>„średnio ważne”</strong> - w mojej ocenie miasto powinno podjąć działania w danym obszarze i dany
+            temat jest dla mnie częściowo istotny
           </Typography>
-          <Typography variant={"h6"} fontWeight={"bold"} marginLeft={"25px"}>
-            „ważne”- w mojej ocenie ten temat powinien być priorytetowy dla miasta, miasto powinno się podjąć jego
-            realizacji w pierwszej kolejności i/lub ma on dla mnie istotne znaczenie
+          <Typography variant={"h6"} marginLeft={isSmallScreen ? "0px" : "25px"}>
+            <strong>„bardzo ważne”</strong> - w mojej ocenie ten temat powinien być priorytetowy dla miasta, miasto
+            powinno się podjąć jego realizacji w pierwszej kolejności i/lub ma on dla mnie istotne znaczenie
           </Typography>
-          <Typography variant={"h6"}>
-            4. Przy udzielaniu odpowiedzi dokładnie rozważ, które odpowiedzi w sposób najpełniejszy odzwierciedlają
-            twoje przekonania. Szczególnie uważnie podejdź do określania ważności danego zagadnienia.
-          </Typography>
-          <Typography variant={"h6"}>
-            5. Po wypełnieniu testu zobaczysz swoją procentową zgodność z odpowiedziami komitetu/kandydata na
+          <Typography variant={"h6"} marginTop={"10px"}>
+            4. Po wypełnieniu testu zobaczysz zgodność swoich odpowiedzi z odpowiedziami komitetu/kandydata na
             prezydenta.
           </Typography>
         </Grid>
-        <Grid item sm={isSmallScreen ? 0 : 0.3}></Grid>
+        <Grid item sm={isSmallScreen ? 0 : 0.7}></Grid>
         <Grid item sm={isSmallScreen ? 12 : 4}>
-          <Paper elevation={4} sx={{ backgroundColor: "lightgrey", borderRadius: "15px", width: "100" }}>
-            <Box p={3} textAlign={"left"}>
-              <Typography variant="h4" paddingBottom={"20px"}>
+          <Paper
+            elevation={4}
+            sx={{
+              backgroundColor: "lightgrey",
+              borderRadius: "15px",
+              width: "100",
+              marginTop: isSmallScreen ? "20px" : "0px",
+            }}
+          >
+            <Box p={3} textAlign={isSmallScreen ? "center" : "left"}>
+              <Typography variant="h5" paddingBottom={"20px"} fontWeight={"bold"}>
                 Pamiętaj!
               </Typography>
               <Typography variant="h6">
@@ -83,7 +88,7 @@ export function QuizExplanationPage() {
             borderRadius: "15px",
             height: "50px",
             textTransform: "none",
-            width: "180px",
+            width: isSmallScreen ? "48%" : "180px",
           }}
         >
           <Typography variant="h6">Strona główna</Typography>
@@ -98,7 +103,7 @@ export function QuizExplanationPage() {
             borderRadius: "15px",
             height: "50px",
             textTransform: "none",
-            width: "180px",
+            width: isSmallScreen ? "48%" : "180px",
           }}
         >
           <Typography variant="h6">Rozpocznij test</Typography>

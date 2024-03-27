@@ -1,13 +1,9 @@
-import {
-  ThemeProvider,
-  createTheme,
-  responsiveFontSizes,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { ThemeProvider, createTheme, responsiveFontSizes, useMediaQuery, useTheme } from "@mui/material";
 import { TopBar } from "./components/TopBar";
 import { Footer } from "./components/Footer";
 import { Outlet } from "react-router-dom";
+import "@fontsource/poppins";
+import "@fontsource/lato";
 
 export function KrakowWybiera() {
   const theme = useTheme();

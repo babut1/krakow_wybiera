@@ -6,7 +6,6 @@ import { Committee, CommitteeAnswerInterface, QuestionInterface } from "../commo
 import { useUserAnswers } from "../common/state";
 import { countResultPerCommittee } from "../common/utils";
 import { CandidateProfileMobile } from "../components/CanidateProfileMobile";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export function CommitteeAnswers(props: { committeeName: string }) {
   const theme = useTheme();

@@ -27,7 +27,7 @@ export function Homepage() {
         </Typography>
         <Box padding={"20px"}>
           <Button
-            sx={{ backgroundColor: "black", borderRadius: "15px", width: "200px", height: "70px" }}
+            sx={{ backgroundColor: "black", borderRadius: "15px", width: "220px", height: "70px" }}
             color="primary"
             variant="contained"
             onClick={handleStartClick}

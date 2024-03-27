@@ -5,6 +5,8 @@
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
     "@emotion/styled": "^11.11.0",
+    "@fontsource/lato": "^5.0.20",
+    "@fontsource/poppins": "^5.0.12",
     "@mui/icons-material": "^5.15.11",
     "@mui/material": "^5.15.11",
     "@ramonak/react-progress-bar": "^5.2.0",

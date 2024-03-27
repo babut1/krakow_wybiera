@@ -70,7 +70,7 @@ export function ResultsView() {
             backgroundColor: "black",
             borderRadius: "15px",
             textTransform: "none",
-            width: "170px",
+            width: "200px",
             height: "50px",
           }}
           color="primary"
@@ -133,15 +133,18 @@ export function ResultsView() {
                 return resultB - resultA;
               })
               .map((committee: string) => (
-                <SimplifiedCandidateProfile
-                  committeeName={committeeAnswers[committee].committeeShorterFullName}
-                  committeeResult={countResultPerCommittee(
-                    userAnswers,
-                    committeeAnswers[committee].answers,
-                    committeeAnswers[committee].importantMatters
-                  )}
-                  committeeLogoPath={committeeAnswers[committee].committeeLogoPath}
-                />
+                <>
+                  <SimplifiedCandidateProfile
+                    committeeName={committeeAnswers[committee].committeeShorterFullName}
+                    committeeResult={countResultPerCommittee(
+                      userAnswers,
+                      committeeAnswers[committee].answers,
+                      committeeAnswers[committee].importantMatters
+                    )}
+                    committeeLogoPath={committeeAnswers[committee].committeeLogoPath}
+                  />
+                  <Divider orientation="horizontal" />
+                </>
               ))}
           </Box>
         </Grid>

@@ -19,7 +19,7 @@ export function TopBar() {
   const location = useLocation();
 
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(700));
   const [anchorEl, setAnchorEl] = useState<null | HTMLButtonElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -126,7 +126,7 @@ export function TopBar() {
                   backgroundColor: "black",
                   borderRadius: "15px",
                   textTransform: "none",
-                  width: "170px",
+                  width: "190px",
                   height: "50px",
                 }}
                 color="primary"

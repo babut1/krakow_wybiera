@@ -21,6 +21,19 @@ export function CommitteeAnswer(props: {
 }) {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(950));
+
+  const agreementToString = (agreement: number) => {
+    if (agreement === 1) {
+      return "Zgadzam się";
+    }
+    if (agreement === 0.5) {
+      return "Nie mam zdania";
+    }
+    if (agreement === 0) {
+      return "Nie zgadzam się";
+    }
+    return "";
+  };
   return (
     <Box
       p={isSmallScreen ? 2 : 5}
@@ -49,7 +62,7 @@ export function CommitteeAnswer(props: {
             marginTop={isSmallScreen ? "5px" : "15px"}
             marginBottom={isSmallScreen ? "20px" : "0px"}
           >
-            Zgadzam się
+            {agreementToString(props.agreement)}
           </Typography>
         </Grid>
         <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5}></Grid>
