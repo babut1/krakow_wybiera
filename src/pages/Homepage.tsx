@@ -9,9 +9,9 @@ export function Homepage() {
   function handleStartClick() {
     navigate("/instrukcja");
   }
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Box

@@ -1,10 +1,6 @@
 // Assuming your Question component is named "Question"
 import React, { useState, useEffect } from "react";
-import {
-  changeSelectedQuestion,
-  setNumberOfQuestions,
-  useSelectedQuestion,
-} from "../common/state";
+import { changeSelectedQuestion, setNumberOfQuestions, useSelectedQuestion } from "../common/state";
 import { QuestionInterface } from "../common/types";
 import { Question } from "../components/Question";
 import { Box, CircularProgress } from "@mui/material";
@@ -48,10 +44,5 @@ export function Questionaire() {
     );
   }
 
-  return (
-    <Question
-      question={questions[selectedQuestion]}
-      questionNumber={selectedQuestion}
-    />
-  );
+  return <Question question={questions[selectedQuestion]} questionNumber={selectedQuestion} />;
 }
