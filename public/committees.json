@@ -137,7 +137,7 @@
       {
         "agreement": 1,
         "importance": 10,
-        "explanation": "Koniecznym jest utworzenie nowych centrów dzielnicowych spełniających funkcje w skali dzielnicy lub zespołu osiedli skupiających najważniejsze centra usługowe zapewniające wysoki standard życia mieszkańców i  przestrzeni publicznej."
+        "explanation": "Koniecznym jest utworzenie nowych centrów dzielnicowych spełniających funkcje w skali dzielnicy lub zespołu osiedli skupiających najważniejsze centra usługowe zapewniające wysoki standard życia mieszkańców i przestrzeni publicznej."
       },
       {
         "agreement": 1,
@@ -207,7 +207,7 @@
       {
         "agreement": 1,
         "importance": 8,
-        "explanation": "Dostępność żłobków jest istotnym kryterium w podejmowaniu decyzji  o wyborze Krakowa jako miejsca zamieszkania i aktywności zawodowej dla młodych rodzin.  Postulujemy realizacje żłobków w ramach Programu Maluch +."
+        "explanation": "Dostępność żłobków jest istotnym kryterium w podejmowaniu decyzji  o wyborze Krakowa jako miejsca zamieszkania i aktywności zawodowej dla młodych rodzin. Postulujemy realizacje żłobków w ramach Programu Maluch +."
       },
       {
         "agreement": 1,
@@ -244,7 +244,7 @@
       },
       {
         "agreement": 1,
-        "importance": 7,
+        "importance": 10,
         "explanation": ""
       },
       {
@@ -305,7 +305,7 @@
       {
         "agreement": 0.5,
         "importance": 5,
-        "explanation": ""
+        "explanation": "Takie inicjatywy powinny być realizowane na poziomie rad dzielnic."
       },
       {
         "agreement": 0.5,
@@ -491,7 +491,7 @@
       {
         "agreement": 1,
         "importance": 8,
-        "explanation": "Kraków jest jednym z najbardziej zakorkowanych miast w Europie i w dużej mierze odpowiada za to ogromna liczba 250 tysięcy samochodów, które każdego dnia wyjeżdżają do miasta, a także wysoki wskaźnik usamochodowienia - na 1000 mieszkańców mamy ponad 700 samochodów. Miasto powinno rozwijać się w kierunku preferowania komunikacji zbiorowej, tworzenia nowych połączeń i rozciągania strefy płatnego parkowania - tak, by grupami chronionymi przed problemem parkingowym byli wyłącznie mieszkańcy danej dzielnicy, którzy powinni mieć priorytet przy znajdowaniu miejsc postojowych. Nie chcemy zmuszać do opuszczania samochodów, ale zachęcać do tego, oferując najlepszą komunikację."
+        "explanation": "Miasto powinno priorytetyzować rozwój wygodnej, niezawodnej komunikacji miejskiej i realizację tras Zwierzynieckiej oraz Pychowickiej, by ograniczyć tranzyt przez centrum. To pozwoli na sprawiedliwsze podzielenie infrastruktury między użytkowników, w tym rowerzystów, z myślą o zmniejszeniu korków i oddziaływaniu na zmiany klimatyczne. Nasz program Metrower ma na celu przyciągnięcie ponad 100 tys. krakowian do korzystania z infrastruktury rowerowej. Komunikacja miejska i bezpieczeństwo pieszych są jednak najważniejsze; w przypadku konfliktów interesów pierwszeństwo powinny mieć torowiska i buspasy."
       },
       {
         "agreement": 1,
@@ -782,7 +782,7 @@
     ],
     "candidateName": "Adam Hareńczyk",
     "committeeLogoPath": "",
-    "candidatePicturePath": "",
+    "candidatePicturePath": "git ",
     "committeeComment": "",
     "importantMatters": [],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/38848",

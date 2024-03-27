@@ -55,7 +55,7 @@ export function Homepage() {
       </Box>
       <Box
         sx={{
-          height: "40vw",
+          height: isSmallScreen ? "30vw" : "40vw",
           backgroundColor: "#FFE299",
           backgroundImage: "url('graphics/test_grafika.png')",
           backgroundSize: "100% 100%", // Make the background image cover the entire container
@@ -167,11 +167,11 @@ export function Homepage() {
           </Typography>
           <Typography variant="body1" padding={"15px 0px 15px 0px"} textAlign={"justify"}>
             Kraków Wybiera to projekt przygotowany przez Stowarzyszenie Twój Wybór. Stowarzyszenie to działająca od 2018
-            roku krakowska, młodzieżowa organizacja pozarządowa (potencjalnie do wykreślenia:zrzeszająca edukatorów,
-            studentów, uczniów szkół średnich oraz aktywistów, którzy wspólnie działają dla świadomego społeczeństwa
-            obywatelskiego). Cele organizacji to budowanie społeczności młodych ludzi zaangażowanych w sprawy publiczne,
-            działanie na rzecz świadomości obywatelskiej i demokracji uczestniczącej, a także wspieranie reformy systemu
-            kształcenia obywatelskiego.
+            roku krakowska, młodzieżowa organizacja pozarządowa zrzeszająca edukatorów, studentów, uczniów szkół
+            średnich oraz aktywistów, którzy wspólnie działają dla świadomego społeczeństwa obywatelskiego. Cele
+            organizacji to budowanie społeczności młodych ludzi zaangażowanych w sprawy publiczne, działanie na rzecz
+            świadomości obywatelskiej i demokracji uczestniczącej, a także wspieranie reformy systemu kształcenia
+            obywatelskiego.
           </Typography>
         </Grid>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 1} textAlign={"center"}></Grid>
@@ -308,7 +308,7 @@ export function Homepage() {
             Katarzyna Markowska
           </Typography>
           <Typography variant="h5" fontWeight={"bold"} marginBottom={"15px"}>
-            Koło Naukowe Publicystyki Politycznej
+            Koło Naukowe Publicystyki Politycznej UJ
           </Typography>
         </Grid>
         <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5} />
