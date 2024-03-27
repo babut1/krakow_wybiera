@@ -12,13 +12,15 @@ export function SimplifiedCandidateProfile(props: {
   return (
     <Grid container spacing={0} sx={{ height: "70px" }}>
       <Grid item container xs={1.9} spacing={2}>
-        <Grid item xs={6} marginTop="5px">
-          <img
-            src={props.committeeLogoPath}
-            alt="Logo komitetu"
-            height="50px"
-            width={isSmallScreen ? "90px" : "110px"}
-          />
+        <Grid item xs={6} marginTop="3px">
+          {props.committeeLogoPath && (
+            <img
+              src={props.committeeLogoPath}
+              alt="Logo komitetu"
+              height={isSmallScreen ? "51px" : "63px"}
+              width={isSmallScreen ? "90px" : "110px"}
+            />
+          )}
         </Grid>
       </Grid>
       <Grid item xs={isSmallScreen ? 8.1 : 5.1}>

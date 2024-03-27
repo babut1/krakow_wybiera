@@ -108,8 +108,8 @@
     "committeeComment": "",
     "importantMatters": [5, 8, 11, 13, 18],
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/wbp/kandydat/3738233",
-    "fullCommitteeName": "Koalicyjny Komitet Wyborczy Koalicja Obywatelska",
-    "committeeShorterFullName": "KKW Koalicja Obywatelska",
+    "fullCommitteeName": "Aleksander Miszalski - lista KKW Koalicja Obywatelska",
+    "committeeShorterFullName": "Aleksander Miszalski - lista KKW Koalicja Obywatelska",
     "hasAgreed": true
   },
   "samorzadnykrakow": {
@@ -216,7 +216,7 @@
       }
     ],
     "candidateName": "Jerzy Muzyk",
-    "committeeLogoPath": "graphics/empty_avatar.png",
+    "committeeLogoPath": "",
     "candidatePicturePath": "muzyk/muzyk.png",
     "committeeComment": "Zwiększenie komfortu i zadowolenia z życia mieszkańców poprzez realizację wizji Krakowa jako miasta bezpiecznego, otwartego na potrzeby wszystkich mieszkańców, miasta z łatwym dostępem do wysokiej jakości usług publicznych i zrównoważonym transportem uwzględniającym preferencje różnych grup mieszkańców, miasta ekologicznego, z bogatą oferta edukacyjną i kulturalną, miasta w którym mali i średni przedsiębiorcy odgrywają należną im rolę w rozwoju gospodarczym. Postulaty te stanowią filary programu wyborczego KWW Samorządny Kraków oraz Jerzego Muzyka. #grajMy dla Krakowa.",
     "importantMatters": [1, 2, 8, 15, 16],
@@ -781,7 +781,7 @@
       }
     ],
     "candidateName": "Adam Hareńczyk",
-    "committeeLogoPath": "graphics/empty_avatar.png",
+    "committeeLogoPath": "",
     "candidatePicturePath": "graphics/empty_avatar.png",
     "committeeComment": "",
     "importantMatters": [],
@@ -894,7 +894,7 @@
       }
     ],
     "candidateName": "Łukasz Kmita",
-    "committeeLogoPath": "graphics/empty_avatar.png",
+    "committeeLogoPath": "",
     "candidatePicturePath": "graphics/empty_avatar.png",
     "committeeComment": "",
     "importantMatters": [],
@@ -1014,6 +1014,6 @@
     "committeeLists": "https://wybory.gov.pl/samorzad2024/pl/komitet/40297",
     "fullCommitteeName": "Komitet Wyborczy Wyborców Rafała Komarewicza Kraków Trzecia Droga",
     "committeeShorterFullName": "KWW Rafała Komarewicza Kraków Trzecia Droga",
-    "hasAgreed": false
+    "hasAgreed": true
   }
 }

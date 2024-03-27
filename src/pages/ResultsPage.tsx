@@ -86,17 +86,17 @@ export function ResultsView() {
   return (
     <Box p={isSmallScreen ? 2 : 6}>
       <Grid container>
-        <Grid item xs={12} sm={isSmallScreen ? 12 : 4}>
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 3.8}>
           <Box textAlign={isSmallScreen ? "center" : "left"} marginTop={isSmallScreen ? "20px" : "0px"}>
             <Typography variant={"h3"} fontWeight={"bold"} marginBottom={isSmallScreen ? "20px" : "30px"}>
               Twoje wyniki
             </Typography>
             <Typography variant={"h6"}>
-              Obok znajdziesz swoją procentową zgodność z odpowiedziami komitetu/kandydata na prezydenta przedstawioną
-              za pomocą diagramu słupkowego. Twoją zgodność obliczył algorytm, z którym możesz się zapoznać klikając w
-              przycisk poniżej. Przesuwając w dół znajdziesz szczegółowe odpowiedzi oraz komentarze komitetów/
-              kandydatów na prezydenta. Zapoznaj się z nimi szczególnie, jeżeli Twoje różnice w zgodności nie są
-              znaczne.
+              Obok znajdziesz swoją zgodność z odpowiedziami komitetu/ kandydata na prezydenta.
+            </Typography>
+            <Typography variant={"h6"} marginTop={"30px"}>
+              Przesuwając w dół znajdziesz szczegółowe odpowiedzi oraz komentarze komitetów/ kandydatów na prezydenta.
+              Zapoznaj się z nimi w szczególności, jeżeli Twoje różnice w zgodności nie są znaczne.
             </Typography>
             <Box padding={"25px 0px 25px 0px"}>
               <Button
@@ -115,7 +115,7 @@ export function ResultsView() {
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={0.2}></Grid>
+        <Grid item xs={12} sm={0.4}></Grid>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 7.8}>
           <Box textAlign={"left"}>
             {Object.keys(committeeAnswers)
@@ -149,7 +149,7 @@ export function ResultsView() {
           </Box>
         </Grid>
       </Grid>
-      <Divider orientation="horizontal" sx={{ marginBottom: "20px" }} />
+      <Divider orientation="horizontal" sx={{ marginBottom: "40px" }} />
       {isSmallScreen ? (
         <Box display="flex" justifyContent="center" alignItems="center">
           <CandidateSlider committees={committeeAnswers}></CandidateSlider>

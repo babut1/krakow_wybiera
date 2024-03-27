@@ -23,22 +23,31 @@ export function CandidateProfile(props: {
 
   return (
     <>
-      <Box textAlign={"left"}>
+      <Box textAlign={"left"} marginBottom={"24px"}>
         <Typography variant="h5" fontWeight={"bold"}>
-          {props.committeeFullName}
+          {props.candidateName === "Aleksander Miszalski" ? `${props.committeeFullName}*` : props.committeeFullName}
         </Typography>
       </Box>
-      <Grid container spacing={2} style={{ height: `${parentHeight}px` }}>
+      <Grid container spacing={2} style={{ height: `${parentHeight}px` }} marginBottom={"40px"}>
         <Grid item container xs={3} spacing={2}>
-          <Grid item xs={6}>
-            <img src={props.candidatePath} alt="Zdjęcie kandydata" style={{ width: photoWidth, height: photoHeight }} />
-          </Grid>
           <Grid item xs={6} container justifyContent="center" alignItems="center">
-            <img src={props.logoPath} alt="Logo komitetu" style={{ width: photoWidth, height: photoHeight / 2.2 }} />
+            {props.logoPath && (
+              <img src={props.logoPath} alt="Logo komitetu" style={{ width: photoWidth, height: photoHeight / 2.2 }} />
+            )}
+          </Grid>
+          <Grid item xs={6}>
+            <img
+              src={props.candidatePath}
+              alt="Zdjęcie kandydata"
+              style={{ width: photoWidth, height: photoHeight, borderRadius: "5px" }}
+            />
           </Grid>
         </Grid>
-        <Grid item xs={3.5} container direction="column" alignContent={"center"} justifyContent={"center"}>
-          <Grid item style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <Grid item xs={3.5} container direction="column">
+          <Grid
+            item
+            style={{ display: "flex", flexDirection: "column", justifyContent: "center", marginBottom: "14px" }}
+          >
             <Typography variant="h6">Kandydat na Prezydenta Miasta</Typography>
           </Grid>
           <Grid item style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -46,10 +55,20 @@ export function CandidateProfile(props: {
               {props.candidateName}
             </Typography>
           </Grid>
+          {props.candidateName === "Aleksander Miszalski" && (
+            <Grid
+              item
+              style={{ display: "flex", flexDirection: "column", justifyContent: "center", marginTop: "20px" }}
+            >
+              <Typography variant="body1" fontWeight="bold">
+                * Kandydat udzielił odpowiedzi wyłącznie w swoim imieniu
+              </Typography>
+            </Grid>
+          )}
         </Grid>
         <Grid item xs={5.5}>
           <Box>
-            <Box textAlign={"left"}>
+            <Box textAlign={"left"} marginBottom={"18px"}>
               <Typography variant="h6">
                 {props.hasAgreed ? "Zgodność Twoich opinii z programem" : "Komitet nie wziął udziału w badaniu"}
               </Typography>
@@ -64,13 +83,12 @@ export function CandidateProfile(props: {
               labelAlignment="right"
               labelSize="40"
             />
-            <Box textAlign={"right"}>
+            <Box textAlign={"right"} marginTop={"24px"}>
               <Button
                 sx={{
                   marginRight: "10px",
                   color: "black",
                   borderColor: "black",
-                  marginTop: "20px",
                   borderRadius: "15px",
                   textTransform: "none",
                   width: "170px",
@@ -84,10 +102,9 @@ export function CandidateProfile(props: {
                 <Button
                   sx={{
                     backgroundColor: "black",
-                    marginTop: "20px",
                     borderRadius: "15px",
                     textTransform: "none",
-                    width: "240px",
+                    width: "250px",
                   }}
                   onClick={() => navigate(`/${props.committeeName}`)}
                   color="primary"

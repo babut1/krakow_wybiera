@@ -54,7 +54,7 @@ export default function CandidateSlider(props: { committees: Committee }) {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h5" fontWeight={"bold"}>
+        <Typography variant="h4" fontWeight={"bold"}>
           {sortedCandidateListValues[activeStep].fullCommitteeName}
         </Typography>
       </Paper>
@@ -66,6 +66,7 @@ export default function CandidateSlider(props: { committees: Committee }) {
           flexDirection: "row",
           height: 210,
           maxWidth: 600,
+          marginBottom: "20px",
         }}
       >
         <img
@@ -97,7 +98,7 @@ export default function CandidateSlider(props: { committees: Committee }) {
       <Typography textAlign={"center"} variant="h4" fontWeight={"bold"}>
         {sortedCandidateListValues[activeStep].candidateName}
       </Typography>
-      <Typography textAlign={"center"} variant="body1" marginTop={"10px"}>
+      <Typography textAlign={"center"} variant="h5" marginTop={"10px"} marginBottom={"20px"}>
         {sortedCandidateListValues[activeStep].hasAgreed
           ? "Zgodność Twoich opinii z programem"
           : "Komitet nie wziął udziału w badaniu"}
