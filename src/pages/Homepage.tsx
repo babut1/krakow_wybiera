@@ -24,39 +24,50 @@ export function Homepage() {
     >
       <Box
         sx={{
-          minHeight: "100vh", // Set the minimum height to 100% of the viewport height
+          textAlign: "center",
           backgroundColor: "#FFE299",
-          backgroundImage: "url('graphics/KW_grafika.png')",
+          paddingLeft: isSmallScreen ? "20px" : "50px",
+          paddingRight: isSmallScreen ? "20px" : "50px",
+          paddingBottom: "0px",
+          paddingTop: "100px", // Adjust padding here
+          width: isSmallScreen ? "calc(100% - 40px)" : "calc(100% - 100px)", // Adjust width to account for the padding
+        }}
+      >
+        <Typography variant="h1" fontWeight={"bold"}>
+          Kraków wybiera
+        </Typography>
+        <Typography variant="h5" padding={"20px"}>
+          Uzupełnij nasz test i zobacz, który komitet widzi Kraków tak jak Ty. A później wyjdź na pole i ciesz się
+          naszym pięknym miastem!
+        </Typography>
+        <Box padding={"20px"}>
+          <Button
+            sx={{ backgroundColor: "black", borderRadius: "15px", width: "220px", height: "70px" }}
+            color="primary"
+            variant="contained"
+            onClick={handleStartClick}
+          >
+            <Typography variant="h5" textTransform={"none"}>
+              Rozpocznij test
+            </Typography>
+          </Button>
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          height: "40vw",
+          backgroundColor: "#FFE299",
+          backgroundImage: "url('graphics/test_grafika.png')",
           backgroundSize: "100% 100%", // Make the background image cover the entire container
           backgroundRepeat: "no-repeat", // Prevent the background image from repeating
-          backgroundPosition: "center", // Center the background image
+          backgroundPosition: "bottom", // Center the background image
           width: "100%",
           display: "flex",
           justifyContent: "center",
           alignItems: "flex-start", // Align items to the top
           paddingTop: "20vh", // Add padding to the top to create space
         }}
-      >
-        <Box sx={{ textAlign: "center" }}>
-          <Typography variant="h1">Kraków wybiera</Typography>
-          <Typography variant="h5" padding={"20px"}>
-            Uzupełnij nasz test i zobacz, który komitet widzi Kraków tak jak Ty. A później wyjdź na pole i ciesz się
-            naszym pięknym miastem!
-          </Typography>
-          <Box padding={"20px"}>
-            <Button
-              sx={{ backgroundColor: "black", borderRadius: "15px", width: "220px", height: "70px" }}
-              color="primary"
-              variant="contained"
-              onClick={handleStartClick}
-            >
-              <Typography variant="h5" textTransform={"none"}>
-                Rozpocznij test
-              </Typography>
-            </Button>
-          </Box>
-        </Box>
-      </Box>
+      ></Box>
       <Grid
         container
         sx={{
@@ -70,14 +81,12 @@ export function Homepage() {
       >
         <Grid
           item
-          xs={12}
-          sm={6}
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            width: "50%",
+            width: isSmallScreen ? "100%" : "50%",
             margin: "auto",
           }}
         >
