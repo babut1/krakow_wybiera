@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export function Homepage() {
   const navigate = useNavigate();
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(800));
   function handleStartClick() {
     navigate("/instrukcja");
   }
@@ -57,7 +57,17 @@ export function Homepage() {
           </Box>
         </Box>
       </Box>
-      <Grid container sx={{ backgroundColor: "#222222", color: "white", textAlign: "center", paddingBottom: "100px" }}>
+      <Grid
+        container
+        sx={{
+          backgroundColor: "#222222",
+          color: "white",
+          textAlign: "center",
+          paddingBottom: "100px",
+          paddingLeft: isSmallScreen ? "20px" : "0px",
+          paddingRight: isSmallScreen ? "20px" : "0px",
+        }}
+      >
         <Grid
           item
           xs={12}
@@ -88,9 +98,14 @@ export function Homepage() {
           </Typography>
         </Grid>
       </Grid>
-      <Box marginTop={"40px"} marginBottom={"40px"}>
+      <Box
+        marginTop={"40px"}
+        marginBottom={"40px"}
+        paddingLeft={isSmallScreen ? "20px" : "0px"}
+        paddingRight={isSmallScreen ? "20px" : "0px"}
+      >
         <Box>
-          <Typography variant="h4" fontWeight={"bold"} marginBottom={"40px"} marginTop={"20px"}>
+          <Typography variant="h4" fontWeight={"bold"} marginBottom={"30px"} marginTop={"30px"}>
             Jak powstało nasze narzędzie?
           </Typography>
         </Box>
@@ -132,7 +147,11 @@ export function Homepage() {
           Kto przygotował narzędzie?
         </Typography>
       </Box>
-      <Grid container sx={{ backgroundColor: "lightgrey" }} padding={"0px 50px 0px 50px"}>
+      <Grid
+        container
+        sx={{ backgroundColor: "lightgrey" }}
+        padding={isSmallScreen ? "0px 20px 0px 20px" : "0px 50px 0px 50px"}
+      >
         <Grid item xs={12} sm={isSmallScreen ? 12 : 7} textAlign={"center"}>
           <Typography variant="h4" padding={"15px 0px 15px 0px"} fontWeight={"bold"} textAlign={"left"}>
             O Stowarzyszeniu
@@ -159,32 +178,137 @@ export function Homepage() {
           <img src="graphics/STW_logo.png" style={{ maxWidth: "100%", height: "auto" }}></img>
         </Grid>
       </Grid>
-      <Typography variant="h4" padding={"15px 0px 15px 0px"} fontWeight={"bold"}>
-        Autorzy projektu
-      </Typography>
-      <Grid container></Grid>
-      <Typography variant="body1" padding={"15px 0px 15px 0px"}>
-        Koordynacja projektu: Franciszek Bednarek
-      </Typography>
-      <Typography variant="body1" padding={"15px 0px 15px 0px"}>
-        Strona internetowa: Jakub Kościelniak
-      </Typography>
-      <Typography variant="body1" padding={"15px 0px 15px 0px"}>
-        Grafika, UX/UI design: Olga Kowalska
-      </Typography>
-      <Typography variant="body1" padding={"15px 0px 15px 0px"}>
-        Współpraca z komitetami: Jan Przewięźlikowski
-      </Typography>
-      <Typography variant="body1" padding={"15px 0px 15px 0px"}>
-        Opracowanie kwestionariusza: Koło Naukowe Socjologii UJ, Koło Naukowe Publicystyki Politycznej, Franciszek
-        Bednarek, Mikołaj Sazonov, Jan Przewięźlikowski, Olga Kowalska
-      </Typography>
-      <Typography variant="body1" padding={"15px 0px 15px 0px"}>
-        Opracowanie algorytmu: Jakub Kościelniak, Franciszek Bednarek, Koło Naukowe Socjologii UJ
-      </Typography>
-      <Typography variant="body1" padding={"15px 0px 15px 0px"}>
-        Koordynatorzy medialni: Łukasz Śliz, Aleksandra Fijałek, Franciszek Rychlak
-      </Typography>
+      <Box width={"100%"} sx={{ backgroundColor: "lightgrey" }} textAlign={isSmallScreen ? "center" : "left"}>
+        <Typography variant="h4" padding={"15px 50px 15px 50px"} fontWeight={"bold"}>
+          Autorzy projektu
+        </Typography>
+      </Box>
+      <Grid
+        container
+        sx={{ backgroundColor: "lightgrey", paddingBottom: "50px" }}
+        textAlign={isSmallScreen ? "center" : "left"}
+      >
+        <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5} />
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 3}>
+          <Typography variant="h6" marginBottom={"10px"}>
+            Koordynacja projektu:
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"} marginBottom={"40px"}>
+            Franciszek Bednarek
+          </Typography>
+          <Typography variant="h6" marginBottom={"10px"}>
+            Strona internetowa:
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"} marginBottom={"40px"}>
+            Jakub Kościelniak
+          </Typography>
+          <Typography variant="h6" marginBottom={"15px"}>
+            Opracowanie algorytmu:
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Franciszek Bednarek
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Jakub Kościelniak
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"} marginBottom={"40px"}>
+            Koło naukowe socjologii UJ
+          </Typography>
+          <Typography variant="h6" marginBottom={"15px"}>
+            Analiza danych:
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Maciej Pelc
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Igor Dołęga
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={isSmallScreen ? 0 : 1} />
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 3}>
+          <Typography variant="h6" marginBottom={"10px"} marginTop={isSmallScreen ? "40px" : "0px"}>
+            Grafika, UX/UI design:
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"} marginBottom={"40px"}>
+            Olga Kowalska
+          </Typography>
+          <Typography variant="h6" marginBottom={"10px"}>
+            Współpraca z komitetami:
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"} marginBottom={"40px"}>
+            Jan Przewięźlikowski
+          </Typography>
+          <Typography variant="h6" marginBottom={"10px"}>
+            Koordynatorzy medialni:
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Łukasz Śliz
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Aleksandra Fijałek
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Franciszek Rychlak
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={isSmallScreen ? 0 : 1} />
+        <Grid item xs={12} sm={isSmallScreen ? 12 : 3}>
+          <Typography variant="h6" marginBottom={"10px"} marginTop={isSmallScreen ? "40px" : "0px"}>
+            Opracowanie kwestionariusza:
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Franciszek Bednarek
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Mikołaj Sazanov
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Jan Przewięźlikowski
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"} marginBottom={"15px"}>
+            Olga Kowalska
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Koło Naukowe Socjologii UJ:
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Kacper Wcisło
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Natalia Szwedowska
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Maciej Etmanski
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Jakub Dumana
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Hubert Szotek
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Tomasz Turzański
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Katarzyna Krauze
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Marta Andrzejewska
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"} marginBottom={"15px"}>
+            Katarzyna Markowska
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"} marginBottom={"15px"}>
+            Koło Naukowe Publicystyki Politycznej
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5} />
+      </Grid>
+      {/* <Box>
+        <Typography variant="h4" padding={"15px 0px 15px 50px"} fontWeight={"bold"}>
+          Partnerzy Projektu
+        </Typography>
+      </Box> */}
     </Box>
   );
 }
