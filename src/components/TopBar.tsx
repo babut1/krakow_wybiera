@@ -125,7 +125,7 @@ export function TopBar() {
               </Button>
               <Button
                 sx={{
-                  marginRight: "10px",
+                  marginRight: "30px",
                   color: "black",
                   borderColor: "black",
                   borderRadius: "15px",

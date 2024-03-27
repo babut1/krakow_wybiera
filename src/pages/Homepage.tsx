@@ -9,9 +9,9 @@ export function Homepage() {
   function handleStartClick() {
     navigate("/instrukcja");
   }
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <Box
@@ -33,13 +33,26 @@ export function Homepage() {
           width: isSmallScreen ? "calc(100% - 40px)" : "calc(100% - 100px)", // Adjust width to account for the padding
         }}
       >
-        <Typography variant="h1" fontWeight={"bold"}>
-          Kraków wybiera
+        <Typography variant="h2" fontWeight={"bold"}>
+          Kraków Wybiera
         </Typography>
-        <Typography variant="h5" padding={"20px"}>
-          Uzupełnij nasz test i zobacz, który komitet widzi Kraków tak jak Ty. A później wyjdź na pole i ciesz się
-          naszym pięknym miastem!
-        </Typography>
+        <Box
+          width={"50%"}
+          textAlign={"center"}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            width: isSmallScreen ? "100%" : "50%",
+            margin: "auto",
+          }}
+        >
+          <Typography variant="h5" padding={"20px"}>
+            Uzupełnij nasz test i zobacz, który komitet widzi Kraków tak jak Ty. A później wyjdź na pole i ciesz się
+            naszym pięknym miastem!
+          </Typography>
+        </Box>
         <Box padding={"20px"}>
           <Button
             sx={{ backgroundColor: "black", borderRadius: "15px", width: "220px", height: "70px" }}
@@ -74,7 +87,8 @@ export function Homepage() {
           backgroundColor: "#222222",
           color: "white",
           textAlign: "center",
-          paddingBottom: "100px",
+          paddingBottom: isSmallScreen ? "60px" : "150px",
+          paddingTop: isSmallScreen ? "30px" : "80px",
           paddingLeft: isSmallScreen ? "20px" : "0px",
           paddingRight: isSmallScreen ? "20px" : "0px",
         }}
@@ -88,62 +102,92 @@ export function Homepage() {
             flexDirection: "column",
             width: isSmallScreen ? "100%" : "50%",
             margin: "auto",
+            textAlign: isSmallScreen ? "center" : "justify",
           }}
         >
           <Typography variant="h4" fontWeight="bold" sx={{ padding: "15px 0" }}>
-            Kraków wybiera to...
+            Kraków Wybiera to...
           </Typography>
-          <Typography variant="body1" sx={{ padding: "15px 0" }} textAlign={"justify"}>
+          <Typography variant="body1" sx={{ padding: "15px 0" }} fontSize={"18px"}>
             narzędzie, które pozwala Ci porównać twoje poglądy na to jak powinien wyglądać Kraków z programami
             wyborczymi komitetów, którym udało się zarejestrować kandydatów do Rady Miasta Krakowa i na Prezydenta
             Miasta. Wystarczy, że uzupełnisz nasz test, a algorytm pokażę, do którego komitetu jest Ci najbliżej.
           </Typography>
-          <Typography variant="body1" sx={{ padding: "15px 0" }} textAlign={"justify"}>
+          <Typography variant="body1" sx={{ padding: "15px 0" }} fontSize={"18px"}>
             Test składa się z 20 stwierdzeń, które dotyczą kwestii takich jak klimat i środowisko, transport publiczny,
             planowanie przestrzenne, społeczność lokalna, gospodarka, kultura i edukacja, czy bezpieczeństwo.
           </Typography>
-          <Typography variant="body1" sx={{ padding: "15px 0" }} textAlign={"justify"}>
+          <Typography variant="body1" sx={{ padding: "15px 0" }} fontSize={"18px"}>
             Kraków Wybiera jest społecznym, oddolnym i niezależnym projektem. Chcemy pomóc Ci w świadomym wyborze!
           </Typography>
         </Grid>
       </Grid>
       <Box
-        marginTop={"40px"}
-        marginBottom={"40px"}
+        marginTop={isSmallScreen ? "40px" : "130px"}
+        marginBottom={isSmallScreen ? "30px" : "130px"}
         paddingLeft={isSmallScreen ? "20px" : "0px"}
         paddingRight={isSmallScreen ? "20px" : "0px"}
       >
         <Box>
-          <Typography variant="h4" fontWeight={"bold"} marginBottom={"30px"} marginTop={"30px"}>
+          <Typography
+            variant="h4"
+            fontWeight={"bold"}
+            marginBottom={isSmallScreen ? "20px" : "50px"}
+            marginTop={"30px"}
+          >
             Jak powstało nasze narzędzie?
           </Typography>
         </Box>
         <Grid container>
           <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5} />
           <Grid item xs={12} sm={isSmallScreen ? 12 : 3} textAlign={"center"}>
-            <Typography variant="h1" fontWeight={"bold"} padding={"15px 0px 15px 0px"}>
+            <Typography
+              variant="h1"
+              fontWeight={"bold"}
+              padding={isSmallScreen ? "15px 0px 15px 0px" : "15px 0px 45px 0px"}
+            >
               1
             </Typography>
-            <Typography>
+            <Typography variant="body1" fontSize={"18px"}>
               Wybraliśmy różne kluczowe dla Krakowa tematy i stworzyliśmy kwestionariusz. W opracowaniu testu wsparło
-              nas Koło Naukowe Socjologii UJ Sekcja Badawcza oraz Koło Naukowe Nauk Politycznych UJ.
+              nas Koło Naukowe Socjologii UJ Sekcja Badawcza oraz Koło Naukowe Publicystyki Politycznej UJ.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={isSmallScreen ? 0 : 1} />
-          <Grid item xs={12} sm={isSmallScreen ? 12 : 3} textAlign={"center"}>
-            <Typography variant="h1" fontWeight={"bold"} padding={"15px 0px 15px 0px"}>
+          <Grid
+            item
+            xs={12}
+            sm={isSmallScreen ? 12 : 3}
+            textAlign={"center"}
+            marginTop={isSmallScreen ? "25px" : "0px"}
+          >
+            <Typography
+              variant="h1"
+              fontWeight={"bold"}
+              padding={isSmallScreen ? "15px 0px 15px 0px" : "15px 0px 45px 0px"}
+            >
               2
             </Typography>
-            <Typography>
-              Przekazaliśmy komitetom, które zarejestrowały kandydatów do władz samorządowych w Krakowie kwestionariusz.{" "}
+            <Typography variant="body1" fontSize={"18px"}>
+              Przekazaliśmy kwestionariusz komitetom, które zarejestrowały kandydatów do władz samorządowych w Krakowie.
             </Typography>
           </Grid>
           <Grid item xs={12} sm={isSmallScreen ? 0 : 1} />
-          <Grid item xs={12} sm={isSmallScreen ? 12 : 3} textAlign={"center"}>
-            <Typography variant="h1" fontWeight={"bold"} padding={"15px 0px 15px 0px"}>
+          <Grid
+            item
+            xs={12}
+            sm={isSmallScreen ? 12 : 3}
+            textAlign={"center"}
+            marginTop={isSmallScreen ? "25px" : "0px"}
+          >
+            <Typography
+              variant="h1"
+              fontWeight={"bold"}
+              padding={isSmallScreen ? "15px 0px 15px 0px" : "15px 0px 45px 0px"}
+            >
               3
             </Typography>
-            <Typography>
+            <Typography variant="body1" fontSize={"18px"}>
               Przygotowaliśmy stronę internetową i algorytm, który oblicza zbieżność twoich poglądów z programem
               politycznym komitetów. Szczegółowy sposób działania algorytmu możesz zobaczyć na końcu naszego testu.
             </Typography>
@@ -151,8 +195,18 @@ export function Homepage() {
           <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5} />
         </Grid>
       </Box>
-      <Box sx={{ backgroundColor: "lightgrey" }} width={"100%"} marginTop={"50px"} paddingTop={"40px"}>
-        <Typography variant="h4" fontWeight={"bold"} padding={"15px 0px 15px 0px"} textAlign={"center"}>
+      <Box
+        sx={{ backgroundColor: "lightgrey" }}
+        width={"100%"}
+        marginTop={"50px"}
+        paddingTop={isSmallScreen ? "60px" : "130px"}
+      >
+        <Typography
+          variant="h4"
+          fontWeight={"bold"}
+          padding={isSmallScreen ? "15px 0px 20px 0px" : "15px 0px 65px 0px"}
+          textAlign={"center"}
+        >
           Kto przygotował narzędzie?
         </Typography>
       </Box>
@@ -162,15 +216,32 @@ export function Homepage() {
         padding={isSmallScreen ? "0px 20px 0px 20px" : "0px 50px 0px 50px"}
       >
         <Grid item xs={12} sm={isSmallScreen ? 12 : 7} textAlign={"center"}>
-          <Typography variant="h4" padding={"15px 0px 15px 0px"} fontWeight={"bold"} textAlign={"left"}>
+          <Typography
+            variant={isSmallScreen ? "h5" : "h4"}
+            padding={"15px 0px 15px 0px"}
+            fontWeight={"bold"}
+            textAlign={isSmallScreen ? "center" : "left"}
+          >
             O Stowarzyszeniu
           </Typography>
-          <Typography variant="body1" padding={"15px 0px 15px 0px"} textAlign={"justify"}>
+          <Typography
+            variant={"body1"}
+            padding={"15px 0px 15px 0px"}
+            textAlign={isSmallScreen ? "center" : "justify"}
+            fontSize={"18px"}
+          >
             Kraków Wybiera to projekt przygotowany przez Stowarzyszenie Twój Wybór. Stowarzyszenie to działająca od 2018
             roku krakowska, młodzieżowa organizacja pozarządowa zrzeszająca edukatorów, studentów, uczniów szkół
-            średnich oraz aktywistów, którzy wspólnie działają dla świadomego społeczeństwa obywatelskiego. Cele
-            organizacji to budowanie społeczności młodych ludzi zaangażowanych w sprawy publiczne, działanie na rzecz
-            świadomości obywatelskiej i demokracji uczestniczącej, a także wspieranie reformy systemu kształcenia
+            średnich oraz aktywistów, którzy wspólnie działają dla świadomego społeczeństwa obywatelskiego.
+          </Typography>
+          <Typography
+            variant={"body1"}
+            padding={"15px 0px 15px 0px"}
+            textAlign={isSmallScreen ? "center" : "justify"}
+            fontSize={"18px"}
+          >
+            Cele organizacji to budowanie społeczności młodych ludzi zaangażowanych w sprawy publiczne, działanie na
+            rzecz świadomości obywatelskiej i demokracji uczestniczącej, a także wspieranie reformy systemu kształcenia
             obywatelskiego.
           </Typography>
         </Grid>
@@ -188,7 +259,11 @@ export function Homepage() {
         </Grid>
       </Grid>
       <Box width={"100%"} sx={{ backgroundColor: "lightgrey" }} textAlign={isSmallScreen ? "center" : "left"}>
-        <Typography variant="h4" padding={"15px 50px 15px 50px"} fontWeight={"bold"}>
+        <Typography
+          variant="h4"
+          padding={isSmallScreen ? "25px 50px 30px 50px" : "85px 50px 30px 50px"}
+          fontWeight={"bold"}
+        >
           Autorzy projektu
         </Typography>
       </Box>
@@ -221,21 +296,12 @@ export function Homepage() {
             Jakub Kościelniak
           </Typography>
           <Typography variant="h5" fontWeight={"bold"} marginBottom={"40px"}>
-            Koło naukowe socjologii UJ
-          </Typography>
-          <Typography variant="h6" marginBottom={"15px"}>
-            Analiza danych:
-          </Typography>
-          <Typography variant="h5" fontWeight={"bold"}>
-            Maciej Pelc
-          </Typography>
-          <Typography variant="h5" fontWeight={"bold"}>
-            Igor Dołęga
+            Koło Naukowe Socjologii UJ
           </Typography>
         </Grid>
         <Grid item xs={12} sm={isSmallScreen ? 0 : 1} />
         <Grid item xs={12} sm={isSmallScreen ? 12 : 3}>
-          <Typography variant="h6" marginBottom={"10px"} marginTop={isSmallScreen ? "40px" : "0px"}>
+          <Typography variant="h6" marginBottom={"10px"} marginTop={"0px"}>
             Grafika, UX/UI design:
           </Typography>
           <Typography variant="h5" fontWeight={"bold"} marginBottom={"40px"}>
@@ -256,8 +322,17 @@ export function Homepage() {
           <Typography variant="h5" fontWeight={"bold"}>
             Aleksandra Fijałek
           </Typography>
-          <Typography variant="h5" fontWeight={"bold"}>
+          <Typography variant="h5" fontWeight={"bold"} marginBottom={"40px"}>
             Franciszek Rychlak
+          </Typography>
+          <Typography variant="h6" marginBottom={"15px"}>
+            Analiza danych:
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Maciej Pelc
+          </Typography>
+          <Typography variant="h5" fontWeight={"bold"}>
+            Igor Dołęga
           </Typography>
         </Grid>
         <Grid item xs={12} sm={isSmallScreen ? 0 : 1} />
@@ -269,7 +344,7 @@ export function Homepage() {
             Franciszek Bednarek
           </Typography>
           <Typography variant="h5" fontWeight={"bold"}>
-            Mikołaj Sazanov
+            Mikołaj Sazonov
           </Typography>
           <Typography variant="h5" fontWeight={"bold"}>
             Jan Przewięźlikowski
