@@ -52,6 +52,7 @@ export default function CandidateSlider(props: { committees: Committee }) {
           alignItems: "center",
           height: 80,
           justifyContent: "center",
+          marginBottom: "40px",
         }}
       >
         <Typography variant="h4" fontWeight={"bold"}>
