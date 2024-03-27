@@ -1,10 +1,15 @@
 import { Box, Button, Divider, Grid, Paper, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function QuizExplanationPage() {
   const navigate = useNavigate();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(1000));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleGoBack = async () => {
     navigate("/");

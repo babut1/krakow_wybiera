@@ -1,10 +1,15 @@
 import { Box, Button, Divider, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function AlorithmPage() {
   const navigate = useNavigate();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(700));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleGoBack = async () => {
     navigate("/wyniki");

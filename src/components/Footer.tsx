@@ -1,4 +1,3 @@
-import * as React from "react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
@@ -13,7 +12,7 @@ export function Footer() {
       component="footer"
       sx={{
         backgroundColor: "lightgrey",
-        padding: 6,
+        padding: 4,
       }}
     >
       <Container maxWidth="lg">
@@ -52,7 +51,7 @@ export function Footer() {
             </Link>
           </Grid>
         </Grid>
-        <Box mt={5}>
+        <Box mt={0}>
           <Typography variant="body2" color="text.secondary" align="center">
             {"© "}
             <Link href="https://twojwybor.org/" color="inherit" target="_blank">

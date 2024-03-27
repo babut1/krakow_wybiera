@@ -36,11 +36,13 @@ export function CandidateProfile(props: {
             )}
           </Grid>
           <Grid item xs={6}>
-            <img
-              src={props.candidatePath}
-              alt="Zdjęcie kandydata"
-              style={{ width: photoWidth, height: photoHeight, borderRadius: "5px" }}
-            />
+            {props.candidatePath && (
+              <img
+                src={props.candidatePath}
+                alt="Zdjęcie kandydata"
+                style={{ width: photoWidth, height: photoHeight, borderRadius: "5px" }}
+              />
+            )}
           </Grid>
         </Grid>
         <Grid item xs={3.5} container direction="column">
