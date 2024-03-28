@@ -68,9 +68,9 @@ export function Homepage() {
       </Box>
       <Box
         sx={{
-          height: isSmallScreen ? "30vw" : "40vw",
+          height: "40vw",
           backgroundColor: "#FFE299",
-          backgroundImage: "url('graphics/test_grafika.png')",
+          backgroundImage: isSmallScreen ? "url('graphics/KW_grafika_mobile.png')" : "url('graphics/test_grafika.png')",
           backgroundSize: "100% 100%", // Make the background image cover the entire container
           backgroundRepeat: "no-repeat", // Prevent the background image from repeating
           backgroundPosition: "bottom", // Center the background image
@@ -255,7 +255,7 @@ export function Homepage() {
           justifyContent="center"
           alignItems="center"
         >
-          <img src="graphics/STW_logo.png" style={{ maxWidth: "100%", height: "auto" }}></img>
+          <img src="graphics/STW_logo.png" alt="logo stowarzyszenia" style={{ maxWidth: "100%", height: "auto" }}></img>
         </Grid>
       </Grid>
       <Box width={"100%"} sx={{ backgroundColor: "lightgrey" }} textAlign={isSmallScreen ? "center" : "left"}>
@@ -269,7 +269,7 @@ export function Homepage() {
       </Box>
       <Grid
         container
-        sx={{ backgroundColor: "lightgrey", paddingBottom: "50px" }}
+        sx={{ backgroundColor: "lightgrey", paddingBottom: isSmallScreen ? "60px" : "150px" }}
         textAlign={isSmallScreen ? "center" : "left"}
       >
         <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5} />
@@ -382,17 +382,39 @@ export function Homepage() {
           <Typography variant="h5" fontWeight={"bold"} marginBottom={"15px"}>
             Katarzyna Markowska
           </Typography>
-          <Typography variant="h5" fontWeight={"bold"} marginBottom={"15px"}>
+          <Typography variant="h5" fontWeight={"bold"} marginBottom={"15px"} paddingRight={"15px"} paddingLeft={"15px"}>
             Koło Naukowe Publicystyki Politycznej UJ
           </Typography>
         </Grid>
         <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5} />
       </Grid>
-      {/* <Box>
-        <Typography variant="h4" padding={"15px 0px 15px 50px"} fontWeight={"bold"}>
+      <Box paddingTop={isSmallScreen ? "80px" : "150px"} paddingBottom={isSmallScreen ? "0px" : "110px"}>
+        <Typography variant="h4" fontWeight={"bold"}>
           Partnerzy Projektu
         </Typography>
-      </Box> */}
+        <Grid container>
+          <Grid item xs={12} sm={isSmallScreen ? 0 : 1} />
+          <Grid item xs={12} sm={isSmallScreen ? 12 : 4.75}>
+            <Box marginTop={isSmallScreen ? "50px" : "20px"}>
+              <img src="partners/rmf.png" style={{ maxHeight: "auto", width: isSmallScreen ? "30%" : "50%" }}></img>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5} />
+          <Grid item xs={12} sm={isSmallScreen ? 12 : 4.75}>
+            <Box marginTop={isSmallScreen ? "0px" : "20px"}>
+              <img src="partners/knpp.png" style={{ maxHeight: "auto", width: "100%" }}></img>
+            </Box>
+          </Grid>
+          {/* <Grid item xs={12} sm={isSmallScreen ? 0 : 0.5} /> */}
+          {/* <Grid item xs={12} sm={isSmallScreen ? 12 : 3}>
+            <img src="partners/knsuj.png" style={{ maxHeight: "auto", width: "100%" }}></img>
+          </Grid> */}
+          <Grid item xs={12} sm={isSmallScreen ? 0 : 1} />
+          {/* <Grid item xs={12} sm={isSmallScreen ? 12 : 3}>
+            <img src="graphics/STW_logo.png" style={{ maxHeight: "auto", width: "100%" }}></img>
+          </Grid> */}
+        </Grid>
+      </Box>
     </Box>
   );
 }

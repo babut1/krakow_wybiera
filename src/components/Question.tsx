@@ -23,6 +23,7 @@ import {
 } from "../common/state";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useNavigate } from "react-router-dom";
+import ReactGA from "react-ga";
 
 export function Question(props: { question: QuestionInterface; questionNumber: number }) {
   const numberOfQuestions = useNumberOfQuestions();
@@ -68,6 +69,11 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
     setUserAnswer(userAnswer, props.questionNumber);
     setButtonStates([false, false, false, false, false, false]);
     if (props.questionNumber + 1 === numberOfQuestions) {
+      ReactGA.event({
+        category: "Button",
+        action: "Click",
+        label: "click",
+      });
       navigate("/wyniki");
     }
     if (isSmallScreen) {

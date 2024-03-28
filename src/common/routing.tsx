@@ -8,7 +8,7 @@ import { CommitteeAnswers } from "../pages/CommitteeAnswers";
 import { QuizExplanationPage } from "../pages/QuizExplanationPage";
 import { AlorithmPage } from "../pages/AlgorithmPage";
 
-export const routing: RouteObject[] = [
+export const routes: RouteObject[] = [
   {
     path: "/",
     element: <KrakowWybiera />,
@@ -37,10 +37,10 @@ export const routing: RouteObject[] = [
         path: "krakowdlamieszkancow",
         element: <CommitteeAnswers committeeName="krakowdlamieszkancow" />,
       },
-      {
-        path: "zjednoczenidlakrakowa",
-        element: <CommitteeAnswers committeeName="zjednoczenidlakrakowa" />,
-      },
+      // {
+      //   path: "zjednoczenidlakrakowa",
+      //   element: <CommitteeAnswers committeeName="zjednoczenidlakrakowa" />,
+      // },
       // {
       //   path: "prawoisprawiedliwosc",
       //   element: <CommitteeAnswers committeeName="prawoisprawiedliwosc" />,

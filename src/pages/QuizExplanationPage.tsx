@@ -96,7 +96,7 @@ export function QuizExplanationPage() {
             width: isSmallScreen ? "48%" : "180px",
           }}
         >
-          <Typography variant="h6">Strona główna</Typography>
+          <Typography variant="body1">Strona główna</Typography>
         </Button>
         <Button
           variant="contained"
@@ -111,7 +111,7 @@ export function QuizExplanationPage() {
             width: isSmallScreen ? "48%" : "180px",
           }}
         >
-          <Typography variant="h6">Rozpocznij test</Typography>
+          <Typography variant="body1">Rozpocznij test</Typography>
         </Button>
       </Box>
     </Box>
