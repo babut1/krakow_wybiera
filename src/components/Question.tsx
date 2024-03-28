@@ -72,7 +72,7 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
       ReactGA.event({
         category: "Button",
         action: "Click",
-        label: "click",
+        label: "button_click",
       });
       navigate("/wyniki");
     }
@@ -100,14 +100,16 @@ export function Question(props: { question: QuestionInterface; questionNumber: n
 
   return (
     <Box p={isSmallScreen ? 2 : 8} boxShadow={3} mx="auto">
-      <ProgressBar
-        completed={(props.questionNumber / numberOfQuestions) * 100}
-        labelSize="0px"
-        bgColor="black"
-        borderRadius="15px"
-        height="13px"
-        baseBgColor="darkgrey"
-      />
+      <Box marginTop={isSmallScreen ? "30px" : "0px"}>
+        <ProgressBar
+          completed={(props.questionNumber / numberOfQuestions) * 100}
+          labelSize="0px"
+          bgColor="black"
+          borderRadius="15px"
+          height="13px"
+          baseBgColor="darkgrey"
+        />
+      </Box>
       <Grid container>
         <Grid item xs={12} sm={isSmallScreen ? 12 : 6.8}>
           <Typography
